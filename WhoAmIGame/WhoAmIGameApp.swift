@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct WhoAmIGameApp: App {
+    @AppStorage("isFirstTime") var isFirstTime = true
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isFirstTime == true{
+                FirstUsernameScreen()
+            }else{
+                TabsView()
+            }
         }
     }
 }

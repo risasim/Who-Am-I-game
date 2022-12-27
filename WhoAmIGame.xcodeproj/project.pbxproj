@@ -7,18 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7924D89A295B273600A876C5 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D899295B273600A876C5 /* TabsView.swift */; };
+		792F31352942359F00367FB9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F31342942359F00367FB9 /* Utility.swift */; };
+		792F3137294245A100367FB9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3136294245A100367FB9 /* GameView.swift */; };
+		792F3139294245B500367FB9 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3138294245B500367FB9 /* ResultsView.swift */; };
+		792F313B2942469900367FB9 /* NewPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F313A2942469900367FB9 /* NewPackView.swift */; };
+		795796C8293E556B002782FC /* FirstUsernameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795796C7293E556B002782FC /* FirstUsernameScreen.swift */; };
+		797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F4294515AE006E3E74 /* ImageGridView.swift */; };
+		797882F729462131006E3E74 /* TurnOverPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F629462131006E3E74 /* TurnOverPhoneView.swift */; };
+		797882F92946216E006E3E74 /* StartedGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F82946216E006E3E74 /* StartedGameView.swift */; };
+		79A36E8A293FB5CE000308D3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A36E89293FB5CE000308D3 /* SettingsView.swift */; };
+		79A36E8C293FB787000308D3 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A36E8B293FB787000308D3 /* SettingsLabelView.swift */; };
+		79A36E8E293FB8B4000308D3 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A36E8D293FB8B4000308D3 /* SettingsRowView.swift */; };
+		79DE3F35295A130600559151 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE3F34295A130600559151 /* Debouncer.swift */; };
 		79E37972293CD8CD0080C98F /* WhoAmIGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37971293CD8CD0080C98F /* WhoAmIGameApp.swift */; };
-		79E37974293CD8CD0080C98F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37973293CD8CD0080C98F /* ContentView.swift */; };
 		79E37976293CD8CF0080C98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79E37975293CD8CF0080C98F /* Assets.xcassets */; };
 		79E37979293CD8CF0080C98F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79E37978293CD8CF0080C98F /* Preview Assets.xcassets */; };
+		79E37981293CDA120080C98F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 79E37980293CDA120080C98F /* Realm */; };
+		79E37983293CDA120080C98F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79E37982293CDA120080C98F /* RealmSwift */; };
+		79E37987293CDA600080C98F /* ChoosingPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37986293CDA5F0080C98F /* ChoosingPackView.swift */; };
+		79E3798B293CE7AE0080C98F /* RealmGuess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3798A293CE7AE0080C98F /* RealmGuess.swift */; };
+		79E3798D293CE7D30080C98F /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3798C293CE7D30080C98F /* Migrator.swift */; };
+		79E3798F293CE7FF0080C98F /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3798E293CE7FF0080C98F /* GameModel.swift */; };
+		79E37991293CE84E0080C98F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37990293CE84E0080C98F /* Question.swift */; };
+		79E37993293CE8640080C98F /* QuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37992293CE8640080C98F /* QuestionPack.swift */; };
+		79E37998293CEEB20080C98F /* EmptyPacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37997293CEEB20080C98F /* EmptyPacksView.swift */; };
+		79E3799C293CEF230080C98F /* ListPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3799B293CEF230080C98F /* ListPackView.swift */; };
+		79E379A0293CF7000080C98F /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3799F293CF7000080C98F /* ListItemView.swift */; };
+		79E379A2293D1CCB0080C98F /* VisualBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E379A1293D1CCB0080C98F /* VisualBlurEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7924D899295B273600A876C5 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		792F31342942359F00367FB9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		792F3136294245A100367FB9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		792F3138294245B500367FB9 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		792F313A2942469900367FB9 /* NewPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPackView.swift; sourceTree = "<group>"; };
+		795796C7293E556B002782FC /* FirstUsernameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUsernameScreen.swift; sourceTree = "<group>"; };
+		796704E729477F7A0032955B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		797882F4294515AE006E3E74 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		797882F629462131006E3E74 /* TurnOverPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOverPhoneView.swift; sourceTree = "<group>"; };
+		797882F82946216E006E3E74 /* StartedGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedGameView.swift; sourceTree = "<group>"; };
+		79A36E89293FB5CE000308D3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		79A36E8B293FB787000308D3 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		79A36E8D293FB8B4000308D3 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		79DE3F34295A130600559151 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		79E3796E293CD8CD0080C98F /* WhoAmIGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoAmIGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E37971293CD8CD0080C98F /* WhoAmIGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoAmIGameApp.swift; sourceTree = "<group>"; };
-		79E37973293CD8CD0080C98F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79E37975293CD8CF0080C98F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79E37978293CD8CF0080C98F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		79E37986293CDA5F0080C98F /* ChoosingPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosingPackView.swift; sourceTree = "<group>"; };
+		79E3798A293CE7AE0080C98F /* RealmGuess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGuess.swift; sourceTree = "<group>"; };
+		79E3798C293CE7D30080C98F /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
+		79E3798E293CE7FF0080C98F /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		79E37990293CE84E0080C98F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		79E37992293CE8640080C98F /* QuestionPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPack.swift; sourceTree = "<group>"; };
+		79E37997293CEEB20080C98F /* EmptyPacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPacksView.swift; sourceTree = "<group>"; };
+		79E3799B293CEF230080C98F /* ListPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPackView.swift; sourceTree = "<group>"; };
+		79E3799F293CF7000080C98F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		79E379A1293D1CCB0080C98F /* VisualBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualBlurEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +73,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79E37983293CDA120080C98F /* RealmSwift in Frameworks */,
+				79E37981293CDA120080C98F /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		797882FB29462198006E3E74 /* ChoosingPackView */ = {
+			isa = PBXGroup;
+			children = (
+				79E37997293CEEB20080C98F /* EmptyPacksView.swift */,
+				79E3799B293CEF230080C98F /* ListPackView.swift */,
+				79E3799F293CF7000080C98F /* ListItemView.swift */,
+			);
+			path = ChoosingPackView;
+			sourceTree = "<group>";
+		};
+		797882FC294621A6006E3E74 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				79A36E8B293FB787000308D3 /* SettingsLabelView.swift */,
+				79A36E8D293FB8B4000308D3 /* SettingsRowView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		797882FD294621B5006E3E74 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				797882F629462131006E3E74 /* TurnOverPhoneView.swift */,
+				797882F82946216E006E3E74 /* StartedGameView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
 		79E37965293CD8CD0080C98F = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +128,11 @@
 		79E37970293CD8CD0080C98F /* WhoAmIGame */ = {
 			isa = PBXGroup;
 			children = (
+				796704E729477F7A0032955B /* Info.plist */,
+				79E37994293CE87C0080C98F /* Screens */,
 				79E37971293CD8CD0080C98F /* WhoAmIGameApp.swift */,
-				79E37973293CD8CD0080C98F /* ContentView.swift */,
+				79E37985293CDA490080C98F /* Models */,
+				79E37984293CDA430080C98F /* Views */,
 				79E37975293CD8CF0080C98F /* Assets.xcassets */,
 				79E37977293CD8CF0080C98F /* Preview Content */,
 			);
@@ -65,6 +145,46 @@
 				79E37978293CD8CF0080C98F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79E37984293CDA430080C98F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				797882FB29462198006E3E74 /* ChoosingPackView */,
+				797882FC294621A6006E3E74 /* SettingsView */,
+				797882F4294515AE006E3E74 /* ImageGridView.swift */,
+				797882FD294621B5006E3E74 /* GameView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		79E37985293CDA490080C98F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				79E3798A293CE7AE0080C98F /* RealmGuess.swift */,
+				79E3798C293CE7D30080C98F /* Migrator.swift */,
+				79E3798E293CE7FF0080C98F /* GameModel.swift */,
+				79E37990293CE84E0080C98F /* Question.swift */,
+				79E37992293CE8640080C98F /* QuestionPack.swift */,
+				79E379A1293D1CCB0080C98F /* VisualBlurEffect.swift */,
+				792F31342942359F00367FB9 /* Utility.swift */,
+				79DE3F34295A130600559151 /* Debouncer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		79E37994293CE87C0080C98F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				795796C7293E556B002782FC /* FirstUsernameScreen.swift */,
+				792F313A2942469900367FB9 /* NewPackView.swift */,
+				7924D899295B273600A876C5 /* TabsView.swift */,
+				79E37986293CDA5F0080C98F /* ChoosingPackView.swift */,
+				79A36E89293FB5CE000308D3 /* SettingsView.swift */,
+				792F3136294245A100367FB9 /* GameView.swift */,
+				792F3138294245B500367FB9 /* ResultsView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +203,10 @@
 			dependencies = (
 			);
 			name = WhoAmIGame;
+			packageProductDependencies = (
+				79E37980293CDA120080C98F /* Realm */,
+				79E37982293CDA120080C98F /* RealmSwift */,
+			);
 			productName = WhoAmIGame;
 			productReference = 79E3796E293CD8CD0080C98F /* WhoAmIGame.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 79E37965293CD8CD0080C98F;
+			packageReferences = (
+				79E3797F293CDA120080C98F /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 79E3796F293CD8CD0080C98F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +264,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79E37974293CD8CD0080C98F /* ContentView.swift in Sources */,
+				797882F92946216E006E3E74 /* StartedGameView.swift in Sources */,
+				79E37998293CEEB20080C98F /* EmptyPacksView.swift in Sources */,
+				79E3799C293CEF230080C98F /* ListPackView.swift in Sources */,
 				79E37972293CD8CD0080C98F /* WhoAmIGameApp.swift in Sources */,
+				79E379A0293CF7000080C98F /* ListItemView.swift in Sources */,
+				792F313B2942469900367FB9 /* NewPackView.swift in Sources */,
+				792F3137294245A100367FB9 /* GameView.swift in Sources */,
+				79A36E8E293FB8B4000308D3 /* SettingsRowView.swift in Sources */,
+				795796C8293E556B002782FC /* FirstUsernameScreen.swift in Sources */,
+				792F3139294245B500367FB9 /* ResultsView.swift in Sources */,
+				7924D89A295B273600A876C5 /* TabsView.swift in Sources */,
+				79E37987293CDA600080C98F /* ChoosingPackView.swift in Sources */,
+				79A36E8A293FB5CE000308D3 /* SettingsView.swift in Sources */,
+				797882F729462131006E3E74 /* TurnOverPhoneView.swift in Sources */,
+				79E3798D293CE7D30080C98F /* Migrator.swift in Sources */,
+				79E379A2293D1CCB0080C98F /* VisualBlurEffect.swift in Sources */,
+				79E37993293CE8640080C98F /* QuestionPack.swift in Sources */,
+				79DE3F35295A130600559151 /* Debouncer.swift in Sources */,
+				79E3798B293CE7AE0080C98F /* RealmGuess.swift in Sources */,
+				79A36E8C293FB787000308D3 /* SettingsLabelView.swift in Sources */,
+				79E37991293CE84E0080C98F /* Question.swift in Sources */,
+				797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */,
+				79E3798F293CE7FF0080C98F /* GameModel.swift in Sources */,
+				792F31352942359F00367FB9 /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +419,9 @@
 				DEVELOPMENT_TEAM = 6Q38DY93CU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhoAmIGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -299,9 +448,9 @@
 				DEVELOPMENT_TEAM = 6Q38DY93CU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhoAmIGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,6 +488,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		79E3797F293CDA120080C98F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79E37980293CDA120080C98F /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E3797F293CDA120080C98F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		79E37982293CDA120080C98F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79E3797F293CDA120080C98F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 79E37966293CD8CD0080C98F /* Project object */;
 }
