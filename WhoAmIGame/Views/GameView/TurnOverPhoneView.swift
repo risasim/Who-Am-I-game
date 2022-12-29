@@ -14,9 +14,10 @@ struct TurnOverPhoneView: View {
     var body: some View {
         VStack{
             ZStack {
-                Image(uiImage: UIImage(imageLiteralResourceName: "vectorrotate")
-                      .withHorizontallyFlippedOrientation()
-                  )
+               // Image(uiImage: UIImage(imageLiteralResourceName: "vectorrotate")
+               //       .withHorizontallyFlippedOrientation()
+               //   )
+                Image("vectorrotate")
                     .resizable()
                     .scaledToFit()
             }

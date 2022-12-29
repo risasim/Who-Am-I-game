@@ -16,6 +16,9 @@ struct GameView: View {
             (model.question == "Please turn over your phone to start the game") ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color))
        
         }
+        .navigationDestination(isPresented: $model.ended, destination: {
+            ResultsView(model: model)
+        })
         .onDisappear{
             model.endGame()
         }
@@ -23,7 +26,7 @@ struct GameView: View {
             model.checkOrientation()
         }
         .onRotate(perform: { newOrientation in
-            //may gonna have to change this isnt really valid solution
+            //may gonna have to change this isnt really valid solution ??
             model.checkOrientation()
         })
         .toolbar(.hidden, for: .tabBar)
