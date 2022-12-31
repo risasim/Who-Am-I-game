@@ -17,6 +17,7 @@ struct GameView: View {
        
         }
         .navigationDestination(isPresented: $model.ended, destination: {
+            // Probably not a valid solution??
             ResultsView(model: model)
         })
         .onDisappear{

@@ -111,6 +111,24 @@
 			path = GameView;
 			sourceTree = "<group>";
 		};
+		79C628ED295F2FAE0082FE67 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				792F3136294245A100367FB9 /* GameView.swift */,
+				79E3798E293CE7FF0080C98F /* GameModel.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		79C628EE295F2FC80082FE67 /* NewPack */ = {
+			isa = PBXGroup;
+			children = (
+				7924D89B295B30CE00A876C5 /* AddingPackModel.swift */,
+				792F313A2942469900367FB9 /* NewPackView.swift */,
+			);
+			path = NewPack;
+			sourceTree = "<group>";
+		};
 		79E37965293CD8CD0080C98F = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +181,6 @@
 		79E37985293CDA490080C98F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				79E3798E293CE7FF0080C98F /* GameModel.swift */,
-				7924D89B295B30CE00A876C5 /* AddingPackModel.swift */,
 				79E3798A293CE7AE0080C98F /* RealmGuess.swift */,
 				79E3798C293CE7D30080C98F /* Migrator.swift */,
 				79E37990293CE84E0080C98F /* Question.swift */,
@@ -180,11 +196,11 @@
 			isa = PBXGroup;
 			children = (
 				795796C7293E556B002782FC /* FirstUsernameScreen.swift */,
-				792F313A2942469900367FB9 /* NewPackView.swift */,
+				79C628EE295F2FC80082FE67 /* NewPack */,
 				7924D899295B273600A876C5 /* TabsView.swift */,
 				79E37986293CDA5F0080C98F /* ChoosingPackView.swift */,
 				79A36E89293FB5CE000308D3 /* SettingsView.swift */,
-				792F3136294245A100367FB9 /* GameView.swift */,
+				79C628ED295F2FAE0082FE67 /* Game */,
 				792F3138294245B500367FB9 /* ResultsView.swift */,
 			);
 			path = Screens;

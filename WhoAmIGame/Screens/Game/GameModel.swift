@@ -21,7 +21,7 @@ final class GameModel: ObservableObject{
     @Published var ended:Bool = false
     
     //Pack operations
-    private var readyPack : [Question]
+    private var readyPack : [String]
     private var index = 0
     
     //Models
@@ -43,7 +43,7 @@ final class GameModel: ObservableObject{
     
     
     init(pack: QuestionPack){
-        self.readyPack = pack.names.shuffled()
+        self.readyPack = pack.questions.shuffled()
         checkOrientation()
     }
     
@@ -136,7 +136,7 @@ final class GameModel: ObservableObject{
     //if you can still get question get other question, else end the game
     func getQuestion(){
         if index < readyPack.count{
-            question = readyPack[index].name
+            question = readyPack[index]
         }else{
             endGame()
         }

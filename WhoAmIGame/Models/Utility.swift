@@ -10,7 +10,7 @@ import SwiftUI
 
 
 //constant arrays
-let images: [String] = ["films", "literature", "presidents", "lab", "celebrit","classic", "literature 1", "cinema", "nature", "discovery", "notes", ]
+let images: [String] = ["films", "literature", "presidents", "art", "lab", "celebrit","classic", "literature 1", "cinema", "nature", "discovery", "notes", ]
 let times: [Int] = [30, 45, 60, 90]
 //UI
 let columnSpacing: CGFloat = 10

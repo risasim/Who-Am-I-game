@@ -31,7 +31,7 @@ struct ListItemView: View {
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
                 HStack {
-                    Text(String(pack.names.count))
+                    Text(String(pack.questions.count))
                     Text(pack.author)
                 }
             }

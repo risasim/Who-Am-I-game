@@ -13,5 +13,6 @@ class QuestionPack: Object, ObjectKeyIdentifiable{
     @Persisted var author: String = "Coolie"
     @Persisted var isFavourite:Bool = false
     @Persisted var imageStr:String = "nature"
-    @Persisted var names: List<Question> = List<Question>()
+    @Persisted var questions: List<String> = List<String>()
+   // @Persisted var names: List<Question> = List<Question>()
 }
