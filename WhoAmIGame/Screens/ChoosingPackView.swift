@@ -17,9 +17,10 @@ struct ChoosingPackView: View {
     @State var isSettingsShown:Bool = false
     @State var isNewPackShown: Bool = false
     
+    @ObservedObject var navi = Navigator()
     
     var body: some View {
-        NavigationStack{
+        NavigationStack(path: $navi.path){
             VStack{
                 questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView())
             }
@@ -52,6 +53,7 @@ struct ChoosingPackView: View {
                 }
             }
         }
+        .environmentObject(navi)
     }
 }
 

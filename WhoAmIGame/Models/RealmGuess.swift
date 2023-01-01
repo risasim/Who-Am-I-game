@@ -11,4 +11,6 @@ import RealmSwift
 class RealmGuess: ObservableObject{
     
     @Published var realm = try! Realm()
+    
+    //maybe add delete pack from screenshot
 }
