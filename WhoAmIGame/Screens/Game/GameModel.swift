@@ -37,8 +37,7 @@ final class GameModel: ObservableObject{
     private var yaw : Double = 0
     
     //Final
-    @Published var answers: [String] = []
-    @Published var correct: [Bool] = []
+    @Published var answers: [Answer] = []
     @Published var points: Int = 0
     
     
@@ -144,15 +143,13 @@ final class GameModel: ObservableObject{
     func rightAnswer(){
         index += 1
         points += 1
-        answers.append(question)
-        correct.append(true)
+        answers.append(Answer(question: question, correct: true))
         getQuestion()
     }
     
     func wrongAnswer(){
         index += 1
-        answers.append(question)
-        correct.append(false)
+        answers.append(Answer(question: question, correct: true))
         getQuestion()
     }
     

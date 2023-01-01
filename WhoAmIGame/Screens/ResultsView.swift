@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ResultsView: View {
     
-    @ObservedObject var model: GameModel
+    var answers: [Answer]
+    var points: Int
     
     var body: some View {
         
@@ -17,10 +18,10 @@ struct ResultsView: View {
             Text("Results")
                 .font(.system(size: 27, weight: .bold, design: .rounded))
             List{
-                ForEach(0..<model.answers.count) { index in
-                    Text(model.answers[index])
+                ForEach(answers, id: \.self) { answer in
+                    Text(answer.question)
                         .background(RoundedRectangle(cornerRadius: 10))
-                        .listRowBackground(model.correct[index] ? Color.green : Color.red)
+                        .listRowBackground(answer.correct ? Color.green : Color.red)
                 }
             }
             .listStyle(.plain)
@@ -30,6 +31,6 @@ struct ResultsView: View {
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsView(model: GameModel(pack: QuestionPack()))
+        ResultsView(answers: [Answer(question: "JFK", correct: true), Answer(question: "Trump", correct: false)], points: 2)
     }
 }
