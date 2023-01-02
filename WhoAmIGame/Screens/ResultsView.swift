@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ResultsView: View {
     
-    var answers: [Answer]
-    var points: Int
+    @Binding var ans: AnswerPack
     
     @EnvironmentObject var navi: Navigator
 
@@ -20,7 +19,7 @@ struct ResultsView: View {
             Text("Results")
                 .font(.system(size: 27, weight: .bold, design: .rounded))
             List{
-                ForEach(answers, id: \.self) { answer in
+                ForEach(ans.answers, id: \.self) { answer in
                     Text(answer.question)
                        // .background(RoundedRectangle(cornerRadius: 10))
                        // .listRowBackground(answer.correct ? Color.green : Color.red)
@@ -33,7 +32,7 @@ struct ResultsView: View {
             }
             .listStyle(.plain)
             .onAppear {
-                print(answers)
+                print(ans)
             }
         }
     }
@@ -41,6 +40,6 @@ struct ResultsView: View {
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsView(answers: [Answer(question: "JFK", correct: true), Answer(question: "Trump", correct: false)], points: 2)
+        ResultsView(ans: .constant(AnswerPack()))
     }
 }

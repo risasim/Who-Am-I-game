@@ -11,6 +11,7 @@ struct GameView: View {
     
     @ObservedObject var model:GameModel
     @State var isActive = false
+    @State var banswers: AnswerPack = AnswerPack()
     
     var body: some View {
         VStack{
@@ -19,17 +20,18 @@ struct GameView: View {
         }
         .navigationDestination(isPresented: $isActive, destination: {
             // Probably not a valid solution??
-            ResultsView(answers: model.getAns(), points: model.points)
+            ResultsView(ans: $banswers)
         })
         .onDisappear{
             model.endGame()
         }
         .onAppear{
-            model.checkOrientation()
+            model.addAnswers(ans: $banswers)
+            model.checkOrientation(ended: isActive)
         }
         .onRotate(perform: { newOrientation in
             //may gonna have to change this isnt really valid solution ??
-            model.checkOrientation()
+            model.checkOrientation(ended: isActive)
         })
         .toolbar(.hidden, for: .tabBar)
         //.navigationBarBackButtonHidden()

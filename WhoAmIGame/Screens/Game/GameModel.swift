@@ -14,11 +14,10 @@ import UIKit
 final class GameModel: ObservableObject{
     @AppStorage("gameTime") var countTime: Int = 30
     
-    @Published var question = ""
+    @Published var question = "Please turn over your phone to start the game"
     @Published var time:Int = 0
     @Published var started = false
     @Published var color: Color = .white
-    @Published var ended:Bool = false
     
     //Pack operations
     private var readyPack : [String]
@@ -39,18 +38,23 @@ final class GameModel: ObservableObject{
     //Final
     @Published var answers: [Answer] = []
     @Published var points: Int = 0
+    var bindedAnswers : Binding<AnswerPack>?
     
     
     init(pack: QuestionPack){
         self.readyPack = pack.questions.shuffled()
-        checkOrientation()
+        //checkOrientation()
+    }
+    
+    func addAnswers(ans: Binding<AnswerPack>){
+        self.bindedAnswers = ans
     }
     
     
     //checking if phone is in right orientation -> start game
-    func checkOrientation(){
+    func checkOrientation(ended: Bool){
         orientation = UIDevice.current.orientation
-        if !started{
+        if !started && !ended{
             if !orientation.isLandscape{
                 print("orientation not right")
                 question = "Please turn over your phone to start the game"
@@ -142,18 +146,24 @@ final class GameModel: ObservableObject{
     func rightAnswer(){
         index += 1
         points += 1
+        if let ans = bindedAnswers{
+            ans.answers.wrappedValue.append(Answer(question: question, correct: true))
+        }
         answers.append(Answer(question: question, correct: true))
         getQuestion()
     }
     
     func wrongAnswer(){
         index += 1
+        if let ans = bindedAnswers{
+            ans.answers.wrappedValue.append(Answer(question: question, correct: false))
+        }
         answers.append(Answer(question: question, correct: true))
         getQuestion()
     }
     
     func getAns() -> [Answer]{
-        print(self.answers)
+        print(answers.isEmpty ? "answers are empty" : "answers are not empty")
         return self.answers
     }
     
@@ -162,7 +172,6 @@ final class GameModel: ObservableObject{
         //end telemetry
         self.motionManager.stopDeviceMotionUpdates()
         // export points and answers
-        self.ended = true
         //push new view!!!!!!!!!!!!!!! ???
         self.index = 0
         
