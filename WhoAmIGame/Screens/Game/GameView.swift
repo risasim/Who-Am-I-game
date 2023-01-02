@@ -10,15 +10,16 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var model:GameModel
+    @State var isActive = false
     
     var body: some View {
         VStack{
-            (model.question == "Please turn over your phone to start the game") ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color))
+            (model.question == "Please turn over your phone to start the game") ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: $isActive))
        
         }
-        .navigationDestination(isPresented: $model.ended, destination: {
+        .navigationDestination(isPresented: $isActive, destination: {
             // Probably not a valid solution??
-            ResultsView(answers: model.answers, points: model.points)
+            ResultsView(answers: model.getAns(), points: model.points)
         })
         .onDisappear{
             model.endGame()

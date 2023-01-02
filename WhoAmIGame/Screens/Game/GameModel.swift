@@ -52,9 +52,10 @@ final class GameModel: ObservableObject{
         orientation = UIDevice.current.orientation
         if !started{
             if !orientation.isLandscape{
+                print("orientation not right")
                 question = "Please turn over your phone to start the game"
             }else{
-                print("go through")
+                print("Game gonna start")
                 started = true
                 startGame()
             }
@@ -63,6 +64,7 @@ final class GameModel: ObservableObject{
     
     func startGame(){
         //start telemetry
+        print("game started")
         self.motionManager.startDeviceMotionUpdates(to: self.queue) { (data: CMDeviceMotion?, error: Error?) in
             guard let data = data else {
                 print("Error: \(error!)")
@@ -71,9 +73,9 @@ final class GameModel: ObservableObject{
             
             let attitude: CMAttitude = data.attitude
             
-            print("pitch: \(attitude.pitch)")
-            print("yaw: \(attitude.yaw)")
-            print("roll: \(attitude.roll)")
+           // print("pitch: \(attitude.pitch)")
+           // print("yaw: \(attitude.yaw)")
+           // print("roll: \(attitude.roll)")
             
             DispatchQueue.main.async {
                 self.pitch = attitude.pitch
@@ -88,15 +90,13 @@ final class GameModel: ObservableObject{
     }
     
     func waitingForMotion(_ pitch: Double, _ yaw:  Double, _ attitude: Double){
+        //print("check")
         //   if (roll > 0.9 && -0.5 ... 0.7 ~= pitch){
         //maybe to delete was before the orieantation trick
         //probably vital for understating the orientation of the phone (left or right landscape!!)
         if 2.20...2.35 ~= roll || -2.35 ... -2.20 ~= roll{
             // Changing color red and after 0.6 s back to black
             self.color = .green
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(700) ){
-                self.color = .white
-            }
             debouncer.renewInterval()
             debouncer.handler = {
                 //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
@@ -105,9 +105,6 @@ final class GameModel: ObservableObject{
         }else if 0.7...0.85 ~= roll || -0.85 ... -0.7 ~= roll{
             print("lol ok")
             self.color = .red
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(700) ){
-                self.color = .white
-            }
             debouncer.renewInterval()
             debouncer.handler = {
                 //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
@@ -120,6 +117,7 @@ final class GameModel: ObservableObject{
     }
     
     func startTimer(){
+        print("timer started")
         time = countTime
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.refreshValue), userInfo: nil, repeats: true)
     }
@@ -136,6 +134,7 @@ final class GameModel: ObservableObject{
     func getQuestion(){
         if index < readyPack.count{
             question = readyPack[index]
+            self.color = .white
         }else{
             endGame()
         }
@@ -151,6 +150,11 @@ final class GameModel: ObservableObject{
         index += 1
         answers.append(Answer(question: question, correct: true))
         getQuestion()
+    }
+    
+    func getAns() -> [Answer]{
+        print(self.answers)
+        return self.answers
     }
     
     func endGame(){
