@@ -10,9 +10,10 @@ import SwiftUI
 struct ResultsView: View {
     
     @Binding var ans: AnswerPack
+    @Binding var active: Bool
     
     @EnvironmentObject var navi: Navigator
-
+    
     
     var body: some View {
         VStack {
@@ -21,18 +22,43 @@ struct ResultsView: View {
             List{
                 ForEach(ans.answers, id: \.self) { answer in
                     Text(answer.question)
-                       // .background(RoundedRectangle(cornerRadius: 10))
-                       // .listRowBackground(answer.correct ? Color.green : Color.red)
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .listRowBackground(answer.correct ? Color.green : Color.red)
                 }
             }
+            .scrollContentBackground(.hidden)
             Button {
-                navi.path.removeLast(1)
+                active = false
             } label: {
-                Text("Back to menu")
+                Text("Play again")
             }
-            .listStyle(.plain)
-            .onAppear {
-                print(ans)
+                .fontWeight(.bold)
+                .font(.title)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(40)
+                .foregroundColor(.white)
+                .padding(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color.blue, lineWidth: 5)
+                )
+            Spacer()
+        }
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    navi.path.removeLast(1)
+                } label: {
+                    HStack{
+                        Image(systemName: "chevron.left")
+                        Text("Back to menu")
+                    }
+                    .foregroundColor(.blue)
+                }
+                
             }
         }
     }
@@ -40,6 +66,8 @@ struct ResultsView: View {
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsView(ans: .constant(AnswerPack()))
+        NavigationStack{
+            ResultsView(ans: .constant(AnswerPack(score: 4, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)])), active: .constant(true))
+        }
     }
 }

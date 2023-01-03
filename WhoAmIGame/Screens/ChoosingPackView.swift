@@ -54,6 +54,7 @@ struct ChoosingPackView: View {
             }
         }
         .environmentObject(navi)
+        
     }
 }
 

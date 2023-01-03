@@ -13,6 +13,8 @@ struct StartedGameView: View {
     @Binding var time: Int
     @Binding var color: Color
     @Binding var active: Bool
+    @Binding var ans: AnswerPack
+    @Binding var rans: AnswerPack
     //@Binding var ended: 
     
    // @Binding var answers: [Answer]
@@ -33,6 +35,7 @@ struct StartedGameView: View {
                 .foregroundColor(color)
                 .onChange(of: text) { newValue in
                     if newValue == "End of the Game"{
+                        ans = rans
                         active =  true
                        // navi.path.append(points)
                     }
@@ -47,6 +50,6 @@ struct StartedGameView: View {
 
 struct StartedGameView_Previews: PreviewProvider {
     static var previews: some View {
-        StartedGameView(text: .constant("Petr Bezruč"), time: .constant(29), color: .constant(.white), active: .constant(false))
+        StartedGameView(text: .constant("Petr Bezruč"), time: .constant(29), color: .constant(.white), active: .constant(false), ans: .constant(AnswerPack()), rans: .constant(AnswerPack()))
     }
 }

@@ -36,20 +36,13 @@ final class GameModel: ObservableObject{
     private var yaw : Double = 0
     
     //Final
-    @Published var answers: [Answer] = []
-    @Published var points: Int = 0
-    var bindedAnswers : Binding<AnswerPack>?
+    var answers: AnswerPack = AnswerPack()
     
     
     init(pack: QuestionPack){
         self.readyPack = pack.questions.shuffled()
         //checkOrientation()
     }
-    
-    func addAnswers(ans: Binding<AnswerPack>){
-        self.bindedAnswers = ans
-    }
-    
     
     //checking if phone is in right orientation -> start game
     func checkOrientation(ended: Bool){
@@ -145,26 +138,16 @@ final class GameModel: ObservableObject{
     }
     func rightAnswer(){
         index += 1
-        points += 1
-        if let ans = bindedAnswers{
-            ans.answers.wrappedValue.append(Answer(question: question, correct: true))
-        }
-        answers.append(Answer(question: question, correct: true))
+        answers.score += 1
+        answers.answers.append(Answer(question: question, correct: true))
+        print(answers)
         getQuestion()
     }
     
     func wrongAnswer(){
         index += 1
-        if let ans = bindedAnswers{
-            ans.answers.wrappedValue.append(Answer(question: question, correct: false))
-        }
-        answers.append(Answer(question: question, correct: true))
+        answers.answers.append(Answer(question: question, correct: false))
         getQuestion()
-    }
-    
-    func getAns() -> [Answer]{
-        print(answers.isEmpty ? "answers are empty" : "answers are not empty")
-        return self.answers
     }
     
     func endGame(){
