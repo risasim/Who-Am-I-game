@@ -10,7 +10,6 @@ import SwiftUI
 
 class Navigator:ObservableObject{
     @Published var path = NavigationPath()
-    @Published var isAcitve = false
     
     func getPath(){
         print(self.path)

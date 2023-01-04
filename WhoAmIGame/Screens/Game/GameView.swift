@@ -10,27 +10,32 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var model:GameModel
-    @State var isActive = false
+   // @State var isActive = false
     @State var banswers: AnswerPack = AnswerPack()
+    @State var isPresented: Bool = false
+
+    
+    @EnvironmentObject var navi: Navigator
     
     var body: some View {
         VStack{
-            (model.question == "Please turn over your phone to start the game") ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isActive, ans: $banswers, rans: $model.answers))
+            (model.question == "Please turn over your phone to start the game") ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
        
         }
-        .navigationDestination(isPresented: self.$isActive, destination: {
-            ResultsView(ans: $banswers, active: $isActive)
+        .navigationDestination(isPresented: self.$isPresented, destination: {
+            ResultsView(ans: $banswers// active: $navi.isAcitve
+            )
         })
         .onDisappear{
             model.endGame()
         }
         .onAppear{
             print("Cleared")
-            model.checkOrientation(ended: isActive)
+            model.checkOrientation(ended: isPresented)
         }
         .onRotate(perform: { newOrientation in
             //may gonna have to change this isnt really valid solution ??
-            model.checkOrientation(ended: isActive)
+            model.checkOrientation(ended: isPresented)
         })
         .toolbar(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden()

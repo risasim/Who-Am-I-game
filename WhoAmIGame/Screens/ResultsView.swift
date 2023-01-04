@@ -10,8 +10,8 @@ import SwiftUI
 struct ResultsView: View {
     
     @Binding var ans: AnswerPack
-    @Binding var active: Bool
-    
+   // @Binding var active: Bool
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var navi: Navigator
     
     
@@ -29,8 +29,8 @@ struct ResultsView: View {
             }
             .scrollContentBackground(.hidden)
             Button {
-                print(active)
-                active = false
+                dismiss()
+               // navi.isAcitve = false
             } label: {
                 Text("Play again")
             }
@@ -70,7 +70,8 @@ struct ResultsView: View {
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            ResultsView(ans: .constant(AnswerPack(score: 4, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)])), active: .constant(true))
+            ResultsView(ans: .constant(AnswerPack(score: 4, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)]))//, active: .constant(true)
+            )
         }
     }
 }
