@@ -32,7 +32,6 @@
 		79E3798B293CE7AE0080C98F /* RealmGuess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3798A293CE7AE0080C98F /* RealmGuess.swift */; };
 		79E3798D293CE7D30080C98F /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3798C293CE7D30080C98F /* Migrator.swift */; };
 		79E3798F293CE7FF0080C98F /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3798E293CE7FF0080C98F /* GameModel.swift */; };
-		79E37991293CE84E0080C98F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37990293CE84E0080C98F /* Question.swift */; };
 		79E37993293CE8640080C98F /* QuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37992293CE8640080C98F /* QuestionPack.swift */; };
 		79E37998293CEEB20080C98F /* EmptyPacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37997293CEEB20080C98F /* EmptyPacksView.swift */; };
 		79E3799C293CEF230080C98F /* ListPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3799B293CEF230080C98F /* ListPackView.swift */; };
@@ -66,7 +65,6 @@
 		79E3798A293CE7AE0080C98F /* RealmGuess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGuess.swift; sourceTree = "<group>"; };
 		79E3798C293CE7D30080C98F /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
 		79E3798E293CE7FF0080C98F /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
-		79E37990293CE84E0080C98F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		79E37992293CE8640080C98F /* QuestionPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPack.swift; sourceTree = "<group>"; };
 		79E37997293CEEB20080C98F /* EmptyPacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPacksView.swift; sourceTree = "<group>"; };
 		79E3799B293CEF230080C98F /* ListPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPackView.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 			children = (
 				79E3798A293CE7AE0080C98F /* RealmGuess.swift */,
 				79E3798C293CE7D30080C98F /* Migrator.swift */,
-				79E37990293CE84E0080C98F /* Question.swift */,
 				79E37992293CE8640080C98F /* QuestionPack.swift */,
 				79E379A1293D1CCB0080C98F /* VisualBlurEffect.swift */,
 				792F31342942359F00367FB9 /* Utility.swift */,
@@ -312,7 +309,6 @@
 				79DE3F35295A130600559151 /* Debouncer.swift in Sources */,
 				79E3798B293CE7AE0080C98F /* RealmGuess.swift in Sources */,
 				79A36E8C293FB787000308D3 /* SettingsLabelView.swift in Sources */,
-				79E37991293CE84E0080C98F /* Question.swift in Sources */,
 				797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */,
 				79E3798F293CE7FF0080C98F /* GameModel.swift in Sources */,
 				792F31352942359F00367FB9 /* Utility.swift in Sources */,

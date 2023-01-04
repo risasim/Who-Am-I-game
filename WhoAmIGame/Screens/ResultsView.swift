@@ -38,13 +38,9 @@ struct ResultsView: View {
                 .font(.title2)
                 .padding()
                 .background(Color.blue)
-                .cornerRadius(40)
+                .cornerRadius(20)
                 .foregroundColor(.white)
                 .padding(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color.blue, lineWidth: 4)
-                )
             Spacer()
         }
         .multilineTextAlignment(.center)

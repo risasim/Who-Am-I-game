@@ -41,7 +41,6 @@ final class GameModel: ObservableObject{
     
     init(pack: QuestionPack){
         self.readyPack = pack.questions.shuffled()
-        //checkOrientation()
     }
     
     //checking if phone is in right orientation -> start game
@@ -60,7 +59,7 @@ final class GameModel: ObservableObject{
     }
     
     func startGame(){
-        //start telemetry
+        self.readyPack = self.readyPack.shuffled()
         print("game started")
         self.motionManager.startDeviceMotionUpdates(to: self.queue) { (data: CMDeviceMotion?, error: Error?) in
             guard let data = data else {
@@ -70,9 +69,9 @@ final class GameModel: ObservableObject{
             
             let attitude: CMAttitude = data.attitude
             
-           // print("pitch: \(attitude.pitch)")
-           // print("yaw: \(attitude.yaw)")
-           // print("roll: \(attitude.roll)")
+            // print("pitch: \(attitude.pitch)")
+            // print("yaw: \(attitude.yaw)")
+            // print("roll: \(attitude.roll)")
             
             DispatchQueue.main.async {
                 self.pitch = attitude.pitch
@@ -87,30 +86,24 @@ final class GameModel: ObservableObject{
     }
     
     func waitingForMotion(_ pitch: Double, _ yaw:  Double, _ attitude: Double){
-        //print("check")
-          if (-0.5 ... 0.7 ~= pitch){
-        //maybe to delete was before the orieantation trick
-        //probably vital for understating the orientation of the phone (left or right landscape!!)
-        if 2.20...2.35 ~= roll || -2.35 ... -2.20 ~= roll{
-            // Changing color red and after 0.6 s back to black
-            self.color = .green
-            debouncer.renewInterval()
-            debouncer.handler = {
-                //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
-                self.rightAnswer()
-            }
-        }else if 0.7...0.85 ~= roll || -0.85 ... -0.7 ~= roll{
-            print("lol ok")
-            self.color = .red
-            debouncer.renewInterval()
-            debouncer.handler = {
-                //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
-                self.wrongAnswer()
+        //making sure if phone is in landscape ?? maybe usable even for starting the game and chaging the views ??
+        if (-0.5 ... 0.7 ~= pitch){
+            if 2.20...2.35 ~= roll || -2.35 ... -2.20 ~= roll{
+                self.color = .green
+                debouncer.renewInterval()
+                debouncer.handler = {
+                    //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
+                    self.rightAnswer()
+                }
+            }else if 0.7...0.85 ~= roll || -0.85 ... -0.7 ~= roll{
+                self.color = .red
+                debouncer.renewInterval()
+                debouncer.handler = {
+                    //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
+                    self.wrongAnswer()
+                }
             }
         }
-           } //else{
-        //was when user wasn having phone in wanted orienataiton
-        //  }
     }
     
     func startTimer(){
@@ -140,7 +133,6 @@ final class GameModel: ObservableObject{
         index += 1
         answers.score += 1
         answers.answers.append(Answer(question: question, correct: true))
-        print(answers)
         getQuestion()
     }
     
@@ -152,12 +144,8 @@ final class GameModel: ObservableObject{
     
     func endGame(){
         self.question = "End of the Game"
-        //end telemetry
         self.motionManager.stopDeviceMotionUpdates()
-        // export points and answers
-        //push new view!!!!!!!!!!!!!!! ???
         self.index = 0
-        
     }
     
 }
