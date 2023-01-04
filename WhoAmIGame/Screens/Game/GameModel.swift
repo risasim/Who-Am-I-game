@@ -88,7 +88,7 @@ final class GameModel: ObservableObject{
     
     func waitingForMotion(_ pitch: Double, _ yaw:  Double, _ attitude: Double){
         //print("check")
-        //   if (roll > 0.9 && -0.5 ... 0.7 ~= pitch){
+          if (-0.5 ... 0.7 ~= pitch){
         //maybe to delete was before the orieantation trick
         //probably vital for understating the orientation of the phone (left or right landscape!!)
         if 2.20...2.35 ~= roll || -2.35 ... -2.20 ~= roll{
@@ -108,7 +108,7 @@ final class GameModel: ObservableObject{
                 self.wrongAnswer()
             }
         }
-        //   }else{
+           } //else{
         //was when user wasn having phone in wanted orienataiton
         //  }
     }

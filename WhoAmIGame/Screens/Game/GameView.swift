@@ -15,15 +15,13 @@ struct GameView: View {
     
     var body: some View {
         VStack{
-            (model.question == "Please turn over your phone to start the game") ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: $isActive, ans: $banswers, rans: $model.answers))
+            (model.question == "Please turn over your phone to start the game") ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isActive, ans: $banswers, rans: $model.answers))
        
         }
-        .navigationDestination(isPresented: $isActive, destination: {
-            // Probably not a valid solution??
+        .navigationDestination(isPresented: self.$isActive, destination: {
             ResultsView(ans: $banswers, active: $isActive)
         })
         .onDisappear{
-            //banswers =  model.answers
             model.endGame()
         }
         .onAppear{
@@ -35,7 +33,7 @@ struct GameView: View {
             model.checkOrientation(ended: isActive)
         })
         .toolbar(.hidden, for: .tabBar)
-        //.navigationBarBackButtonHidden()
+        .navigationBarBackButtonHidden()
     }
 }
 
