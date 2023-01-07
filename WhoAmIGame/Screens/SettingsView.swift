@@ -14,6 +14,7 @@ struct SettingsView: View {
     @AppStorage("username") var username: String = "lol xd"
     @AppStorage("gameTime") var timeSelect: Int = 30
     @AppStorage("showLinks")var link = true
+    @AppStorage("localLanguage")var selectedLanguage:String = "EN"
    // @State var link = UserDefaults.standard.bool(forKey: "showLinks")
     
     var body: some View {
@@ -41,8 +42,20 @@ struct SettingsView: View {
                         Divider().padding(.vertical, 4)
                         Toggle("Username screen", isOn: $isFirstTime)
                             .foregroundColor(.gray)
+                        Divider().padding(.vertical, 4)
                         Toggle("Show links in results", isOn: $link)
                             .foregroundColor(.gray)
+                        Divider().padding(.vertical, 4)
+                        HStack{
+                            Text("Link language")
+                                .foregroundColor(.gray)
+                            Spacer()
+                            Picker("Link language", selection: $selectedLanguage) {
+                                ForEach(languages, id: \.self) { lang in
+                                        Text(lang.uppercased())
+                                    }
+                            }
+                        }
                         SettingsRowView(label: "Username", description: username)
                         VStack{
                             Divider().padding(.vertical, 4)

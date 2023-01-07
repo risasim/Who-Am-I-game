@@ -73,8 +73,8 @@ struct ResultsView_Previews: PreviewProvider {
 
 struct ResultListItemView: View{
     
-    //@State var link = UserDefaults.standard.bool(forKey: "showLinks")
     @AppStorage("showLinks")var link = true
+    @AppStorage("localLanguage")var selectedLanguage:String = "EN"
     var answer: Answer
     
     var body: some View{
@@ -83,8 +83,8 @@ struct ResultListItemView: View{
                 .foregroundColor(.accentColor)
             Spacer()
             if link{
-                if let que = answer.question.replacingOccurrences(of: " ", with: "_"){
-                    Link(destination: (URL(string: "https://wikipedia.org/wiki/\(que)") ?? URL(string: "https://wikipedia.org"))!) {
+                if let que = answer.question.replacingOccurrences(of: " ", with: "_").addingPercentEncoding(withAllowedCharacters: .urlPathAllowed){
+                    Link(destination: (URL(string: "https://\(selectedLanguage).wikipedia.org/wiki/\(que)") ?? URL(string: "https://\(selectedLanguage).wikipedia.org"))!) {
                         HStack{
                             Text("Wikipedia")
                             Image(systemName: "arrow.up.right.square")
@@ -95,5 +95,4 @@ struct ResultListItemView: View{
             }
         }
     }
-    
 }
