@@ -13,7 +13,8 @@ struct SettingsView: View {
     @AppStorage("isFirstTime") var isFirstTime : Bool = false
     @AppStorage("username") var username: String = "lol xd"
     @AppStorage("gameTime") var timeSelect: Int = 30
-    @AppStorage("resultLinks")var links: Bool = false
+    @AppStorage("showLinks")var link = true
+   // @State var link = UserDefaults.standard.bool(forKey: "showLinks")
     
     var body: some View {
         NavigationStack {
@@ -40,7 +41,7 @@ struct SettingsView: View {
                         Divider().padding(.vertical, 4)
                         Toggle("Username screen", isOn: $isFirstTime)
                             .foregroundColor(.gray)
-                        Toggle("Show links in results", isOn: $links)
+                        Toggle("Show links in results", isOn: $link)
                             .foregroundColor(.gray)
                         SettingsRowView(label: "Username", description: username)
                         VStack{

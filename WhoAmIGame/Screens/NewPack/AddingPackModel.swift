@@ -64,7 +64,7 @@ final class AddModel: ObservableObject{
     
     func addItem(){
         if !isSame{
-            names.append(currentTextField)
+            names.append(currentTextField.trimmingCharacters(in: .whitespacesAndNewlines))
             currentTextField = ""
         }
     }

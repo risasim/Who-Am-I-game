@@ -18,8 +18,10 @@ struct ResultsView: View {
             List{
                 ForEach(ans.answers, id: \.self) { answer in
                     //Add link maybe transfer to view !!
-                    Text(answer.question)
-                        .foregroundColor(.white)
+                   // Text(answer.question)
+                   //     .foregroundColor(.white)
+                   //     .listRowBackground(answer.correct ? Color.green : Color.red)
+                    ResultListItemView(answer: answer)
                         .listRowBackground(answer.correct ? Color.green : Color.red)
                 }
             }
@@ -66,4 +68,32 @@ struct ResultsView_Previews: PreviewProvider {
             )
         }
     }
+}
+
+
+struct ResultListItemView: View{
+    
+    //@State var link = UserDefaults.standard.bool(forKey: "showLinks")
+    @AppStorage("showLinks")var link = true
+    var answer: Answer
+    
+    var body: some View{
+        HStack{
+            Text(answer.question)
+                .foregroundColor(.accentColor)
+            Spacer()
+            if link{
+                if let que = answer.question.replacingOccurrences(of: " ", with: "_"){
+                    Link(destination: (URL(string: "https://wikipedia.org/wiki/\(que)") ?? URL(string: "https://wikipedia.org"))!) {
+                        HStack{
+                            Text("Wikipedia")
+                            Image(systemName: "arrow.up.right.square")
+                        }
+                        .font(.footnote)
+                    }
+                }
+            }
+        }
+    }
+    
 }
