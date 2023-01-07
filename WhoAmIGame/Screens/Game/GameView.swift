@@ -17,9 +17,11 @@ struct GameView: View {
     
     @EnvironmentObject var navi: Navigator
     
+    let plsString = "Please turn over your phone to start the game"
+    
     var body: some View {
         VStack{
-            (model.question == "Please turn over your phone to start the game") ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
+            (model.question == plsString) ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
        
         }
         .navigationDestination(isPresented: self.$isPresented, destination: {
@@ -38,7 +40,7 @@ struct GameView: View {
             model.checkOrientation(ended: isPresented)
         })
         .toolbar(.hidden, for: .tabBar)
-        .navigationBarBackButtonHidden()
+        .navigationBarBackButtonHidden(!(model.question == plsString))
     }
 }
 

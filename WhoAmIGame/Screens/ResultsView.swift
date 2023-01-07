@@ -10,18 +10,14 @@ import SwiftUI
 struct ResultsView: View {
     
     @Binding var ans: AnswerPack
-   // @Binding var active: Bool
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var navi: Navigator
     
-    
     var body: some View {
         VStack{
-            Text("Results")
-                .font(.system(.largeTitle, design: .rounded))
-                .fontWeight(.bold)
             List{
                 ForEach(ans.answers, id: \.self) { answer in
+                    //Add link maybe transfer to view !!
                     Text(answer.question)
                         .foregroundColor(.white)
                         .listRowBackground(answer.correct ? Color.green : Color.red)
@@ -30,7 +26,6 @@ struct ResultsView: View {
             .scrollContentBackground(.hidden)
             Button {
                 dismiss()
-               // navi.isAcitve = false
             } label: {
                 Text("Play again")
             }
@@ -45,6 +40,7 @@ struct ResultsView: View {
         }
         .multilineTextAlignment(.center)
         .navigationBarBackButtonHidden()
+        .navigationTitle("Results")
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {

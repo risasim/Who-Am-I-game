@@ -17,7 +17,7 @@ final class GameModel: ObservableObject{
     @Published var question = "Please turn over your phone to start the game"
     @Published var time:Int = 0
     @Published var started = false
-    @Published var color: Color = .white
+    @Published var color: Color = .accentColor
     
     //Pack operations
     private var readyPack : [String]
@@ -46,6 +46,8 @@ final class GameModel: ObservableObject{
     //checking if phone is in right orientation -> start game
     func checkOrientation(ended: Bool){
         orientation = UIDevice.current.orientation
+        //maybe problem when turingn phone durign game ????!!!!!!!!
+        print(started)
         if !started && !ended{
             if !orientation.isLandscape{
                 print("orientation not right")
@@ -124,7 +126,7 @@ final class GameModel: ObservableObject{
     func getQuestion(){
         if index < readyPack.count{
             question = readyPack[index]
-            self.color = .white
+            self.color = .accentColor
         }else{
             endGame()
         }

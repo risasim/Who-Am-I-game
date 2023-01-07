@@ -29,7 +29,7 @@ struct StartedGameView: View {
                 .font(.title2)
             Spacer()
             Text(text)
-                .font(.system(size: 75))
+                .font(.system(size: 110))
                 .fontWeight(.bold)
                 .fontDesign(.serif)
                 .foregroundColor(color)
@@ -50,6 +50,6 @@ struct StartedGameView: View {
 
 struct StartedGameView_Previews: PreviewProvider {
     static var previews: some View {
-        StartedGameView(text: .constant("Petr Bezruč"), time: .constant(29), color: .constant(.white), active: .constant(false), ans: .constant(AnswerPack()), rans: .constant(AnswerPack()))
+        StartedGameView(text: .constant("Petr Bezruč"), time: .constant(29), color: .constant(.accentColor), active: .constant(false), ans: .constant(AnswerPack()), rans: .constant(AnswerPack()))
     }
 }
