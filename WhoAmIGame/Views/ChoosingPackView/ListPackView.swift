@@ -11,7 +11,7 @@ import RealmSwift
 struct ListPackView: View {
     
     @State var navPath = NavigationPath()
-    let feedback = UIImpactFeedbackGenerator(style: .medium)
+    @State var search: String = ""
     
     @ObservedObject private var realmie = RealmGuess()
     @ObservedResults(QuestionPack.self) var questionPacks
@@ -23,23 +23,24 @@ struct ListPackView: View {
                     ForEach(questionPacks) { pack in
                         NavigationLink(value: pack) {
                             ListItemView(pack: pack)
-                                //.padding()
+                            //.padding()
                         }
-                            .onTapGesture {
-                                feedback.impactOccurred()
-                                withAnimation(.easeOut) {
-                                   //
-                                }
+                        .onTapGesture {
+                            feedbackManager.impactOccurred()
+                            withAnimation(.easeOut) {
+                                //
                             }
+                        }
                     }
                 }
                 .navigationDestination(for: QuestionPack.self, destination: { pack in
                     GameView(model: GameModel(pack: pack))
                 })
-            .padding()
+                .padding()
             }
         }
-
+        //Actually not working
+        .searchable(text: $search,placement: .navigationBarDrawer, prompt: "Search pack...")
     }
 }
 

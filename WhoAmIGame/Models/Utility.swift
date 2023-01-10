@@ -15,6 +15,7 @@ let images: [String] = ["films", "literature", "presidents", "art", "lab", "comi
 let times: [Int] = [10 ,30, 45, 60, 90]
 let languages: [String] = ["en", "cz", "sk"]
 //UI
+let feedbackManager = UIImpactFeedbackGenerator(style: .medium)
 let columnSpacing: CGFloat = 10
 let rowSpacing:CGFloat = 10
 var gridLayout:[GridItem] {

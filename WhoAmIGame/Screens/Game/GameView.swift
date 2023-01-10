@@ -32,7 +32,6 @@ struct GameView: View {
             model.endGame()
         }
         .onAppear{
-            print("Cleared")
             model.checkOrientation(ended: isPresented)
         }
         .onRotate(perform: { newOrientation in

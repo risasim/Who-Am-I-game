@@ -17,10 +17,6 @@ struct ResultsView: View {
         VStack{
             List{
                 ForEach(ans.answers, id: \.self) { answer in
-                    //Add link maybe transfer to view !!
-                   // Text(answer.question)
-                   //     .foregroundColor(.white)
-                   //     .listRowBackground(answer.correct ? Color.green : Color.red)
                     ResultListItemView(answer: answer)
                         .listRowBackground(answer.correct ? Color.green : Color.red)
                 }

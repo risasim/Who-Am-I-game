@@ -35,6 +35,7 @@ final class GameModel: ObservableObject{
     private var roll: Double = 0
     private var yaw : Double = 0
     
+    
     //Final
     var answers: AnswerPack = AnswerPack()
     
@@ -46,14 +47,15 @@ final class GameModel: ObservableObject{
     //checking if phone is in right orientation -> start game
     func checkOrientation(ended: Bool){
         orientation = UIDevice.current.orientation
+        print(UIDevice.current.orientation.isValidInterfaceOrientation)
         //maybe problem when turingn phone durign game ????!!!!!!!!
-        print(started)
         if !started && !ended{
+            print(orientation.rawValue)
             if !orientation.isLandscape{
-                print("orientation not right")
+                //print("orientation not right")
                 question = "Please turn over your phone to start the game"
             }else{
-                print("Game gonna start")
+                //print("Game gonna start")
                 started = true
                 startGame()
             }
@@ -62,7 +64,6 @@ final class GameModel: ObservableObject{
     
     func startGame(){
         self.readyPack = self.readyPack.shuffled()
-        print("game started")
         self.motionManager.startDeviceMotionUpdates(to: self.queue) { (data: CMDeviceMotion?, error: Error?) in
             guard let data = data else {
                 print("Error: \(error!)")
@@ -109,7 +110,7 @@ final class GameModel: ObservableObject{
     }
     
     func startTimer(){
-        print("timer started")
+        //print("timer started")
         time = countTime
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.refreshValue), userInfo: nil, repeats: true)
     }
