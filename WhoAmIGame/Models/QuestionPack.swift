@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class QuestionPack: Object, ObjectKeyIdentifiable{
+class QuestionPack: Object, ObjectKeyIdentifiable, Codable{
     @Persisted var id: ObjectId
     @Persisted var name: String = "President"
     @Persisted var author: String = "Coolie"

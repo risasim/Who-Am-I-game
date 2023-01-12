@@ -10,8 +10,7 @@ import RealmSwift
 
 struct ChoosingPackView: View {
     
-    @ObservedObject private var realmie = RealmGuess()
-    @ObservedResults(QuestionPack.self) var questionPacks
+    @StateObject var realm = RealmGuess()
     
     
     @State var isSettingsShown:Bool = false
@@ -22,13 +21,13 @@ struct ChoosingPackView: View {
     var body: some View {
         NavigationStack(path: $navi.path){
             VStack{
-                questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView())
+                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView())
             }
             .sheet(isPresented: $isSettingsShown, content: {
                 SettingsView()
             })
             .sheet(isPresented: $isNewPackShown, content: {
-                NewPackView(packModel: AddModel(realm: realmie))
+                NewPackView(packModel: AddModel(realm: realm))
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -53,6 +52,7 @@ struct ChoosingPackView: View {
                 }
             }
         }
+        .environmentObject(realm)
         .environmentObject(navi)
         
     }

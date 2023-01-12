@@ -11,7 +11,6 @@ import RealmSwift
 
 
 final class AddModel: ObservableObject{
-    @ObservedResults(QuestionPack.self) var questionPacks
     
     //Published
     @Published var warning = ""
@@ -43,9 +42,7 @@ final class AddModel: ObservableObject{
                 newQuestionPack.questions.append(objectsIn: names)
                 newQuestionPack.imageStr = selectedImage
                 newQuestionPack.author = userDefaults.object(forKey: "username") as! String
-                try! realmie.realm.write {
-                    $questionPacks.append(newQuestionPack)
-                }
+                realmie.addPack(pack: newQuestionPack)
             }
         }else{
             imageAlert = true

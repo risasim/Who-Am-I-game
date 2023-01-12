@@ -10,10 +10,18 @@ import SwiftUI
 @main
 struct WhoAmIGameApp: App {
     @AppStorage("isFirstTime") var isFirstTime = true
+    @AppStorage("wasUploaded") var upload = false
+    
     var body: some Scene {
         WindowGroup {
             if isFirstTime == true{
                 FirstUsernameScreen()
+                    .onAppear {
+                        if !upload{
+                            StartingDatabase()
+                            upload = true
+                        }
+                    }
             }else{
                 TabsView()
             }
