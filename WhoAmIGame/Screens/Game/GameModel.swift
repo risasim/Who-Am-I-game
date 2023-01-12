@@ -96,7 +96,6 @@ final class GameModel: ObservableObject{
                 debouncer.renewInterval()
                 debouncer.handler = {
                     //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
-                    feedbackManager.impactOccurred()
                     self.rightAnswer()
                 }
             }else if 0.7...0.85 ~= roll || -0.85 ... -0.7 ~= roll{
@@ -104,7 +103,6 @@ final class GameModel: ObservableObject{
                 debouncer.renewInterval()
                 debouncer.handler = {
                     //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
-                    feedbackManager.impactOccurred()
                     self.wrongAnswer()
                 }
             }

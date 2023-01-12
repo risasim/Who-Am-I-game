@@ -29,7 +29,10 @@ struct GameView: View {
             )
         })
         .onDisappear{
-            model.endGame()
+            if isPresented{
+                model.endGame()
+            }
+            feedbackManager.impactOccurred()
         }
         .onAppear{
             model.checkOrientation(ended: isPresented)
