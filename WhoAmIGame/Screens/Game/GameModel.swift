@@ -147,6 +147,7 @@ final class GameModel: ObservableObject{
     
     func endGame(){
         self.question = "End of the Game"
+        feedbackManager.impactOccurred()
         self.motionManager.stopDeviceMotionUpdates()
         self.index = 0
     }

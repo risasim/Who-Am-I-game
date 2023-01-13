@@ -18,7 +18,7 @@ struct ListItemView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 160, height: 160)
-            Blur(style: .light)
+            Blur(style: .prominent)
             Image(pack.imageStr)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -31,9 +31,6 @@ struct ListItemView: View {
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
                 HStack {
-                  //  Menu{
-                  //      Picker
-                  //  }
                     Text(String(pack.questions.count))
                     Text(pack.author)
                 }
@@ -42,6 +39,19 @@ struct ListItemView: View {
         }
         .frame(width: 160, height: 160)
         .cornerRadius(20)
+        .contextMenu {
+            Button {
+                //
+            } label: {
+                Label("Edit pack", systemImage: "pencil")
+            }
+            
+            Button(role: .destructive) {
+                realmie.deletePack(id: pack.id)
+            } label: {
+                Label("Delete pack", systemImage: "minus.circle")
+            }
+        }
     }
 }
 
