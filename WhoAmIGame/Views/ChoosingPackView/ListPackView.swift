@@ -12,6 +12,7 @@ struct ListPackView: View {
     
     @State var navPath = NavigationPath()
     @State var search: String = ""
+    @State var change: Bool = false
     
     @ObservedObject private var realmie = RealmGuess()
     @ObservedResults(QuestionPack.self) var questionPacks
@@ -22,7 +23,7 @@ struct ListPackView: View {
                 LazyVGrid(columns: gridLayout,spacing: 15) {
                     ForEach(questionPacks) { pack in
                         NavigationLink(value: pack) {
-                            ListItemView(pack: pack)
+                            ListItemView(pack: pack, changed: $change)
                             //.padding()
                         }
                         .onTapGesture {

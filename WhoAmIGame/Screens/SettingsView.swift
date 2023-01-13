@@ -11,11 +11,10 @@ struct SettingsView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("isFirstTime") var isFirstTime : Bool = false
-    @AppStorage("username") var username: String = "lol xd"
+    @AppStorage("username") var username: String = "username"
     @AppStorage("gameTime") var timeSelect: Int = 30
     @AppStorage("showLinks")var link = true
     @AppStorage("localLanguage")var selectedLanguage:String = "EN"
-   // @State var link = UserDefaults.standard.bool(forKey: "showLinks")
     
     var body: some View {
         NavigationStack {

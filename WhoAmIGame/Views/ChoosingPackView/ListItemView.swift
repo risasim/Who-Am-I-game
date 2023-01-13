@@ -11,6 +11,8 @@ struct ListItemView: View {
     
     var pack : QuestionPack
     @ObservedObject private var realmie = RealmGuess()
+    @Binding var changed : Bool
+    @State var editPack: Bool = false
     
     var body: some View {
         ZStack{
@@ -41,22 +43,26 @@ struct ListItemView: View {
         .cornerRadius(20)
         .contextMenu {
             Button {
-                //
+                editPack.toggle()
             } label: {
                 Label("Edit pack", systemImage: "pencil")
             }
             
             Button(role: .destructive) {
                 realmie.deletePack(id: pack.id)
+                changed.toggle()
             } label: {
                 Label("Delete pack", systemImage: "minus.circle")
             }
+        }
+        .sheet(isPresented: $editPack) {
+            Text("Lol ok")
         }
     }
 }
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ListItemView(pack: QuestionPack())
+        ListItemView(pack: QuestionPack(),changed: .constant(false))
     }
 }
