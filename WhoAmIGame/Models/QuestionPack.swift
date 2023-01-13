@@ -13,7 +13,7 @@ class QuestionPack: Object, ObjectKeyIdentifiable, Codable{
     @Persisted var name: String = "President"
     @Persisted var author: String = "Coolie"
     @Persisted var isFavourite:Bool = false
-    @Persisted var imageStr:String = "nature"
+    @Persisted var imageStr:String = "cinema"
     @Persisted var questions: List<String> = List<String>()
    // @Persisted var names: List<Question> = List<Question>()
     
