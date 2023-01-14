@@ -10,7 +10,7 @@ import SwiftUI
 import RealmSwift
 
 
-final class AddModel: ObservableObject{
+final class EditAddModel: ObservableObject{
     
     //Published
     @Published var warning = ""

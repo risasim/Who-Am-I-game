@@ -42,6 +42,9 @@ struct StartedGameView: View {
                 }
             Spacer()
         }
+        .onDisappear {
+            feedbackManager.impactOccurred()
+        }
       //  .navigationDestination(for: [Answer].self) { nothing in
       //      ResultsView(answers: self.answers, points: self.points)
       //  }

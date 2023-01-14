@@ -10,7 +10,7 @@ import RealmSwift
 
 struct NewPackView: View {
     
-    @ObservedObject var packModel: AddModel
+    @ObservedObject var packModel: EditAddModel
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -99,7 +99,7 @@ struct NewPackView: View {
 struct NewPackView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            NewPackView(packModel: AddModel(realm: RealmGuess()))
+            NewPackView(packModel: EditAddModel(realm: RealmGuess()))
         }
     }
 }

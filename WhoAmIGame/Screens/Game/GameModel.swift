@@ -47,7 +47,6 @@ final class GameModel: ObservableObject{
     //checking if phone is in right orientation -> start game
     func checkOrientation(ended: Bool){
         orientation = UIDevice.current.orientation
-        print(UIDevice.current.orientation.isValidInterfaceOrientation)
         //maybe problem when turingn phone durign game ????!!!!!!!!
         if !started && !ended{
             print(orientation.rawValue)
@@ -63,7 +62,6 @@ final class GameModel: ObservableObject{
     }
     
     func startGame(){
-        print(self.motionManager.deviceMotionUpdateInterval)
         self.readyPack = self.readyPack.shuffled()
         self.motionManager.startDeviceMotionUpdates(to: self.queue) { (data: CMDeviceMotion?, error: Error?) in
             guard let data = data else {
@@ -149,7 +147,6 @@ final class GameModel: ObservableObject{
     
     func endGame(){
         self.question = "End of the Game"
-        feedbackManager.impactOccurred()
         self.motionManager.stopDeviceMotionUpdates()
         self.index = 0
     }

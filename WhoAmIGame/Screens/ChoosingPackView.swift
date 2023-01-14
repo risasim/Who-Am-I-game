@@ -27,7 +27,7 @@ struct ChoosingPackView: View {
                 SettingsView()
             })
             .sheet(isPresented: $isNewPackShown, content: {
-                NewPackView(packModel: AddModel(realm: realm))
+                NewPackView(packModel: EditAddModel(realm: realm))
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
