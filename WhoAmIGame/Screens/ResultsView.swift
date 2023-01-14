@@ -15,6 +15,10 @@ struct ResultsView: View {
     
     var body: some View {
         VStack{
+            Text("Your score was \(ans.score) from \(ans.index - 1)")
+                .font(.title3)
+                .fontWeight(.bold)
+                .padding(.top)
             List{
                 ForEach(ans.answers, id: \.self) { answer in
                     ResultListItemView(answer: answer)
@@ -60,7 +64,7 @@ struct ResultsView: View {
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            ResultsView(ans: .constant(AnswerPack(score: 4, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)]))//, active: .constant(true)
+            ResultsView(ans: .constant(AnswerPack(score: 2,index: 3, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)]))//, active: .constant(true)
             )
         }
     }

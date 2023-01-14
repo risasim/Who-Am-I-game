@@ -63,6 +63,7 @@ final class GameModel: ObservableObject{
     }
     
     func startGame(){
+        print(self.motionManager.deviceMotionUpdateInterval)
         self.readyPack = self.readyPack.shuffled()
         self.motionManager.startDeviceMotionUpdates(to: self.queue) { (data: CMDeviceMotion?, error: Error?) in
             guard let data = data else {
@@ -127,6 +128,7 @@ final class GameModel: ObservableObject{
     func getQuestion(){
         if index < readyPack.count{
             question = readyPack[index]
+            answers.index += 1
             self.color = .accentColor
         }else{
             endGame()
