@@ -51,8 +51,9 @@ struct SettingsView: View {
                             Spacer()
                             Picker("Link language", selection: $selectedLanguage) {
                                 ForEach(languages, id: \.self) { lang in
-                                        Text(lang.uppercased())
-                                    }
+                                    Text(lang.uppercased())
+                                        .tag(lang)
+                                }
                             }
                         }
                         SettingsRowView(label: "Username", description: username)

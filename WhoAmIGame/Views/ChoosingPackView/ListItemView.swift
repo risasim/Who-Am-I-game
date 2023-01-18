@@ -59,7 +59,10 @@ struct ListItemView: View {
             }
         }
         .sheet(isPresented: $editPack) {
-            Text("Lol ok")
+            NewPackView(packModel: EditAddModel(realm: realmie,pack: pack))
+                .onDisappear {
+                    changed.toggle()
+                }
         }
     }
 }

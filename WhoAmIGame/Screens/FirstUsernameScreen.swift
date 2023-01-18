@@ -25,11 +25,15 @@ Username will be used for publishing your own packs
                         .cornerRadius(5)
                 )
                 .onSubmit {
-                    isFirstTime = false
-                    print(username)
+                    if username != specString{
+                        isFirstTime = false
+                        print(username)
+                    }
                 }
             Button {
-                isFirstTime = false
+                if username != specString{
+                    isFirstTime = false
+                }
             } label: {
                 Text("Submit username")
                     .foregroundColor(.white)

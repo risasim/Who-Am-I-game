@@ -52,8 +52,29 @@ class RealmGuess: ObservableObject{
         }
     }
     
-    func updatePack(){
-        //TO BE ADDED
+    func updatePack(id: ObjectId, name:String, names: [String], imgStr: String){
+        if let localRealm = localRealm{
+            do{
+                let updatePack = localRealm.objects(QuestionPack.self).filter(NSPredicate(format: "id == %@", id))
+                guard !updatePack.isEmpty else {return}
+                try localRealm.write({
+                    print(updatePack[0])
+                    updatePack[0].name = name
+                    print("get here")
+                    for ques in names{
+                        if !updatePack[0].questions.contains(ques){
+                            print(ques)
+                            updatePack[0].questions.append(ques)
+                        }
+                    }
+                    updatePack[0].imageStr = imgStr
+                    print(updatePack[0])
+                    getPacks()
+                })
+            }catch{
+                print("Error updating pack \(error)")
+            }
+        }
     }
     
     func deletePack(id:ObjectId){

@@ -24,25 +24,44 @@ final class EditAddModel: ObservableObject{
     //Constants
     private let warningText = "Cannot have items with same name"
     private let userDefaults = UserDefaults.standard
+    private var customPack = false
     
     //Internal
-    var newQuestionPack:QuestionPack
+    private var newQuestionPack:QuestionPack
     var names: [String]
     
-    init(realm: RealmGuess){
-        self.newQuestionPack = QuestionPack()
+    
+    init(realm: RealmGuess, pack: QuestionPack = QuestionPack()){
         self.names = []
         self.realmie = realm
+        self.newQuestionPack = pack
+        if self.newQuestionPack.author != specString{
+            self.customPack = true
+            self.packName = pack.name
+            self.names.append(contentsOf: pack.questions)
+            self.selectedImage = pack.imageStr
+        }
     }
+    
+    
+    
+    //Have to resolve how to differetiate or remake the saving logic
+    //maybe bind only the properties of quesitonpack instead of having separate variables
+    // problem with directly working with parameters
     
     func savePack(){
         if selectedImage != ""{
             if packName != "" && !names.isEmpty{
-                newQuestionPack.name = packName
-                newQuestionPack.questions.append(objectsIn: names)
-                newQuestionPack.imageStr = selectedImage
-                newQuestionPack.author = userDefaults.object(forKey: "username") as! String
-                realmie.addPack(pack: newQuestionPack)
+                if customPack{
+                    print(names)
+                    realmie.updatePack(id: newQuestionPack.id, name: packName, names: names, imgStr: selectedImage)
+                }else{
+                    newQuestionPack.name = packName
+                    newQuestionPack.questions.append(objectsIn: names)
+                    newQuestionPack.imageStr = selectedImage
+                    newQuestionPack.author = userDefaults.object(forKey: "username") as! String
+                    realmie.addPack(pack: newQuestionPack)
+                }
             }
         }else{
             imageAlert = true
