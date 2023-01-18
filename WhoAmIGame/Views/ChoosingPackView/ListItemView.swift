@@ -30,12 +30,17 @@ struct ListItemView: View {
                 .frame(width: 160, height: 160)
                 .mask(LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0)]), startPoint: .top, endPoint: .bottom))
             VStack{
+                HStack{
+                    Image(systemName: pack.isFavourite ? "heart.fill" : "heart")
+                        .foregroundColor(pack.isFavourite ? .red : .white)
+                    Spacer()
+                }
                 Spacer()
                 Text(pack.name)
                     .font(.title3)
                     .fontWeight(.semibold)
                 HStack {
-                    Text(String(pack.questions.count))
+                   // Text(String(pack.questions.count))
                     Text(pack.author)
                 }
             }
@@ -45,6 +50,17 @@ struct ListItemView: View {
         .frame(width: 160, height: 160)
         .cornerRadius(20)
         .contextMenu {
+            Button {
+                realmie.manageFavourite(id: pack.id)
+                changed.toggle()
+            } label: {
+                if pack.isFavourite{
+                    Label("Make unfavourite", systemImage: "heart.slash")
+                }else{
+                    Label("Make favourite", systemImage: "heart.fill")
+                }
+            }
+
             Button {
                 editPack.toggle()
             } label: {

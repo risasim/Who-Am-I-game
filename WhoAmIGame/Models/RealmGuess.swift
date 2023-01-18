@@ -58,9 +58,7 @@ class RealmGuess: ObservableObject{
                 let updatePack = localRealm.objects(QuestionPack.self).filter(NSPredicate(format: "id == %@", id))
                 guard !updatePack.isEmpty else {return}
                 try localRealm.write({
-                    print(updatePack[0])
                     updatePack[0].name = name
-                    print("get here")
                     for ques in names{
                         if !updatePack[0].questions.contains(ques){
                             print(ques)
@@ -68,11 +66,24 @@ class RealmGuess: ObservableObject{
                         }
                     }
                     updatePack[0].imageStr = imgStr
-                    print(updatePack[0])
                     getPacks()
                 })
             }catch{
                 print("Error updating pack \(error)")
+            }
+        }
+    }
+    
+    func manageFavourite(id:ObjectId){
+        if let localRealm = localRealm{
+            do{
+                let updatePack = localRealm.objects(QuestionPack.self).filter(NSPredicate(format: "id == %@", id))
+                guard !updatePack.isEmpty else {return}
+                try localRealm.write({
+                    updatePack[0].isFavourite.toggle()
+                })
+            }catch{
+                print("Error managing favourite state \(error)")
             }
         }
     }
