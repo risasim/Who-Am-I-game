@@ -10,7 +10,7 @@ import RealmSwift
 
 struct ChoosingPackView: View {
     
-    @StateObject var realm = RealmGuess()
+    @ObservedObject var realm = RealmGuess()
     
     
     @State var isSettingsShown:Bool = false
@@ -22,7 +22,7 @@ struct ChoosingPackView: View {
     var body: some View {
         NavigationStack(path: $navi.path){
             VStack{
-                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(questionpacks: realm.questionPacks).environmentObject(realm))
+                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView().environmentObject(realm))
             }
             .sheet(isPresented: $isSettingsShown, content: {
                 SettingsView()

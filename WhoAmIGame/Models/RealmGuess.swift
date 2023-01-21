@@ -47,7 +47,9 @@ class RealmGuess: ObservableObject{
             let packs = localRealm.objects(QuestionPack.self)
             questionPacks = []
             packs.forEach { pack in
-                questionPacks.append(pack)
+                if !pack.isInvalidated{
+                    questionPacks.append(pack)
+                }
             }
         }
     }
@@ -59,6 +61,7 @@ class RealmGuess: ObservableObject{
                 guard !updatePack.isEmpty else {return}
                 try localRealm.write({
                     updatePack[0].name = name
+                    //Checking whether the question already exist
                     for ques in names{
                         if !updatePack[0].questions.contains(ques){
                             print(ques)
@@ -97,10 +100,8 @@ class RealmGuess: ObservableObject{
                 guard !delPack.isEmpty else {return}
                 
                 try localRealm.write({
-                    print("get here")
                     localRealm.delete(delPack)
                     getPacks()
-                    print("Pack id\(id) was deleted")
                 })
             }catch{
                 print("Error deleting pack \(error)")

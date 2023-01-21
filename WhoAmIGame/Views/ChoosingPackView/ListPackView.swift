@@ -14,24 +14,19 @@ struct ListPackView: View {
     @State var search: String = ""
     @State var change: Bool = false
     
+    @ObservedResults(QuestionPack.self) var questionPacks
     //@EnvironmentObject var realm: RealmGuess
     
-    @State var questionpacks: [QuestionPack]
+    //  @Binding var questionpacks: [QuestionPack]
     
     var body: some View {
         VStack{
             ScrollView {
                 LazyVGrid(columns: gridLayout,spacing: 15) {
-                    ForEach(questionpacks) { pack in
+                    ForEach(questionPacks) { pack in
                         NavigationLink(value: pack) {
                             ListItemView(pack: pack, changed: $change)
                             //.padding()
-                        }
-                        .onTapGesture {
-                            feedbackManager.impactOccurred()
-                            withAnimation(.easeOut) {
-                                //
-                            }
                         }
                     }
                 }
@@ -48,6 +43,6 @@ struct ListPackView: View {
 
 struct ListPackView_Previews: PreviewProvider {
     static var previews: some View {
-        ListPackView(questionpacks: []).environmentObject(RealmGuess())
+        ListPackView().environmentObject(RealmGuess())
     }
 }

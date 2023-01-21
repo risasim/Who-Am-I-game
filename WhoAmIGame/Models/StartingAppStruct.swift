@@ -178,6 +178,25 @@ let jsonData = """
         "Jurrasic Park",
         "Intern",
      ]
+   },{
+     "name" : "Animals",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "nature",
+     "names": [
+        "Dog",
+        "Cat",
+        "Bat",
+        "Cow",
+        "Duck",
+        "Frog",
+        "Eagle",
+        "Elephant",
+        "Giraffe",
+        "Panda",
+        "Rabbit",
+        "",
+     ]
    }
 ]
 """
