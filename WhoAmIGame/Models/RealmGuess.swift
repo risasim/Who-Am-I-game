@@ -81,7 +81,9 @@ class RealmGuess: ObservableObject{
                 guard !updatePack.isEmpty else {return}
                 try localRealm.write({
                     updatePack[0].isFavourite.toggle()
+                    getPacks()
                 })
+                print("Pack id\(id) was toggled")
             }catch{
                 print("Error managing favourite state \(error)")
             }
@@ -95,8 +97,10 @@ class RealmGuess: ObservableObject{
                 guard !delPack.isEmpty else {return}
                 
                 try localRealm.write({
+                    print("get here")
                     localRealm.delete(delPack)
                     getPacks()
+                    print("Pack id\(id) was deleted")
                 })
             }catch{
                 print("Error deleting pack \(error)")

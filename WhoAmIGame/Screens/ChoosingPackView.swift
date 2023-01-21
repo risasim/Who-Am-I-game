@@ -16,12 +16,13 @@ struct ChoosingPackView: View {
     @State var isSettingsShown:Bool = false
     @State var isNewPackShown: Bool = false
     
+    
     @ObservedObject var navi = Navigator()
     
     var body: some View {
         NavigationStack(path: $navi.path){
             VStack{
-                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView())
+                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(questionpacks: realm.questionPacks).environmentObject(realm))
             }
             .sheet(isPresented: $isSettingsShown, content: {
                 SettingsView()

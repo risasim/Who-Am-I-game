@@ -17,7 +17,8 @@ final class EditAddModel: ObservableObject{
     @Published var currentTextField = ""
     @Published var packName = ""
     @Published var isSame = false
-    @Published var imageAlert = false
+    @Published var alertBool = false
+    @Published var alert: Alert = Alert(title: Text("Default aler"), message: Text("Message"))
     @Published var selectedImage = ""
     var realmie : RealmGuess
     
@@ -43,30 +44,61 @@ final class EditAddModel: ObservableObject{
         }
     }
     
+    enum Alerts: String{
+        case Image = "Image not selected"
+        case Name = "Name not entered"
+        case NotEnoughNames = "Not enough question in pack"
+        
+        func getDesc() -> String{
+            switch self{
+            case .Image:
+                return "Please select image for your questionpack in the section Image."
+            case .Name:
+                return "Please enter name for the pack."
+            case .NotEnoughNames:
+                return "Please enter more questions. Minimum for pack is 5 questions."
+            }
+        }
+    }
     
     
     //Have to resolve how to differetiate or remake the saving logic
     //maybe bind only the properties of quesitonpack instead of having separate variables
     // problem with directly working with parameters
-    
-    func savePack(){
+    func checkPack() -> Bool{
         if selectedImage != ""{
-            if packName != "" && !names.isEmpty{
-                if customPack{
-                    print(names)
-                    realmie.updatePack(id: newQuestionPack.id, name: packName, names: names, imgStr: selectedImage)
+            if packName != "" {
+                if !names.isEmpty && names.count >= 5{
+                    savePack()
+                    return true
                 }else{
-                    newQuestionPack.name = packName
-                    newQuestionPack.questions.append(objectsIn: names)
-                    newQuestionPack.imageStr = selectedImage
-                    newQuestionPack.author = userDefaults.object(forKey: "username") as! String
-                    realmie.addPack(pack: newQuestionPack)
+                    alert = Alert(title: Text(Alerts.NotEnoughNames.rawValue), message: Text(Alerts.NotEnoughNames.getDesc()))
                 }
+            }else{
+                alert = Alert(title: Text(Alerts.Name.rawValue), message: Text(Alerts.Name.getDesc()))
             }
         }else{
-            imageAlert = true
+            //probably delete
+            alert = Alert(title: Text(Alerts.Image.rawValue), message: Text(Alerts.Image.getDesc()))
+        }
+        alertBool = true
+        return false
+    
+    }
+    
+    func savePack(){
+        if customPack{
+            print(names)
+            realmie.updatePack(id: newQuestionPack.id, name: packName, names: names, imgStr: selectedImage)
+        }else{
+            newQuestionPack.name = packName
+            newQuestionPack.questions.append(objectsIn: names)
+            newQuestionPack.imageStr = selectedImage
+            newQuestionPack.author = userDefaults.object(forKey: "username") as! String
+            realmie.addPack(pack: newQuestionPack)
         }
     }
+       
     
     func checkItem(){
         if names.contains(currentTextField){
@@ -76,6 +108,10 @@ final class EditAddModel: ObservableObject{
             warning = ""
             isSame = false
         }
+    }
+    
+    func deleteItem(at offsets: IndexSet){
+        names.remove(atOffsets: offsets)
     }
     
     func addItem(){

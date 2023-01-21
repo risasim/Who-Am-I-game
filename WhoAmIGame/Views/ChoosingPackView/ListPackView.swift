@@ -14,14 +14,15 @@ struct ListPackView: View {
     @State var search: String = ""
     @State var change: Bool = false
     
-    @ObservedObject private var realmie = RealmGuess()
-    @ObservedResults(QuestionPack.self) var questionPacks
+    //@EnvironmentObject var realm: RealmGuess
+    
+    @State var questionpacks: [QuestionPack]
     
     var body: some View {
         VStack{
             ScrollView {
                 LazyVGrid(columns: gridLayout,spacing: 15) {
-                    ForEach(questionPacks) { pack in
+                    ForEach(questionpacks) { pack in
                         NavigationLink(value: pack) {
                             ListItemView(pack: pack, changed: $change)
                             //.padding()
@@ -47,6 +48,6 @@ struct ListPackView: View {
 
 struct ListPackView_Previews: PreviewProvider {
     static var previews: some View {
-        ListPackView()
+        ListPackView(questionpacks: []).environmentObject(RealmGuess())
     }
 }

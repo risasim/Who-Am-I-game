@@ -16,7 +16,7 @@ struct NewPackView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Form{
                     Section("Info") {
                         TextField("Add title", text: $packModel.packName)
@@ -45,6 +45,9 @@ struct NewPackView: View {
                         List{
                             ForEach(packModel.names.reversed(), id: \.self) { name in
                                 Text(name)
+                            }
+                            .onDelete { indexset in
+                                packModel.deleteItem(at: indexset)
                             }
                         }
                     } header: {
@@ -81,13 +84,14 @@ struct NewPackView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
-                        packModel.savePack()
-                        presentationMode.wrappedValue.dismiss()
+                        if packModel.checkPack(){
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     } label: {
                         Text("Save")
                     }
-                    .alert("Image not selected", isPresented: $packModel.imageAlert) {
-                        Text("Please select image for your questionpack in the section Image.")
+                    .alert(isPresented: $packModel.alertBool) {
+                        packModel.alert
                     }
                     
                 }

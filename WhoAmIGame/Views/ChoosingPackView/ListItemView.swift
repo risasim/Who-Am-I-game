@@ -11,7 +11,7 @@ struct ListItemView: View {
     
     @Environment(\.colorScheme) var colorScheme
     var pack : QuestionPack
-    @ObservedObject private var realmie = RealmGuess()
+    @EnvironmentObject var realmie: RealmGuess
     @Binding var changed : Bool
     @State var editPack: Bool = false
     
@@ -32,6 +32,7 @@ struct ListItemView: View {
             VStack{
                 HStack{
                     Image(systemName: pack.isFavourite ? "heart.fill" : "heart")
+                        .font(.system(size: 25))
                         .foregroundColor(pack.isFavourite ? .red : .white)
                     Spacer()
                 }
@@ -85,6 +86,10 @@ struct ListItemView: View {
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ListItemView(pack: QuestionPack(),changed: .constant(false))
+        let pack = QuestionPack()
+        ListItemView(pack: pack,changed: .constant(false))
+            .onAppear {
+                pack.author = "Richie"
+            }
     }
 }
