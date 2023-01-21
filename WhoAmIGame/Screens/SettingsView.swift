@@ -14,7 +14,7 @@ struct SettingsView: View {
     @AppStorage("username") var username: String = "username"
     @AppStorage("gameTime") var timeSelect: Int = 30
     @AppStorage("showLinks")var link = true
-    @AppStorage("localLanguage")var selectedLanguage:String = "EN"
+    @AppStorage("localLanguage")var selectedLanguage:String = "en"
     
     var body: some View {
         NavigationStack {

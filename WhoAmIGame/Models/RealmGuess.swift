@@ -10,7 +10,6 @@ import RealmSwift
 
 class RealmGuess: ObservableObject{
     
-    //@Published var realm = try! Realm()
     @Published private(set) var questionPacks: [QuestionPack] = []
     private(set) var localRealm: Realm?
     

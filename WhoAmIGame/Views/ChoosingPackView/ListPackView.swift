@@ -15,9 +15,6 @@ struct ListPackView: View {
     @State var change: Bool = false
     
     @ObservedResults(QuestionPack.self) var questionPacks
-    //@EnvironmentObject var realm: RealmGuess
-    
-    //  @Binding var questionpacks: [QuestionPack]
     
     var body: some View {
         VStack{
