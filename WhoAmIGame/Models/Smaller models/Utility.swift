@@ -27,7 +27,7 @@ var gridLayout:[GridItem] {
 let specString = "6jbw81euPQMuckOJZSekflU5j"
 
 let noFavString = """
-Upsss look like you have no favourite packs.
+Ups look like you have no favourites.
 You can make pack favourite by long pressing on the icon.
 """
 

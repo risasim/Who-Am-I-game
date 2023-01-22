@@ -14,6 +14,5 @@ struct Answer: Hashable{
 
 struct AnswerPack: Hashable{
     var score: Int = 0
-    var index: Int = 0
     var answers: [Answer] = []
 }

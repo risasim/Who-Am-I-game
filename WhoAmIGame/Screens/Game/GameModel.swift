@@ -50,15 +50,15 @@ final class GameModel: ObservableObject{
         //maybe problem when turingn phone durign game ????!!!!!!!!
         if !started && !ended{
             //print(orientation.rawValue)
-            if !orientation.isLandscape{
-                print("Orientation is not landscape \(orientation.rawValue)")
-                //print("orientation not right")
-                question = "Please turn over your phone to start the game"
-            }else{
+            if orientation.isLandscape || orientation.rawValue == 3 || orientation.rawValue == 4{
                 //print("Game gonna start")
                 print("Orientation is landscape \(orientation.rawValue)")
                 started = true
                 startGame()
+            }else{
+                print("Orientation is not landscape \(orientation.rawValue)")
+                //print("orientation not right")
+                question = "Please turn over your phone to start the game"
             }
         }
     }
@@ -128,7 +128,6 @@ final class GameModel: ObservableObject{
     func getQuestion(){
         if index < readyPack.count{
             question = readyPack[index]
-            answers.index += 1
             self.color = .accentColor
         }else{
             endGame()

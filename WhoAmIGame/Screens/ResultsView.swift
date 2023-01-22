@@ -15,7 +15,7 @@ struct ResultsView: View {
     
     var body: some View {
         VStack{
-            Text("Your score was \(ans.score) from \(ans.index - 1)")
+            Text("Your score was \(ans.score) from \(ans.answers.count)")
                 .font(.title3)
                 .fontWeight(.bold)
                 .padding(.top)
@@ -65,7 +65,7 @@ struct ResultsView: View {
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            ResultsView(ans: .constant(AnswerPack(score: 1,index: 3, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)]))//, active: .constant(true)
+            ResultsView(ans: .constant(AnswerPack(score: 1, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)]))//, active: .constant(true)
             )
         }
     }

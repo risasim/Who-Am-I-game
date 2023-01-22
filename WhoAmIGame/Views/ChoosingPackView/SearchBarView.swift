@@ -27,18 +27,18 @@ struct SearchBarView: View {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(Color.accentColor)
                                 .opacity(searchText.isEmpty ? 0.0 : 1.0)
+                                .font(.headline)
                         })
-                        .padding()
                         .disabled(searchText.isEmpty)
                         ,alignment: .trailing
                     )
             }
-            .font(.headline)
+            .font(.callout)
             .padding()
             .background {
-                RoundedRectangle(cornerRadius: 25)
+                RoundedRectangle(cornerRadius: 10)
                     .fill(Color(UIColor.systemBackground))
-                    .shadow(color: Color.accentColor.opacity(0.20), radius: 5, x: 0, y: 0)
+                    .shadow(color: Color.accentColor.opacity(0.30), radius: 5, x: 0, y: 0)
             }
             Button {
                 favouritesToggle.toggle()
@@ -54,7 +54,7 @@ struct SearchBarView: View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView(searchText: .constant(""), favouritesToggle: .constant(false))
+        ChoosingPackView()
         SearchBarView(searchText: .constant("djsfk"), favouritesToggle: .constant(false))
             .preferredColorScheme(.dark)
     }
