@@ -12,13 +12,18 @@ struct ListPackView: View {
     
     @State var navPath = NavigationPath()
     @State var search: String = ""
+    @State var favourites:Bool = false
     @State var change: Bool = false
+    @State var noFavourites = false
     
     @ObservedResults(QuestionPack.self) var questionPacks
     @State var filteredResults:[QuestionPack] = []
     var body: some View {
         VStack{
             ScrollView {
+                SearchBarView(searchText: $search, favouritesToggle: $favourites)
+                    .padding(.horizontal)
+                    .padding(.bottom, 0)
                 LazyVGrid(columns: gridLayout,spacing: 15) {
                     ForEach(filteredResults) { pack in
                         NavigationLink(value: pack) {
@@ -32,20 +37,34 @@ struct ListPackView: View {
                 })
                 .padding()
             }
+            .scrollIndicators(.hidden)
         }
+        .overlay(content: {
+            if noFavourites{
+                Text(noFavString)
+                    .multilineTextAlignment(.center)
+                    .font(.title3)
+                    .fontWeight(.semibold)
+            }
+        })
         //Actually not working
-        .searchable(text: $search,placement: .automatic, prompt: "Search pack...")
+    // .searchable(text: $search,placement: .automatic, prompt: "Search pack...")
         .onAppear {
             filterResults()
         }
         .onChange(of: search) { newValue in
             filterResults()
         }
+        .onChange(of: favourites, perform: { newValue in
+            getFavs()
+            if newValue == false{
+                noFavourites = false
+            }
+        })
         //When deleting to rearrange the List
         .onChange(of: change) { newValue in
             filterResults()
         }
-        
     }
     
     func filterResults(){
@@ -56,6 +75,22 @@ struct ListPackView: View {
                 pack.name
                     .localizedCaseInsensitiveContains(search)
             })
+        }
+    }
+    func getFavs(){
+        if favourites{
+            var favPacks: [QuestionPack] = []
+            for pack in questionPacks{
+                if pack.isFavourite{
+                    favPacks.append(pack)
+                }
+            }
+            if favPacks.isEmpty{
+                noFavourites = true
+            }
+            filteredResults = favPacks
+        }else{
+            filteredResults = Array(questionPacks)
         }
     }
 }

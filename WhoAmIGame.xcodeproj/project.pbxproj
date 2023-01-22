@@ -13,6 +13,7 @@
 		792F3137294245A100367FB9 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3136294245A100367FB9 /* GameView.swift */; };
 		792F3139294245B500367FB9 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F3138294245B500367FB9 /* ResultsView.swift */; };
 		792F313B2942469900367FB9 /* NewPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F313A2942469900367FB9 /* NewPackView.swift */; };
+		794CD15D297D30A60002C143 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794CD15C297D30A60002C143 /* SearchBarView.swift */; };
 		795796C8293E556B002782FC /* FirstUsernameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795796C7293E556B002782FC /* FirstUsernameScreen.swift */; };
 		797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F4294515AE006E3E74 /* ImageGridView.swift */; };
 		797882F729462131006E3E74 /* TurnOverPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F629462131006E3E74 /* TurnOverPhoneView.swift */; };
@@ -47,6 +48,7 @@
 		792F3136294245A100367FB9 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		792F3138294245B500367FB9 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		792F313A2942469900367FB9 /* NewPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPackView.swift; sourceTree = "<group>"; };
+		794CD15C297D30A60002C143 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		795796C7293E556B002782FC /* FirstUsernameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUsernameScreen.swift; sourceTree = "<group>"; };
 		796704E729477F7A0032955B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		797882F4294515AE006E3E74 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		797882FB29462198006E3E74 /* ChoosingPackView */ = {
 			isa = PBXGroup;
 			children = (
+				794CD15C297D30A60002C143 /* SearchBarView.swift */,
 				79E37997293CEEB20080C98F /* EmptyPacksView.swift */,
 				79E3799B293CEF230080C98F /* ListPackView.swift */,
 				79E3799F293CF7000080C98F /* ListItemView.swift */,
@@ -321,6 +324,7 @@
 				79DE3F35295A130600559151 /* Debouncer.swift in Sources */,
 				79E3798B293CE7AE0080C98F /* RealmGuess.swift in Sources */,
 				79A36E8C293FB787000308D3 /* SettingsLabelView.swift in Sources */,
+				794CD15D297D30A60002C143 /* SearchBarView.swift in Sources */,
 				797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */,
 				79E3798F293CE7FF0080C98F /* GameModel.swift in Sources */,
 				792F31352942359F00367FB9 /* Utility.swift in Sources */,

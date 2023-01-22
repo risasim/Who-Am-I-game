@@ -30,6 +30,8 @@ struct StartedGameView: View {
             Spacer()
             Text(text)
                 .font(.system(size: 110))
+                .scaledToFit()
+                .minimumScaleFactor(0.01)
                 .fontWeight(.bold)
                 .fontDesign(.serif)
                 .foregroundColor(color)

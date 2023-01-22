@@ -26,3 +26,8 @@ var gridLayout:[GridItem] {
 //used in init QuestionPack for to differentiate the new and already created pack -> AddModel
 let specString = "6jbw81euPQMuckOJZSekflU5j"
 
+let noFavString = """
+Upsss look like you have no favourite packs.
+You can make pack favourite by long pressing on the icon.
+"""
+

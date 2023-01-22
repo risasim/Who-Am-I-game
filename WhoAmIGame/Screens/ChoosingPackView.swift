@@ -16,7 +16,6 @@ struct ChoosingPackView: View {
     @State var isSettingsShown:Bool = false
     @State var isNewPackShown: Bool = false
     
-    
     @ObservedObject var navi = Navigator()
     
     var body: some View {
@@ -43,6 +42,7 @@ struct ChoosingPackView: View {
                     Text("Who Am I ?")
                         .font(.system(size: 27, weight: .bold, design: .rounded))
                 }
+                
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
                         isNewPackShown = true
@@ -55,6 +55,9 @@ struct ChoosingPackView: View {
         }
         .environmentObject(realm)
         .environmentObject(navi)
+        .onTapGesture(count: 2, perform: {
+                self.hideKeyboard()
+        })
         
     }
 }
