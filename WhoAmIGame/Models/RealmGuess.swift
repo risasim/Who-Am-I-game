@@ -32,7 +32,6 @@ class RealmGuess: ObservableObject{
                 try localRealm.write({
                     let newPack = pack
                     localRealm.add(newPack)
-                    print("Pack added")
                     getPacks()
                 })
             }catch{
@@ -85,7 +84,6 @@ class RealmGuess: ObservableObject{
                     updatePack[0].isFavourite.toggle()
                     getPacks()
                 })
-                print("Pack id\(id) was toggled")
             }catch{
                 print("Error managing favourite state \(error)")
             }

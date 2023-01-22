@@ -25,6 +25,7 @@ struct ResultsView: View {
                         .listRowBackground(answer.correct ? Color.green : Color.red)
                 }
             }
+            .scrollIndicators(.hidden)
             .scrollContentBackground(.hidden)
             Button {
                 dismiss()

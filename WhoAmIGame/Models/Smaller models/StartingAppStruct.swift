@@ -27,8 +27,6 @@ struct StartingDatabase{
             let packs = try decoder.decode([OtherQuestionPack].self, from: data)
             readyData = packs
             addToDatabase()
-            print(packs)
-            
         } catch {
             print(error.localizedDescription)
         }
@@ -182,7 +180,7 @@ let jsonData = """
      "name" : "Animals",
      "author" : "Richie",
      "isFavourite": false,
-     "imageStr": "nature",
+     "imageStr": "animals",
      "names": [
         "Dog",
         "Cat",
@@ -195,7 +193,98 @@ let jsonData = """
         "Giraffe",
         "Panda",
         "Rabbit",
-        "",
+        "Racoon",
+        "Tiger",
+        "Lion",
+        "Wolf",
+        "Bear",
+        "Snake",
+        "Coyote",
+        "Shark",
+        "Monkey",
+        "Donkey",
+        "Crocodile",
+        "Aligator",
+        "Fox",
+        "Crab",
+        "Mouse",
+        "Pig",
+        "Chicken",
+        "Turkey",
+        "Goat",
+        "Owl",
+        "Sparrow",
+        "Zebra"
+     ]
+   },{
+     "name" : "Cities",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "city",
+     "names": [
+        "Prague",
+        "New York",
+        "Paris",
+        "London",
+        "Rome",
+        "Berlin",
+        "Los Angeles",
+        "San Francisco",
+        "Kyjiv",
+        "Tokyo",
+        "Rio De Janero",
+        "Istanbul",
+        "Budapest",
+        "Moscow",
+        "Hong Kong",
+        "Madrid",
+        "Barcelona",
+        "Venice",
+        "Dublin",
+        "Brussels",
+        "Sydney",
+        "Bratislava",
+        "Mexico city",
+        "Las Vegas",
+        "Amsterdam",
+        "Dubai",
+        "Ottawa",
+        "Vienna",
+        "Warsaw",
+        "Bern",
+        "Athens",
+        "Stockholm",
+        "Oslo",
+        "Helsinki",
+        "Copenhagen"
+     ]
+   },{
+     "name" : "Actors",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "celebrit",
+     "names": [
+        "Leonardo DiCaprio",
+        "Florence Pugh",
+        "Morgan Freeman",
+        "Denzel Washington",
+        "Keanu Reeves",
+        "Tom Hanks",
+        "Harrison Ford",
+        "Julia Roberts",
+        "Anthony Hopkins",
+        "Sandra Bullock",
+        "Jack Nicholson",
+        "Bruce Willis",
+        "Anne Hathaway",
+        "Jackie Chan",
+        "Hugh Jackman",
+        "Robert De Niro",
+        "Halle Berry",
+        "Kate Winslet",
+        "Zoe Saldana",
+        "Mark Wahlberg",
+        "Marilyn Monroe"
      ]
    }
 ]
