@@ -12,7 +12,7 @@ struct ListPackView: View {
     
     @State var navPath = NavigationPath()
     @State var search: String = ""
-    @State var favourites:Bool = false
+    @Binding var favourites:Bool
     @State var change: Bool = false
     @State var noFavourites = false
     
@@ -21,9 +21,6 @@ struct ListPackView: View {
     var body: some View {
         VStack{
             ScrollView {
-                SearchBarView(searchText: $search, favouritesToggle: $favourites)
-                    .padding(.horizontal)
-                    .padding(.bottom, 0)
                 LazyVGrid(columns: gridLayout,spacing: 15) {
                     ForEach(filteredResults) { pack in
                         NavigationLink(value: pack) {
@@ -48,7 +45,7 @@ struct ListPackView: View {
             }
         })
         //Actually not working
-    // .searchable(text: $search,placement: .automatic, prompt: "Search pack...")
+     .searchable(text: $search,placement: .automatic, prompt: "Search pack...")
         .onAppear {
             filterResults()
         }
@@ -97,6 +94,6 @@ struct ListPackView: View {
 
 struct ListPackView_Previews: PreviewProvider {
     static var previews: some View {
-        ListPackView().environmentObject(RealmGuess())
+        ListPackView(favourites: .constant(false)).environmentObject(RealmGuess())
     }
 }

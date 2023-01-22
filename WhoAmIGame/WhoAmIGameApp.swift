@@ -23,7 +23,8 @@ struct WhoAmIGameApp: App {
                         }
                     }
             }else{
-                TabsView()
+                ChoosingPackView()
+                //TabsView()
             }
         }
     }

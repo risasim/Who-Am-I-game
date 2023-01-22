@@ -15,14 +15,24 @@ struct ChoosingPackView: View {
     
     @State var isSettingsShown:Bool = false
     @State var isNewPackShown: Bool = false
+    @State var favourites:Bool = false
     
     @ObservedObject var navi = Navigator()
     
     var body: some View {
         NavigationStack(path: $navi.path){
             VStack{
-                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView().environmentObject(realm))
+                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites).environmentObject(realm))
             }
+            .overlay(content: {
+                VStack{
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        PlusButtonView(variable: $isNewPackShown)
+                    }
+                }
+            })
             .sheet(isPresented: $isSettingsShown, content: {
                 SettingsView()
             })
@@ -45,9 +55,9 @@ struct ChoosingPackView: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
-                        isNewPackShown = true
+                        favourites.toggle()
                     } label: {
-                        Image(systemName: "plus")
+                        Image(systemName: "list.star")
                             .font(.title2)
                     }
                 }

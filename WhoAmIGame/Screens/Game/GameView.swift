@@ -35,6 +35,8 @@ struct GameView: View {
             feedbackManager.impactOccurred()
         }
         .onAppear{
+            //so that the screen wont turn off
+            UIApplication.shared.isIdleTimerDisabled = true
             model.checkOrientation(ended: isPresented)
         }
         .onRotate(perform: { newOrientation in

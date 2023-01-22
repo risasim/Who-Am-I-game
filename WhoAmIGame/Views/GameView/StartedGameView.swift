@@ -44,6 +44,7 @@ struct StartedGameView: View {
                 }
             Spacer()
         }
+        .persistentSystemOverlays(.hidden)
         .onDisappear {
             feedbackManager.impactOccurred()
         }
