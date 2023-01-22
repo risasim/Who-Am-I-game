@@ -62,9 +62,6 @@ final class EditAddModel: ObservableObject{
     }
     
     
-    //Have to resolve how to differetiate or remake the saving logic
-    //maybe bind only the properties of quesitonpack instead of having separate variables
-    // problem with directly working with parameters
     func checkPack() -> Bool{
         if selectedImage != ""{
             if packName != "" {

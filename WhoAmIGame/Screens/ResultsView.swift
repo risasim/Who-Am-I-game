@@ -50,7 +50,7 @@ struct ResultsView: View {
                 } label: {
                     HStack{
                         Image(systemName: "chevron.left")
-                        Text("Back to menu")
+                        Text("Menu")
                     }
                     .font(.headline)
                     .foregroundColor(.blue)
@@ -64,7 +64,7 @@ struct ResultsView: View {
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            ResultsView(ans: .constant(AnswerPack(score: 2,index: 3, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)]))//, active: .constant(true)
+            ResultsView(ans: .constant(AnswerPack(score: 1,index: 3, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)]))//, active: .constant(true)
             )
         }
     }

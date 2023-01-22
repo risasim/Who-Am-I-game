@@ -39,8 +39,16 @@ struct SettingsView: View {
 // MARK: - Settings
                     GroupBox {
                         Divider().padding(.vertical, 4)
+                        //Can delete
                         Toggle("Username screen", isOn: $isFirstTime)
                             .foregroundColor(.gray)
+                        Divider().padding(.vertical, 4)
+                        Button {
+                            StartingDatabase()
+                        } label: {
+                            Text("Add packs")
+                        }
+
                         Divider().padding(.vertical, 4)
                         Toggle("Show links in results", isOn: $link)
                             .foregroundColor(.gray)

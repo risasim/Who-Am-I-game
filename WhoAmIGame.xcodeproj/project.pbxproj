@@ -87,6 +87,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		794CD15B297D19180002C143 /* Smaller models */ = {
+			isa = PBXGroup;
+			children = (
+				79E3798C293CE7D30080C98F /* Migrator.swift */,
+				79AB49FD29705CC500ED2F66 /* StartingAppStruct.swift */,
+				79E03F8A2961892900DF5976 /* Navigator.swift */,
+				79E03F88296188A700DF5976 /* Answer.swift */,
+				79DE3F34295A130600559151 /* Debouncer.swift */,
+				792F31342942359F00367FB9 /* Utility.swift */,
+				79E379A1293D1CCB0080C98F /* VisualBlurEffect.swift */,
+			);
+			path = "Smaller models";
+			sourceTree = "<group>";
+		};
 		797882FB29462198006E3E74 /* ChoosingPackView */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,14 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				79E3798A293CE7AE0080C98F /* RealmGuess.swift */,
-				79E3798C293CE7D30080C98F /* Migrator.swift */,
 				79E37992293CE8640080C98F /* QuestionPack.swift */,
-				79E379A1293D1CCB0080C98F /* VisualBlurEffect.swift */,
-				792F31342942359F00367FB9 /* Utility.swift */,
-				79DE3F34295A130600559151 /* Debouncer.swift */,
-				79E03F88296188A700DF5976 /* Answer.swift */,
-				79E03F8A2961892900DF5976 /* Navigator.swift */,
-				79AB49FD29705CC500ED2F66 /* StartingAppStruct.swift */,
+				794CD15B297D19180002C143 /* Smaller models */,
 			);
 			path = Models;
 			sourceTree = "<group>";

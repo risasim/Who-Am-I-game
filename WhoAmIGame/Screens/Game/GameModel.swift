@@ -49,12 +49,14 @@ final class GameModel: ObservableObject{
         orientation = UIDevice.current.orientation
         //maybe problem when turingn phone durign game ????!!!!!!!!
         if !started && !ended{
-            print(orientation.rawValue)
+            //print(orientation.rawValue)
             if !orientation.isLandscape{
+                print("Orientation is not landscape \(orientation.rawValue)")
                 //print("orientation not right")
                 question = "Please turn over your phone to start the game"
             }else{
                 //print("Game gonna start")
+                print("Orientation is landscape \(orientation.rawValue)")
                 started = true
                 startGame()
             }

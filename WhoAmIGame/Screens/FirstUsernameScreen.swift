@@ -24,6 +24,7 @@ Username will be used for publishing your own packs
                     Color(.gray).opacity(0.1)
                         .cornerRadius(5)
                 )
+                //Checkinng if the author isnt the init author value -> AddModel
                 .onSubmit {
                     if username != specString{
                         isFirstTime = false
