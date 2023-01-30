@@ -31,3 +31,5 @@ Ups look like you have no favourites.
 You can make pack favourite by long pressing on the icon.
 """
 
+let changePosString = "Please turn over your phone to start the game"
+

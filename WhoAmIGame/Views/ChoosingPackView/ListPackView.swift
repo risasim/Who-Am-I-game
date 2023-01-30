@@ -45,7 +45,7 @@ struct ListPackView: View {
             }
         })
         //Actually not working
-     .searchable(text: $search,placement: .automatic, prompt: "Search pack...")
+        .searchable(text: $search,placement: .navigationBarDrawer, prompt: "Search pack...")
         .onAppear {
             filterResults()
         }

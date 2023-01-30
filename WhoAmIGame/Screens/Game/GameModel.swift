@@ -14,7 +14,7 @@ import UIKit
 final class GameModel: ObservableObject{
     @AppStorage("gameTime") var countTime: Int = 30
     
-    @Published var question = "Please turn over your phone to start the game"
+    @Published var question = changePosString
     @Published var time:Int = 0
     @Published var started = false
     @Published var color: Color = .accentColor
@@ -48,9 +48,9 @@ final class GameModel: ObservableObject{
     func checkOrientation(ended: Bool){
         orientation = UIDevice.current.orientation
         //maybe problem when turingn phone durign game ????!!!!!!!!
-        if !started && !ended{
+        if (!started && !ended){
             //print(orientation.rawValue)
-            if orientation.isLandscape || orientation.rawValue == 3 || orientation.rawValue == 4{
+            if orientation.isLandscape{
                 //print("Game gonna start")
                 print("Orientation is landscape \(orientation.rawValue)")
                 started = true
@@ -58,7 +58,7 @@ final class GameModel: ObservableObject{
             }else{
                 print("Orientation is not landscape \(orientation.rawValue)")
                 //print("orientation not right")
-                question = "Please turn over your phone to start the game"
+                question = changePosString
             }
         }
     }
@@ -72,11 +72,6 @@ final class GameModel: ObservableObject{
             }
             
             let attitude: CMAttitude = data.attitude
-            
-            // print("pitch: \(attitude.pitch)")
-            // print("yaw: \(attitude.yaw)")
-            // print("roll: \(attitude.roll)")
-            
             DispatchQueue.main.async {
                 self.pitch = attitude.pitch
                 self.yaw = attitude.yaw
