@@ -15,7 +15,7 @@ struct ResultsView: View {
     
     var body: some View {
         
-        var scored: Bool = (ans.answers.count == 0)
+        var scored: Bool = !(ans.answers.count == 0)
         
         VStack{
             if scored{
