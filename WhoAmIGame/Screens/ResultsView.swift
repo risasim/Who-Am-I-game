@@ -14,19 +14,30 @@ struct ResultsView: View {
     @EnvironmentObject var navi: Navigator
     
     var body: some View {
+        
+        var scored: Bool = (ans.answers.count == 0)
+        
         VStack{
-            Text("Your score was \(ans.score) from \(ans.answers.count)")
-                .font(.title3)
-                .fontWeight(.bold)
-                .padding(.top)
-            List{
-                ForEach(ans.answers, id: \.self) { answer in
-                    ResultListItemView(answer: answer)
-                        .listRowBackground(answer.correct ? Color.green : Color.red)
+            if scored{
+                Text("Your score was \(ans.score) from \(ans.answers.count)")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .padding(.top)
+                List{
+                    ForEach(ans.answers, id: \.self) { answer in
+                        ResultListItemView(answer: answer)
+                            .listRowBackground(answer.correct ? Color.green : Color.red)
+                    }
                 }
+                .scrollIndicators(.hidden)
+                .scrollContentBackground(.hidden)
+            }else{
+                Spacer()
+                Text("Ups it looks like you have answered not even one question.")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                Spacer()
             }
-            .scrollIndicators(.hidden)
-            .scrollContentBackground(.hidden)
             Button {
                 dismiss()
             } label: {
@@ -39,7 +50,7 @@ struct ResultsView: View {
                 .cornerRadius(20)
                 .foregroundColor(.white)
                 .padding(10)
-            Spacer()
+            //Spacer()
         }
         .multilineTextAlignment(.center)
         .navigationBarBackButtonHidden()

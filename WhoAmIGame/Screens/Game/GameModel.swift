@@ -48,17 +48,17 @@ final class GameModel: ObservableObject{
     func checkOrientation(ended: Bool){
         orientation = UIDevice.current.orientation
         //maybe problem when turingn phone durign game ????!!!!!!!!
-        if (!started && !ended){
+        if (!self.started && !ended){
             //print(orientation.rawValue)
-            if orientation.isLandscape{
+            if (orientation.rawValue == 3 || orientation.rawValue == 4){
                 //print("Game gonna start")
-                print("Orientation is landscape \(orientation.rawValue)")
-                started = true
-                startGame()
+                print("Orientation is landscape \(orientation.rawValue) and started is \(started)")
+                self.startGame()
+                self.started = true
             }else{
-                print("Orientation is not landscape \(orientation.rawValue)")
+                print("Orientation is not landscape \(orientation.rawValue) and started is \(started)")
                 //print("orientation not right")
-                question = changePosString
+                self.question = changePosString
             }
         }
     }

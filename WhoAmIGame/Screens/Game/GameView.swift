@@ -24,6 +24,7 @@ struct GameView: View {
             (model.question == plsString) ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
        
         }
+        //isPresented binded to StartedGameView to wait for str Game end
         .navigationDestination(isPresented: self.$isPresented, destination: {
             ResultsView(ans: $banswers// active: $navi.isAcitve
             )
@@ -31,8 +32,8 @@ struct GameView: View {
         .onDisappear{
             if isPresented{
                 model.endGame()
+                feedbackManager.impactOccurred()
             }
-            feedbackManager.impactOccurred()
         }
         .onAppear{
             //so that the screen wont turn off
@@ -44,7 +45,7 @@ struct GameView: View {
             model.checkOrientation(ended: isPresented)
         })
         .toolbar(.hidden, for: .tabBar)
-        .navigationBarBackButtonHidden(!(model.question == plsString))
+        .navigationBarBackButtonHidden(!(model.question == changePosString))
     }
 }
 
