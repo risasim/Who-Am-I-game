@@ -199,6 +199,7 @@
 				797882FB29462198006E3E74 /* ChoosingPackView */,
 				797882FC294621A6006E3E74 /* SettingsView */,
 				797882F4294515AE006E3E74 /* ImageGridView.swift */,
+				797E9605298192F1009120B1 /* HelloWorldView.swift */,
 				797882FD294621B5006E3E74 /* GameView */,
 			);
 			path = Views;
@@ -221,7 +222,6 @@
 				79C628EE295F2FC80082FE67 /* NewPack */,
 				7924D899295B273600A876C5 /* TabsView.swift */,
 				79E37986293CDA5F0080C98F /* ChoosingPackView.swift */,
-				797E9605298192F1009120B1 /* HelloWorldView.swift */,
 				79A36E89293FB5CE000308D3 /* SettingsView.swift */,
 				79C628ED295F2FAE0082FE67 /* Game */,
 				792F3138294245B500367FB9 /* ResultsView.swift */,

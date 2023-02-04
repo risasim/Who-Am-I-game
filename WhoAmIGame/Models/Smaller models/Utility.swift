@@ -11,7 +11,7 @@ import SwiftUI
 
 //constant arrays
 //array of the name of pictures in assets
-let images: [String] = ["films", "literature", "presidents", "art", "lab","animals", "comics", "celebrit","classic", "literature 1", "cinema", "nature", "discovery", "notes"]
+let images: [String] = ["films", "literature", "presidents", "art", "lab","animals", "comics", "bands", "celebrit","classic", "literature 1", "cinema", "nature", "discovery", "notes"]
 //maybe delete later
 let times: [Int] = [10 ,30, 45, 60, 90]
 let languages: [String] = ["en", "cz", "sk"]
@@ -32,4 +32,6 @@ You can make pack favourite by long pressing on the icon.
 """
 
 let changePosString = "Please turn over your phone to start the game"
+
+let gameDescription = "Who am I? app was inspired by Heads up! game. It was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis."
 

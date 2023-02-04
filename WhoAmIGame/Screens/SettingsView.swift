@@ -29,7 +29,7 @@ struct SettingsView: View {
                                 .scaledToFit()
                                 .frame(width: 80, height: 80)
                                 .cornerRadius(9)
-                            Text("Who am I? app was inspired by Heads up! game. It was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis.")
+                            Text(gameDescription)
                                 .font(.footnote)
                         }
                     } label: {
