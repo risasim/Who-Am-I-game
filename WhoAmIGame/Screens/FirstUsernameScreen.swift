@@ -12,10 +12,7 @@ struct FirstUsernameScreen: View {
     @AppStorage ("username") var username: String = ""
     var body: some View {
         VStack(alignment: .center){
-            Text("""
-Please enter username.
-Username will be used for publishing your own packs
-""")
+            Text(pleaseEnterUsername)
                 .font(.title3)
                 .fontWeight(.semibold)
             TextField("Enter here", text: $username)

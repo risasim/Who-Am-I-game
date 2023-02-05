@@ -35,3 +35,8 @@ let changePosString = "Please turn over your phone to start the game"
 
 let gameDescription = "Who am I? app was inspired by Heads up! game. It was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis."
 
+let pleaseEnterUsername = """
+Please enter username.
+Username will be used for publishing your own packs
+"""
+

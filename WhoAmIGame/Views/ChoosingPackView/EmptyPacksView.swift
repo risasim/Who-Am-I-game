@@ -9,13 +9,20 @@ import SwiftUI
 
 struct EmptyPacksView: View {
     var body: some View {
-        Text("""
-        Oops look like you have no saved packs...
-        Create your own or download one.
-        """)
-        .multilineTextAlignment(.center)
-        .font(.title3)
-        .fontWeight(.semibold)
+        VStack {
+            Spacer()
+            Text("""
+            Oops look like you have no saved packs...
+            Create your own or download one.
+            """)
+            .multilineTextAlignment(.center)
+            .font(.title3)
+            .fontWeight(.semibold)
+            HStack{
+                Spacer()
+            }
+            Spacer()
+        }
     }
 }
 

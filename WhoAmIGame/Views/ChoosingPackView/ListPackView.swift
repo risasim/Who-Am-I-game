@@ -18,6 +18,7 @@ struct ListPackView: View {
     
     @ObservedResults(QuestionPack.self) var questionPacks
     @State var filteredResults:[QuestionPack] = []
+    
     var body: some View {
         VStack{
             ScrollView {
@@ -38,13 +39,9 @@ struct ListPackView: View {
         }
         .overlay(content: {
             if noFavourites{
-                Text(noFavString)
-                    .multilineTextAlignment(.center)
-                    .font(.title3)
-                    .fontWeight(.semibold)
+                NoFavView()
             }
         })
-        //Actually not working
         .searchable(text: $search,placement: .navigationBarDrawer, prompt: "Search pack...")
         .onAppear {
             filterResults()

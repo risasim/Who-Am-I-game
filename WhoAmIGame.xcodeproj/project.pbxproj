@@ -16,6 +16,7 @@
 		794CD15D297D30A60002C143 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794CD15C297D30A60002C143 /* SearchBarView.swift */; };
 		794CD15F297DC0560002C143 /* PlusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794CD15E297DC0560002C143 /* PlusButtonView.swift */; };
 		795796C8293E556B002782FC /* FirstUsernameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795796C7293E556B002782FC /* FirstUsernameScreen.swift */; };
+		797322F4298EC6D400978FD7 /* NoFavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797322F3298EC6D400978FD7 /* NoFavView.swift */; };
 		797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F4294515AE006E3E74 /* ImageGridView.swift */; };
 		797882F729462131006E3E74 /* TurnOverPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F629462131006E3E74 /* TurnOverPhoneView.swift */; };
 		797882F92946216E006E3E74 /* StartedGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F82946216E006E3E74 /* StartedGameView.swift */; };
@@ -54,6 +55,7 @@
 		794CD15E297DC0560002C143 /* PlusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonView.swift; sourceTree = "<group>"; };
 		795796C7293E556B002782FC /* FirstUsernameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUsernameScreen.swift; sourceTree = "<group>"; };
 		796704E729477F7A0032955B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		797322F3298EC6D400978FD7 /* NoFavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavView.swift; sourceTree = "<group>"; };
 		797882F4294515AE006E3E74 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		797882F629462131006E3E74 /* TurnOverPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOverPhoneView.swift; sourceTree = "<group>"; };
 		797882F82946216E006E3E74 /* StartedGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedGameView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				79E3799B293CEF230080C98F /* ListPackView.swift */,
 				79E3799F293CF7000080C98F /* ListItemView.swift */,
 				794CD15E297DC0560002C143 /* PlusButtonView.swift */,
+				797322F3298EC6D400978FD7 /* NoFavView.swift */,
 			);
 			path = ChoosingPackView;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				79A36E8A293FB5CE000308D3 /* SettingsView.swift in Sources */,
 				797882F729462131006E3E74 /* TurnOverPhoneView.swift in Sources */,
 				79E3798D293CE7D30080C98F /* Migrator.swift in Sources */,
+				797322F4298EC6D400978FD7 /* NoFavView.swift in Sources */,
 				79E379A2293D1CCB0080C98F /* VisualBlurEffect.swift in Sources */,
 				79E37993293CE8640080C98F /* QuestionPack.swift in Sources */,
 				79DE3F35295A130600559151 /* Debouncer.swift in Sources */,
