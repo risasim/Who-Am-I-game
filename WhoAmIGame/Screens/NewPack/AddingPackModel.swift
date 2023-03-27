@@ -113,8 +113,10 @@ final class EditAddModel: ObservableObject{
     
     func addItem(){
         if !isSame{
-            names.append(currentTextField.trimmingCharacters(in: .whitespacesAndNewlines))
-            currentTextField = ""
+            if currentTextField != ""{
+                names.append(currentTextField.trimmingCharacters(in: .whitespacesAndNewlines))
+                currentTextField = ""
+            }
         }
     }
     

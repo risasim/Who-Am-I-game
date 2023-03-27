@@ -15,19 +15,28 @@ struct ListItemView: View {
     @Binding var changed : Bool
     @State var editPack: Bool = false
     
+    var width: CGFloat {
+          if UIDevice.current.userInterfaceIdiom == .phone {
+              return UIScreen.main.bounds.width * 0.44
+          } else {
+              return UIScreen.main.bounds.width * 0.2
+          }
+      }
+    
+    
     var body: some View {
         ZStack{
             Image(pack.imageStr)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 160, height: 160)
-            RoundedRectangle(cornerRadius: 20)
+                .frame(width: width, height: width)
+            RoundedRectangle(cornerRadius: 23)
                 .foregroundColor(.white)
             Blur(style: colorScheme == .dark ? .prominent : .dark)
             Image(pack.imageStr)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 160, height: 160)
+                .frame(width: width, height: width)
                 .mask(LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0)]), startPoint: .top, endPoint: .bottom))
             VStack{
                 HStack{
@@ -48,8 +57,8 @@ struct ListItemView: View {
             .foregroundColor(.white)
             .padding(20)
         }
-        .frame(width: 160, height: 160)
-        .cornerRadius(20)
+        .frame(width: width, height: width)
+        .cornerRadius(23)
         .contextMenu {
             Button {
                 realmie.manageFavourite(id: pack.id)

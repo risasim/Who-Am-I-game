@@ -16,6 +16,7 @@ struct NoFavView: View {
                 .fontWeight(.semibold)
             Image("heart")
                 .resizable()
+                .interpolation(.high)
                 .scaledToFit()
                 .frame(height: 40)
         }

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TurnOverPhoneView: View {
     
-   @State var text:String
-    
     var body: some View {
         VStack{
             ZStack {
@@ -21,7 +19,7 @@ struct TurnOverPhoneView: View {
                     .resizable()
                     .scaledToFit()
             }
-            Text(text)
+            Text(changePosString)
                 .font(.title)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
@@ -31,6 +29,6 @@ struct TurnOverPhoneView: View {
 
 struct TurnOverPhoneView_Previews: PreviewProvider {
     static var previews: some View {
-        TurnOverPhoneView(text: "Please turn over your phone to start the game")
+        TurnOverPhoneView()
     }
 }

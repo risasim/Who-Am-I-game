@@ -15,7 +15,7 @@ struct ResultsView: View {
     
     var body: some View {
         
-        var scored: Bool = !(ans.answers.count == 0)
+        let scored: Bool = !(ans.answers.count == 0)
         
         VStack{
             if scored{
@@ -33,8 +33,8 @@ struct ResultsView: View {
                 .scrollContentBackground(.hidden)
             }else{
                 Spacer()
-                Text("Ups it looks like you have answered not even one question.")
-                    .font(.title)
+                Text("Ups it looks like you got stuck on the first question. Better luck next time.")
+                    .font(.title2)
                     .fontWeight(.semibold)
                 Spacer()
             }
@@ -55,6 +55,9 @@ struct ResultsView: View {
         .multilineTextAlignment(.center)
         .navigationBarBackButtonHidden()
         .navigationTitle("Results")
+        .onAppear(perform: {
+            AppDelegate.orientationLock = .all
+        })
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {

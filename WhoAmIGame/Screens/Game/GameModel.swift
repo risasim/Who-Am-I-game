@@ -16,8 +16,8 @@ final class GameModel: ObservableObject{
     
     @Published var question = changePosString
     @Published var time:Int = 0
-    @Published var started = false
     @Published var color: Color = .accentColor
+    @Published var landscape = false
     
     //Pack operations
     private var readyPack : [String]
@@ -42,27 +42,18 @@ final class GameModel: ObservableObject{
     
     init(pack: QuestionPack){
         self.readyPack = pack.questions.shuffled()
+        self.landscape = false
     }
     
-    //checking if phone is in right orientation -> start game
-    func checkOrientation(ended: Bool){
-        orientation = UIDevice.current.orientation
-        //maybe problem when turingn phone durign game ????!!!!!!!!
-        if (!self.started && !ended){
-            //print(orientation.rawValue)
-            if (orientation.rawValue == 3 || orientation.rawValue == 4){
-                //print("Game gonna start")
-                print("Orientation is landscape \(orientation.rawValue) and started is \(started)")
-                self.startGame()
-                self.started = true
-            }else{
-                print("Orientation is not landscape \(orientation.rawValue) and started is \(started)")
-                //print("orientation not right")
-                self.question = changePosString
-            }
+    func checkOrientation(){
+        if UIDevice.current.orientation.isLandscape && !landscape{
+            landscape =  true
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+            AppDelegate.orientationLock = .landscape
+            startGame()
         }
     }
-    
+
     func startGame(){
         self.readyPack = self.readyPack.shuffled()
         self.motionManager.startDeviceMotionUpdates(to: self.queue) { (data: CMDeviceMotion?, error: Error?) in
@@ -85,7 +76,6 @@ final class GameModel: ObservableObject{
     }
     
     func waitingForMotion(_ pitch: Double, _ yaw:  Double, _ attitude: Double){
-        //making sure if phone is in landscape ?? maybe usable even for starting the game and chaging the views ??
         if (-0.5 ... 0.7 ~= pitch){
             if 2.20...2.35 ~= roll || -2.35 ... -2.20 ~= roll{
                 self.color = .green
@@ -106,20 +96,17 @@ final class GameModel: ObservableObject{
     }
     
     func startTimer(){
-        //print("timer started")
         time = countTime
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.refreshValue), userInfo: nil, repeats: true)
     }
     @objc func refreshValue(){
         time -= 1
-        //print(time)
         if  time <= 0{
             self.timer.invalidate()
             endGame()
         }
     }
     
-    //if you can still get question get other question, else end the game
     func getQuestion(){
         if index < readyPack.count{
             question = readyPack[index]

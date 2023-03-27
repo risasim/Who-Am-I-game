@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7903292629A15C8400DBB5FF /* LaunchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903292529A15C8400DBB5FF /* LaunchingView.swift */; };
 		7924D89A295B273600A876C5 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D899295B273600A876C5 /* TabsView.swift */; };
 		7924D89C295B30CE00A876C5 /* AddingPackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D89B295B30CE00A876C5 /* AddingPackModel.swift */; };
 		792F31352942359F00367FB9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F31342942359F00367FB9 /* Utility.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7903292529A15C8400DBB5FF /* LaunchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingView.swift; sourceTree = "<group>"; };
 		7924D899295B273600A876C5 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		7924D89B295B30CE00A876C5 /* AddingPackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPackModel.swift; sourceTree = "<group>"; };
 		792F31342942359F00367FB9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				797882F4294515AE006E3E74 /* ImageGridView.swift */,
 				797E9605298192F1009120B1 /* HelloWorldView.swift */,
 				797882FD294621B5006E3E74 /* GameView */,
+				7903292529A15C8400DBB5FF /* LaunchingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			files = (
 				797882F92946216E006E3E74 /* StartedGameView.swift in Sources */,
 				794CD15F297DC0560002C143 /* PlusButtonView.swift in Sources */,
+				7903292629A15C8400DBB5FF /* LaunchingView.swift in Sources */,
 				79E37998293CEEB20080C98F /* EmptyPacksView.swift in Sources */,
 				79E03F8B2961892900DF5976 /* Navigator.swift in Sources */,
 				79E3799C293CEF230080C98F /* ListPackView.swift in Sources */,
@@ -472,10 +476,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhoAmIGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Who Am I?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchingView;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,10 +506,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhoAmIGame/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Who Am I?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchingView;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

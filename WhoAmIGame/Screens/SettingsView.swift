@@ -27,7 +27,7 @@ struct SettingsView: View {
                             Image("logo")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 80, height: 80)
+                                .frame(width: 100, height: 100)
                                 .cornerRadius(9)
                             Text(gameDescription)
                                 .font(.footnote)

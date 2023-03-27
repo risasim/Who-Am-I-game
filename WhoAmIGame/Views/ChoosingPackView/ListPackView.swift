@@ -19,6 +19,7 @@ struct ListPackView: View {
     @ObservedResults(QuestionPack.self) var questionPacks
     @State var filteredResults:[QuestionPack] = []
     
+    
     var body: some View {
         VStack{
             ScrollView {

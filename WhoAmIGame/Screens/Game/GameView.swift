@@ -14,14 +14,14 @@ struct GameView: View {
     @State var banswers: AnswerPack = AnswerPack()
     @State var isPresented: Bool = false
 
+    private let rotationChangePublisher = NotificationCenter.default
+        .publisher(for: UIDevice.orientationDidChangeNotification)
     
     @EnvironmentObject var navi: Navigator
     
-    let plsString = "Please turn over your phone to start the game"
-    
     var body: some View {
         VStack{
-            (model.question == plsString) ? AnyView(TurnOverPhoneView(text: model.question)) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
+            !model.landscape ? AnyView(TurnOverPhoneView()) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
        
         }
         //isPresented binded to StartedGameView to wait for str Game end
@@ -34,16 +34,14 @@ struct GameView: View {
                 model.endGame()
                 feedbackManager.impactOccurred()
             }
+            AppDelegate.orientationLock = .all
         }
         .onAppear{
-            //so that the screen wont turn off
-            UIApplication.shared.isIdleTimerDisabled = true
-            model.checkOrientation(ended: isPresented)
+            model.checkOrientation()
         }
-        .onRotate(perform: { newOrientation in
-            //may gonna have to change this isnt really valid solution ??
-            model.checkOrientation(ended: isPresented)
-        })
+        .onReceive(rotationChangePublisher) { _ in
+            model.checkOrientation()
+        }
         .toolbar(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden(!(model.question == changePosString))
     }
@@ -55,24 +53,3 @@ struct GameView_Previews: PreviewProvider {
     }
 }
 
-
-// https://www.hackingwithswift.com/quick-start/swiftui/how-to-detect-device-rotation
-
-struct DeviceRotationViewModifier: ViewModifier {
-    let action: (UIDeviceOrientation) -> Void
-
-    func body(content: Content) -> some View {
-        content
-            .onAppear()
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                action(UIDevice.current.orientation)
-            }
-    }
-}
-
-// A View wrapper to make the modifier easier to use
-extension View {
-    func onRotate(perform action: @escaping (UIDeviceOrientation) -> Void) -> some View {
-        self.modifier(DeviceRotationViewModifier(action: action))
-    }
-}

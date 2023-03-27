@@ -32,7 +32,7 @@ struct NewPackView: View {
                                 }
                                 .onSubmit {
                                     packModel.addItem()
-                                }
+                                }        
                             Spacer()
                             Button {
                                 packModel.addItem()
@@ -72,7 +72,7 @@ struct NewPackView: View {
             })
             // For no differenciantions in color in list
             //.background(Color("listBack"))
-            .navigationTitle(packModel.packName)
+            .navigationTitle(packModel.packName == "" ? "Title" : packModel.packName)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {

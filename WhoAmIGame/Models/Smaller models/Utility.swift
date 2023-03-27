@@ -19,9 +19,18 @@ let languages: [String] = ["en", "cz", "sk"]
 let feedbackManager = UIImpactFeedbackGenerator(style: .medium)
 let columnSpacing: CGFloat = 10
 let rowSpacing:CGFloat = 10
+
 var gridLayout:[GridItem] {
-    return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
+    if UIDevice.current.userInterfaceIdiom == .phone{
+        return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
+    } else {
+        return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 3)
+    }
 }
+
+// var gridLayout:[GridItem] {
+//     return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
+// }
 
 //used in init QuestionPack for to differentiate the new and already created pack -> AddModel
 let specString = "6jbw81euPQMuckOJZSekflU5j"
