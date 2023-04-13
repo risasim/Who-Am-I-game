@@ -84,6 +84,7 @@ struct ListItemView: View {
                 Label("Delete pack", systemImage: "minus.circle")
             }
         }
+        .defersSystemGestures(on: .bottom)
         .sheet(isPresented: $editPack) {
             NewPackView(packModel: EditAddModel(realm: realmie,pack: pack))
                 .onDisappear {

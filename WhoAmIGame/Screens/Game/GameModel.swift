@@ -46,7 +46,9 @@ final class GameModel: ObservableObject{
     }
     
     func checkOrientation(){
+        print("was called with \(landscape)")
         if UIDevice.current.orientation.isLandscape && !landscape{
+            print("landscape set")
             landscape =  true
             UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
             AppDelegate.orientationLock = .landscape

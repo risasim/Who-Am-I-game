@@ -16,13 +16,14 @@ struct ChoosingPackView: View {
     @State var isSettingsShown:Bool = false
     @State var isNewPackShown: Bool = false
     @State var favourites:Bool = false
+    @State var outerChange: Bool = false 
     
     @ObservedObject var navi = Navigator()
     
     var body: some View {
         NavigationStack(path: $navi.path){
             VStack{
-                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites).environmentObject(realm))
+                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites, outerChange: $outerChange).environmentObject(realm))
             }
             .overlay(content: {
                 VStack{
@@ -38,6 +39,9 @@ struct ChoosingPackView: View {
             })
             .sheet(isPresented: $isNewPackShown, content: {
                 NewPackView(packModel: EditAddModel(realm: realm))
+                    .onDisappear {
+                        outerChange.toggle()
+                    }
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

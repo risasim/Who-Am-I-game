@@ -15,6 +15,7 @@ struct ListPackView: View {
     @Binding var favourites:Bool
     @State var change: Bool = false
     @State var noFavourites = false
+    @Binding var outerChange:Bool
     
     @ObservedResults(QuestionPack.self) var questionPacks
     @State var filteredResults:[QuestionPack] = []
@@ -37,6 +38,9 @@ struct ListPackView: View {
                 .padding()
             }
             .scrollIndicators(.hidden)
+            .refreshable {
+                change.toggle()
+            }
         }
         .overlay(content: {
             if noFavourites{
@@ -50,6 +54,9 @@ struct ListPackView: View {
         .onChange(of: search) { newValue in
             filterResults()
         }
+        .onChange(of: outerChange, perform: { newValue in
+            change.toggle()
+        })
         .onChange(of: favourites, perform: { newValue in
             getFavs()
             if newValue == false{
@@ -92,6 +99,6 @@ struct ListPackView: View {
 
 struct ListPackView_Previews: PreviewProvider {
     static var previews: some View {
-        ListPackView(favourites: .constant(false)).environmentObject(RealmGuess())
+        ListPackView(favourites: .constant(false), outerChange: .constant(false)).environmentObject(RealmGuess())
     }
 }
