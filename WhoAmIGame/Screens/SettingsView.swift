@@ -24,12 +24,12 @@ struct SettingsView: View {
                     GroupBox {
                         Divider().padding(.vertical, 4)
                         HStack(alignment: .center, spacing: 10){
-                            Image("logo")
+                            Image("logo2")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 100, height: 100)
                                 .cornerRadius(9)
-                            Text(gameDescription)
+                            Text("game.Description")
                                 .font(.footnote)
                         }
                     } label: {
@@ -43,12 +43,13 @@ struct SettingsView: View {
                         Toggle("Username screen", isOn: $isFirstTime)
                             .foregroundColor(.gray)
                         Divider().padding(.vertical, 4)
+                        #if DEBUG
                         Button {
                             StartingDatabase()
                         } label: {
                             Text("Add packs")
                         }
-
+                        #endif
                         Divider().padding(.vertical, 4)
                         Toggle("Show links in results", isOn: $link)
                             .foregroundColor(.gray)
@@ -83,10 +84,11 @@ struct SettingsView: View {
 // MARK: - Application info
                     GroupBox(content: {
                         SettingsRowView(label: "Developer", description: "Richie")
+                        SettingsRowView(label: "Buy me a cofee", linkLabel: "Link", linkDestination:"https://www.buymeacoffee.com/richiesimonik")
                         SettingsRowView(label: "Compatibility", description: "iOS 16")
                         SettingsRowView(label: "Twitter", linkLabel: "@risasimonik", linkDestination: "twitter.com/risasimonik")
                         SettingsRowView(label: "SwiftUI", description: "6.0")
-                        SettingsRowView(label: "Version",description: "0.9")
+                        SettingsRowView(label: "Version",description: "1.0")
                     }, label: {
                         SettingsLabelView(label: "Application", image: "apps.iphone")
                     })

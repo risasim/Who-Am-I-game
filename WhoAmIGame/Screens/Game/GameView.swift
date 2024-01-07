@@ -13,6 +13,7 @@ struct GameView: View {
    // @State var isActive = false
     @State var banswers: AnswerPack = AnswerPack()
     @State var isPresented: Bool = false
+    @State var change: Bool = false
 
     private let rotationChangePublisher = NotificationCenter.default
         .publisher(for: UIDevice.orientationDidChangeNotification)
@@ -21,7 +22,12 @@ struct GameView: View {
     
     var body: some View {
         VStack{
-            !model.landscape ? AnyView(TurnOverPhoneView()) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
+      //      !model.landscape ? AnyView(TurnOverPhoneView()) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
+            if !model.landscape{
+                TurnOverPhoneView()
+            }else{
+                StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers)
+            }
        
         }
         //isPresented binded to StartedGameView to wait for str Game end
@@ -42,8 +48,11 @@ struct GameView: View {
         .onReceive(rotationChangePublisher) { _ in
             model.checkOrientation()
         }
+        .onChange(of: model.landscape, perform: { newValue in
+            change.toggle()
+        })
         .toolbar(.hidden, for: .tabBar)
-        .navigationBarBackButtonHidden(!(model.question == changePosString))
+        .navigationBarBackButtonHidden(!(model.question == "game.TurnOver"))
     }
 }
 

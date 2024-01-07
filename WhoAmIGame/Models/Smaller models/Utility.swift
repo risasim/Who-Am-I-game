@@ -35,17 +35,4 @@ var gridLayout:[GridItem] {
 //used in init QuestionPack for to differentiate the new and already created pack -> AddModel
 let specString = "6jbw81euPQMuckOJZSekflU5j"
 
-let noFavString = """
-Ups look like you have no favourites.
-You can make pack favourite by long pressing on the icon.
-"""
-
-let changePosString = "Please turn over your phone to start the game"
-
-let gameDescription = "Who am I? app was inspired by Heads up! game. It was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis."
-
-let pleaseEnterUsername = """
-Please enter username.
-Username will be used for publishing your own packs
-"""
 

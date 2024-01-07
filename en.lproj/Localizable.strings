@@ -5,3 +5,33 @@
   Created by Richard on 06.01.2024.
   
 */
+
+//Utilities
+"searchBarSearchPack"="Search pack...";
+"emptyPackText"="
+            Oops\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0saved\U00A0packs... \n Create your own or download one.
+            ";
+"enterUsername"="Enter here";
+"submitUsername"="Submit username";
+"pleaseEnterUsername"="
+Please\U00A0enter\U00A0username. \nUsername will be used for publishing your own packs
+";
+
+//Packs
+"pack.makeFavourite" = "Make favourite";
+"pack.makeUnFavorite"="Make unfavourite";
+"pack.editPack" = "Edit pack";
+"pack.deletePack" = "Delete pack";
+"pack.noFavPacks"="
+Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can make pack favourite by long pressing on the icon.
+";
+"pack.warninngSame"="Cannot have items with same name";
+"pack.noImage"="Image not selected";
+"pack.noName"="Name not entered";
+"pack.notEnoughQ"="Not enough question in pack";
+
+//Game
+"game.TurnOver"="Please turn over your phone to start the game";
+"game.Description"="Who am I? app was inspired by Heads up! game. It was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis.";
+
+

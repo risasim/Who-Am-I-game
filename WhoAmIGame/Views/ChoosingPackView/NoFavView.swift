@@ -10,7 +10,7 @@ import SwiftUI
 struct NoFavView: View {
     var body: some View {
         VStack {
-            Text(noFavString)
+            Text("pack.noFavPacks")
                 .multilineTextAlignment(.center)
                 .font(.title3)
                 .fontWeight(.semibold)

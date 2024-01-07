@@ -19,7 +19,7 @@ struct TurnOverPhoneView: View {
                     .resizable()
                     .scaledToFit()
             }
-            Text(changePosString)
+            Text("game.TurnOver")
                 .font(.title)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)

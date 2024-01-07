@@ -14,7 +14,7 @@ import UIKit
 final class GameModel: ObservableObject{
     @AppStorage("gameTime") var countTime: Int = 30
     
-    @Published var question = changePosString
+    @Published var question = "game.TurnOver"
     @Published var time:Int = 0
     @Published var color: Color = .accentColor
     @Published var landscape = false
@@ -46,7 +46,7 @@ final class GameModel: ObservableObject{
     }
     
     func checkOrientation(){
-        print("was called with \(landscape)")
+        print("was called with \(landscape) and orientation is \(UIDevice.current.orientation.isLandscape)")
         if UIDevice.current.orientation.isLandscape && !landscape{
             print("landscape set")
             landscape =  true

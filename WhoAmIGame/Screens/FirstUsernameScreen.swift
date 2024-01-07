@@ -12,10 +12,10 @@ struct FirstUsernameScreen: View {
     @AppStorage ("username") var username: String = ""
     var body: some View {
         VStack(alignment: .center){
-            Text(pleaseEnterUsername)
+            Text("pleaseEnterUsername")
                 .font(.title3)
                 .fontWeight(.semibold)
-            TextField("Enter here", text: $username)
+            TextField("enterUsername", text: $username)
                 .padding(.all, 6)
                 .background(
                     Color(.gray).opacity(0.1)
@@ -33,7 +33,7 @@ struct FirstUsernameScreen: View {
                     isFirstTime = false
                 }
             } label: {
-                Text("Submit username")
+                Text("submitUsername")
                     .foregroundColor(.white)
             }
             .padding(.all, 10)

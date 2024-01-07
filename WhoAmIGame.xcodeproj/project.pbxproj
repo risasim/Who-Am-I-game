@@ -22,6 +22,7 @@
 		797882F729462131006E3E74 /* TurnOverPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F629462131006E3E74 /* TurnOverPhoneView.swift */; };
 		797882F92946216E006E3E74 /* StartedGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F82946216E006E3E74 /* StartedGameView.swift */; };
 		797E9606298192F1009120B1 /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9605298192F1009120B1 /* HelloWorldView.swift */; };
+		7999B8F22B49BE89003BA1D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7999B8F42B49BE89003BA1D2 /* Localizable.strings */; };
 		79A36E8A293FB5CE000308D3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A36E89293FB5CE000308D3 /* SettingsView.swift */; };
 		79A36E8C293FB787000308D3 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A36E8B293FB787000308D3 /* SettingsLabelView.swift */; };
 		79A36E8E293FB8B4000308D3 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A36E8D293FB8B4000308D3 /* SettingsRowView.swift */; };
@@ -62,6 +63,8 @@
 		797882F629462131006E3E74 /* TurnOverPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOverPhoneView.swift; sourceTree = "<group>"; };
 		797882F82946216E006E3E74 /* StartedGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedGameView.swift; sourceTree = "<group>"; };
 		797E9605298192F1009120B1 /* HelloWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldView.swift; sourceTree = "<group>"; };
+		7999B8F32B49BE89003BA1D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7999B8F52B49BE8E003BA1D2 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		79A36E89293FB5CE000308D3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		79A36E8B293FB787000308D3 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 		79A36E8D293FB8B4000308D3 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		79E37965293CD8CD0080C98F = {
 			isa = PBXGroup;
 			children = (
+				7999B8F42B49BE89003BA1D2 /* Localizable.strings */,
 				79E37970293CD8CD0080C98F /* WhoAmIGame */,
 				79E3796F293CD8CD0080C98F /* Products */,
 			);
@@ -281,6 +285,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 79E37965293CD8CD0080C98F;
 			packageReferences = (
@@ -301,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E37979293CD8CF0080C98F /* Preview Assets.xcassets in Resources */,
+				7999B8F22B49BE89003BA1D2 /* Localizable.strings in Resources */,
 				79E37976293CD8CF0080C98F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +354,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7999B8F42B49BE89003BA1D2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7999B8F32B49BE89003BA1D2 /* en */,
+				7999B8F52B49BE8E003BA1D2 /* cs */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		79E3797A293CD8CF0080C98F /* Debug */ = {
@@ -480,6 +498,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchingView;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -510,6 +529,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchingView;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

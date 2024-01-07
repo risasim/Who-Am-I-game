@@ -11,10 +11,7 @@ struct EmptyPacksView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("""
-            Oops look like you have no saved packs...
-            Create your own or download one.
-            """)
+            Text("emptyPackText")
             .multilineTextAlignment(.center)
             .font(.title3)
             .fontWeight(.semibold)

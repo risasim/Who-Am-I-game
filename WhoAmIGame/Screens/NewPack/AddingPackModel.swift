@@ -23,7 +23,7 @@ final class EditAddModel: ObservableObject{
     var realmie : RealmGuess
     
     //Constants
-    private let warningText = "Cannot have items with same name"
+    private let warningText = "pack.warninngSame"
     private let userDefaults = UserDefaults.standard
     private var customPack = false
     
@@ -45,9 +45,9 @@ final class EditAddModel: ObservableObject{
     }
     
     enum Alerts: String{
-        case Image = "Image not selected"
-        case Name = "Name not entered"
-        case NotEnoughNames = "Not enough question in pack"
+        case Image = "pack.noImage"
+        case Name = "pack.noName"
+        case NotEnoughNames = "pack.notEnoughQ"
         
         func getDesc() -> String{
             switch self{

@@ -56,7 +56,6 @@ struct ChoosingPackView: View {
                     Text("Who Am I ?")
                         .font(.system(size: 27, weight: .bold, design: .rounded))
                 }
-                
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
                         favourites.toggle()
@@ -72,7 +71,9 @@ struct ChoosingPackView: View {
         .onTapGesture(count: 2, perform: {
                 self.hideKeyboard()
         })
-        
+        .onAppear(perform: {
+            AppDelegate.orientationLock = .all
+        })
     }
 }
 

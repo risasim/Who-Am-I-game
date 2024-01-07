@@ -17,7 +17,7 @@ struct SearchBarView: View {
             HStack{
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color(UIColor.secondaryLabel))
-                TextField("Search pack...", text: $searchText)
+                TextField("searchBarSearchPack", text: $searchText)
                     .foregroundColor(.accentColor)
                     .overlay(
                         Button(action: {

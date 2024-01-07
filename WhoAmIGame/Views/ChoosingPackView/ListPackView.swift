@@ -47,7 +47,7 @@ struct ListPackView: View {
                 NoFavView()
             }
         })
-        .searchable(text: $search,placement: .navigationBarDrawer, prompt: "Search pack...")
+        .searchable(text: $search,placement: .navigationBarDrawer, prompt: "searchBarSearchPack")
         .onAppear {
             filterResults()
         }

@@ -18,7 +18,7 @@ struct ImageGridView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
-            LazyHStack{
+            HStack{
                 Section {
                     ForEach(images, id: \.self) { image in
                         ZStack {

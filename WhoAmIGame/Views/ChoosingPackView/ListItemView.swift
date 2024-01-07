@@ -65,23 +65,23 @@ struct ListItemView: View {
                 changed.toggle()
             } label: {
                 if pack.isFavourite{
-                    Label("Make unfavourite", systemImage: "heart.slash")
+                    Label("pack.makeUnFavorite", systemImage: "heart.slash")
                 }else{
-                    Label("Make favourite", systemImage: "heart.fill")
+                    Label("pack.makeFavourite", systemImage: "heart.fill")
                 }
             }
 
             Button {
                 editPack.toggle()
             } label: {
-                Label("Edit pack", systemImage: "pencil")
+                Label("pack.editPack", systemImage: "pencil")
             }
             
             Button(role: .destructive) {
                 realmie.deletePack(id: pack.id)
                 changed.toggle()
             } label: {
-                Label("Delete pack", systemImage: "minus.circle")
+                Label("pack.deletePack", systemImage: "minus.circle")
             }
         }
         .defersSystemGestures(on: .bottom)
