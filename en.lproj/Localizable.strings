@@ -17,6 +17,20 @@
 Please\U00A0enter\U00A0username. \nUsername will be used for publishing your own packs
 ";
 
+//Settings
+"set.Username"="Username screen";
+"set.AddPacks"="Add packs";
+"set.showLinks"="Show links in results";
+"set.linkLang"="Link language";
+"set.gameDur"="Game duration";
+"set.username"="Username";
+"set.dev"="Developer";
+"set.compat"="Compatibility";
+"set.Ver"="Version";
+"set.app"="Application";
+"set.set"="Settings";
+""="";
+
 //Packs
 "pack.makeFavourite" = "Make favourite";
 "pack.makeUnFavorite"="Make unfavourite";
@@ -32,6 +46,16 @@ Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can ma
 
 //Game
 "game.TurnOver"="Please turn over your phone to start the game";
-"game.Description"="Who am I? app was inspired by Heads up! game. It was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis.";
+"game.Description"="Who am I? app was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis.";
+"game.end"="End of the Game";
+"game.score"="Your score was %lld from ";
+"game.playagain"="Play again";
+"game.res"="Results";
+"game.menu"="Menu";
+"game.ups"="Ups it looks like you got stuck on the first question. Better luck next time.";
+
+//Tabs
+"tab.Packs"="Packs";
+"tab.library"="Online library of packs";
 
 

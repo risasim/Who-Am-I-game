@@ -5,3 +5,55 @@
   Created by Richard on 06.01.2024.
   
 */
+
+//Utilities
+"searchBarSearchPack"="Search pack...";
+"emptyPackText"="
+            UUps\U00A0asi\U00A0nemáte\U00A0uložené\U00A0žádné\U00A0balíčky... \n Vytvořte si nový vlastní nebo si jeden stáhněte.
+            ";
+"enterUsername"="Zadejte sem";
+"submitUsername"="Zadat jméno";
+"pleaseEnterUsername"="
+Prosím\U00A0zadejte\U00A0jméno. \nUživatelské jméno bude použito pro sdílení balíčků.
+";
+
+//Settings
+"set.Username"="Výběr jména";
+"set.AddPacks"="Přidat balíček";
+"set.showLinks"="Ukazovat odkazů u výsledků";
+"set.linkLang"="Jazyk odkazů";
+"set.gameDur"="Délka hry";
+"set.username"="Uživatelské jméno";
+"set.dev"="Vývojář";
+"set.compat"="Kompabilita";
+"set.Ver"="Verze";
+"set.app"="Aplikace";
+"set.set"="Nastavení";
+""="";
+
+//Packs
+"pack.makeFavourite" = "Přidat oblíbený";
+"pack.makeUnFavorite"="Odstranit oblíbený";
+"pack.editPack" = "Upravit";
+"pack.deletePack" = "Smazat";
+"pack.noFavPacks"="
+Ups\U00A0vypadá\U00A0to\U00A0že\U00A0nemáte\U00A0žádné\U00A0oblíbence. \nMůže si sem přidat balíček,když na něho zmáčknete.
+";
+"pack.warninngSame"="Nelze mít dva pojmy se stejným jménem";
+"pack.noImage"="Obrázek nevybrán";
+"pack.noName"="Jméno nenapsáno";
+"pack.notEnoughQ"="Není dostatek pojmů";
+
+//Game
+"game.TurnOver"="Pro spuštění hry otočte telefon";
+"game.Description"="Aplikace Who am I? byla vytvořena jako příklad tvorby aplikací s využitím Swiftu a SwiftUI pro závěrečnou maturitní práci.";
+"game.end"="Konec hry";
+"game.score"="Your score was %lld from ";
+"game.playagain"="Hrát znovu";
+"game.res"="Výsledky";
+"game.menu"="Menu";
+"game.ups"="Zdá se, že jste se zasekli u první otázky. Příště se vám bude dařit lépe.";
+
+//Tabs
+"tab.Packs"="Balíčky";
+"tab.library"="Knihovna balíčků";

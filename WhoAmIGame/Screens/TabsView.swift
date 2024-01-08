@@ -14,9 +14,9 @@ struct TabsView: View {
                 ChoosingPackView()
                 //.environmentObject(router)
                     .tabItem{
-                        Label("Packs", systemImage: "square.stack.3d.down.right")
+                        Label("tab.Packs", systemImage: "square.stack.3d.down.right")
                     }
-                Text("Online library of packs")
+                Text("tab.library")
                     .tabItem {
                         Label("Library", systemImage: "magnifyingglass")
                     }

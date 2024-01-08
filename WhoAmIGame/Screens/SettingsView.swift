@@ -40,35 +40,35 @@ struct SettingsView: View {
                     GroupBox {
                         Divider().padding(.vertical, 4)
                         //Can delete
-                        Toggle("Username screen", isOn: $isFirstTime)
+                        Toggle("set.Username", isOn: $isFirstTime)
                             .foregroundColor(.gray)
                         Divider().padding(.vertical, 4)
                         #if DEBUG
                         Button {
                             StartingDatabase()
                         } label: {
-                            Text("Add packs")
+                            Text("set.AddPacks")
                         }
                         #endif
                         Divider().padding(.vertical, 4)
-                        Toggle("Show links in results", isOn: $link)
+                        Toggle("set.showLinks", isOn: $link)
                             .foregroundColor(.gray)
                         Divider().padding(.vertical, 4)
                         HStack{
-                            Text("Link language")
+                            Text("set.linkLang")
                                 .foregroundColor(.gray)
                             Spacer()
-                            Picker("Link language", selection: $selectedLanguage) {
+                            Picker("set.linkLang", selection: $selectedLanguage) {
                                 ForEach(languages, id: \.self) { lang in
                                     Text(lang.uppercased())
                                         .tag(lang)
                                 }
                             }
                         }
-                        SettingsRowView(label: "Username", description: username)
+                        SettingsRowView(label: "set.username", description: username)
                         VStack{
                             Divider().padding(.vertical, 4)
-                            Text("Game duration")
+                            Text("set.gameDur")
                                 .foregroundColor(.gray)
                             Picker("", selection: $timeSelect) {
                                         ForEach(times, id: \.self) { time in
@@ -79,22 +79,22 @@ struct SettingsView: View {
                             
                         }
                     } label: {
-                        SettingsLabelView(label: "Settings", image: "gear")
+                        SettingsLabelView(label: "set.set", image: "gear")
                     }
 // MARK: - Application info
                     GroupBox(content: {
-                        SettingsRowView(label: "Developer", description: "Richie")
+                        SettingsRowView(label: "set.dev", description: "Richie")
                         SettingsRowView(label: "Buy me a cofee", linkLabel: "Link", linkDestination:"https://www.buymeacoffee.com/richiesimonik")
-                        SettingsRowView(label: "Compatibility", description: "iOS 16")
-                        SettingsRowView(label: "Twitter", linkLabel: "@risasimonik", linkDestination: "twitter.com/risasimonik")
+                        SettingsRowView(label: "set.compat", description: "iOS 16")
+                        SettingsRowView(label: "X", linkLabel: "@risasimonik", linkDestination: "twitter.com/risasimonik")
                         SettingsRowView(label: "SwiftUI", description: "6.0")
-                        SettingsRowView(label: "Version",description: "1.0")
+                        SettingsRowView(label: "set.Ver",description: "1.0")
                     }, label: {
-                        SettingsLabelView(label: "Application", image: "apps.iphone")
+                        SettingsLabelView(label: "set.app", image: "apps.iphone")
                     })
                 }
             }
-            .navigationTitle("Settings")
+            .navigationTitle("set.set")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button {

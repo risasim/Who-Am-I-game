@@ -69,14 +69,14 @@ final class EditAddModel: ObservableObject{
                     savePack()
                     return true
                 }else{
-                    alert = Alert(title: Text(Alerts.NotEnoughNames.rawValue), message: Text(Alerts.NotEnoughNames.getDesc()))
+                    alert = Alert(title: Text(LocalizedStringKey(Alerts.NotEnoughNames.rawValue)), message: Text(Alerts.NotEnoughNames.getDesc()))
                 }
             }else{
-                alert = Alert(title: Text(Alerts.Name.rawValue), message: Text(Alerts.Name.getDesc()))
+                alert = Alert(title: Text(LocalizedStringKey(Alerts.Name.rawValue)), message: Text(Alerts.Name.getDesc()))
             }
         }else{
             //probably delete
-            alert = Alert(title: Text(Alerts.Image.rawValue), message: Text(Alerts.Image.getDesc()))
+            alert = Alert(title: Text(LocalizedStringKey(Alerts.Image.rawValue)), message: Text(Alerts.Image.getDesc()))
         }
         alertBool = true
         return false

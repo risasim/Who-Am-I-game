@@ -33,7 +33,7 @@ struct ResultsView: View {
                 .scrollContentBackground(.hidden)
             }else{
                 Spacer()
-                Text("Ups it looks like you got stuck on the first question. Better luck next time.")
+                Text("game.ups")
                     .font(.title2)
                     .fontWeight(.semibold)
                 Spacer()
@@ -41,7 +41,7 @@ struct ResultsView: View {
             Button {
                 dismiss()
             } label: {
-                Text("Play again")
+                Text("game.playagain")
             }
                 .fontWeight(.bold)
                 .font(.title2)
@@ -54,7 +54,7 @@ struct ResultsView: View {
         }
         .multilineTextAlignment(.center)
         .navigationBarBackButtonHidden()
-        .navigationTitle("Results")
+        .navigationTitle("game.res")
         .onAppear(perform: {
             AppDelegate.orientationLock = .all
         })
@@ -65,7 +65,7 @@ struct ResultsView: View {
                 } label: {
                     HStack{
                         Image(systemName: "chevron.left")
-                        Text("Menu")
+                        Text("game.menu")
                     }
                     .font(.headline)
                     .foregroundColor(.blue)

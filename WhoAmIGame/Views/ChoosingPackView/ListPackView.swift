@@ -38,9 +38,9 @@ struct ListPackView: View {
                 .padding()
             }
             .scrollIndicators(.hidden)
-            .refreshable {
-                change.toggle()
-            }
+           // .refreshable {
+           //     change.toggle()
+           // }
         }
         .overlay(content: {
             if noFavourites{
