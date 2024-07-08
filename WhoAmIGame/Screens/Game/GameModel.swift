@@ -5,135 +5,132 @@
 //  Created by Richard on 04.12.2022.
 //
 
-import Foundation
-import CoreMotion
 import SwiftUI
-import UIKit
+import CoreMotion
 
-
-final class GameModel: ObservableObject{
-    @AppStorage("gameTime") var countTime: Int = 30
-    
+final class GameModel: ObservableObject {
+    // MARK: - Published properties
+    @AppStorage("gameTime") private(set) var countTime: Int = 30
     @Published var question = "game.TurnOver"
-    @Published var time:Int = 0
+    @Published var time: Int = 0
     @Published var color: Color = .accentColor
     @Published var landscape = false
     
-    //Pack operations
-    private var readyPack : [String]
+    // MARK: - Private properties
+    private var readyPack: [String]
     private var index = 0
-    
-    //Models
     private let motionManager = CMMotionManager()
     private let queue = OperationQueue()
     private let debouncer = Debouncer(timeInterval: 0.7)
-    private var timer: Timer!
+    private var timer: Timer?
     
-    //Orientation
-    private var orientation = UIDevice.current.orientation
-    private var pitch: Double = 0
-    private var roll: Double = 0
-    private var yaw : Double = 0
-    
-    
-    //Final
-    var answers: AnswerPack = AnswerPack()
-    
-    
-    init(pack: QuestionPack){
-        self.readyPack = pack.questions.shuffled()
-        self.landscape = false
+    // MARK: - Constants
+    private enum MotionThresholds {
+        static let pitchRange = -0.5...0.7
+        static let rollCorrectRange = 2.20...2.35
+        static let rollIncorrectRange = 0.7...0.85
     }
     
-    func checkOrientation(){
-        print("was called with \(landscape) and orientation is \(UIDevice.current.orientation.isLandscape)")
-        if UIDevice.current.orientation.isLandscape && !landscape{
-            print("landscape set")
-            landscape =  true
-            UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
-            AppDelegate.orientationLock = .landscape
-            startGame()
-        }
+    // MARK: - Public properties
+    var answers = AnswerPack()
+    
+    // MARK: - Initialization
+    init(pack: QuestionPack) {
+        self.readyPack = pack.questions.shuffled()
+    }
+    
+    // MARK: - Public methods
+    func checkOrientation() {
+        let isLandscape = UIDevice.current.orientation.isLandscape
+        print("Checking orientation: current = \(landscape), device = \(isLandscape)")
+        
+        guard isLandscape && !landscape else { return }
+        
+        print("Setting to landscape")
+        landscape = true
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+        AppDelegate.orientationLock = .landscape
+        startGame()
     }
 
-    func startGame(){
-        self.readyPack = self.readyPack.shuffled()
-        self.motionManager.startDeviceMotionUpdates(to: self.queue) { (data: CMDeviceMotion?, error: Error?) in
-            guard let data = data else {
-                print("Error: \(error!)")
-                return
-            }
-            
-            let attitude: CMAttitude = data.attitude
-            DispatchQueue.main.async {
-                self.pitch = attitude.pitch
-                self.yaw = attitude.yaw
-                self.roll = attitude.roll
-                
-                self.waitingForMotion(self.pitch, self.yaw, self.roll)
-            }
-        }
+    func startGame() {
+        readyPack.shuffle()
+        setupMotionUpdates()
         getQuestion()
         startTimer()
     }
     
-    func waitingForMotion(_ pitch: Double, _ yaw:  Double, _ attitude: Double){
-        if (-0.5 ... 0.7 ~= pitch){
-            if 2.20...2.35 ~= roll || -2.35 ... -2.20 ~= roll{
-                self.color = .green
-                debouncer.renewInterval()
-                debouncer.handler = {
-                    //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
-                    self.rightAnswer()
-                }
-            }else if 0.7...0.85 ~= roll || -0.85 ... -0.7 ~= roll{
-                self.color = .red
-                debouncer.renewInterval()
-                debouncer.handler = {
-                    //RESOLVE TO CHANGE IMMEDEIATELY AFTER SWING????
-                    self.wrongAnswer()
-                }
+    // MARK: - Private methods
+    private func setupMotionUpdates() {
+        motionManager.startDeviceMotionUpdates(to: queue) { [weak self] data, error in
+            guard let self = self, let data = data else {
+                print("Motion update error: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.processMotionData(data.attitude)
             }
         }
     }
     
-    func startTimer(){
-        time = countTime
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.refreshValue), userInfo: nil, repeats: true)
-    }
-    @objc func refreshValue(){
-        time -= 1
-        if  time <= 0{
-            self.timer.invalidate()
-            endGame()
+    private func processMotionData(_ attitude: CMAttitude) {
+        guard MotionThresholds.pitchRange.contains(attitude.pitch) else { return }
+        
+        if MotionThresholds.rollCorrectRange.contains(attitude.roll) || MotionThresholds.rollCorrectRange.contains(-attitude.roll) {
+            handleAnswer(correct: true)
+        } else if MotionThresholds.rollIncorrectRange.contains(attitude.roll) || MotionThresholds.rollIncorrectRange.contains(-attitude.roll) {
+            handleAnswer(correct: false)
         }
     }
     
-    func getQuestion(){
-        if index < readyPack.count{
-            question = readyPack[index]
-            self.color = .accentColor
-        }else{
-            endGame()
+    private func handleAnswer(correct: Bool) {
+        color = correct ? .green : .red
+        debouncer.renewInterval()
+        debouncer.handler = { [weak self] in
+            guard let self = self else { return }
+            correct ? self.rightAnswer() : self.wrongAnswer()
         }
     }
-    func rightAnswer(){
+    
+    private func startTimer() {
+        time = countTime
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            self.time -= 1
+            if self.time <= 0 {
+                self.timer?.invalidate()
+                self.endGame()
+            }
+        }
+    }
+    
+    private func getQuestion() {
+        guard index < readyPack.count else {
+            endGame()
+            return
+        }
+        
+        question = readyPack[index]
+        color = .accentColor
+    }
+    
+    private func rightAnswer() {
         index += 1
         answers.score += 1
         answers.answers.append(Answer(question: question, correct: true))
         getQuestion()
     }
     
-    func wrongAnswer(){
+    private func wrongAnswer() {
         index += 1
         answers.answers.append(Answer(question: question, correct: false))
         getQuestion()
     }
     
-    func endGame(){
-        self.question = "End of the Game"
-        self.motionManager.stopDeviceMotionUpdates()
-        self.index = 0
+    func endGame() {
+        question = "End of the Game"
+        motionManager.stopDeviceMotionUpdates()
+        index = 0
     }
-    
 }

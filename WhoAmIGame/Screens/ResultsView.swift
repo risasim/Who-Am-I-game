@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultsView: View {
     
     @Binding var ans: AnswerPack
+    @ObservedObject var gameModel:GameModel
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var navi: Navigator
     
@@ -39,6 +40,7 @@ struct ResultsView: View {
                 Spacer()
             }
             Button {
+                gameModel.checkOrientation()
                 dismiss()
             } label: {
                 Text("game.playagain")
@@ -79,7 +81,7 @@ struct ResultsView: View {
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            ResultsView(ans: .constant(AnswerPack(score: 1, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)]))//, active: .constant(true)
+            ResultsView(ans: .constant(AnswerPack(score: 1, answers: [Answer(question: "JFK", correct: true), Answer(question: "Richard Nixon", correct: false)])), gameModel: GameModel(pack: QuestionPack())//, active: .constant(true)
             )
         }
     }
