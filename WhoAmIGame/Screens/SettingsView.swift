@@ -40,16 +40,16 @@ struct SettingsView: View {
                     GroupBox {
                         Divider().padding(.vertical, 4)
                         //Can delete
+                    #if DEBUG
                         Toggle("set.Username", isOn: $isFirstTime)
                             .foregroundColor(.gray)
                         Divider().padding(.vertical, 4)
-                        #if DEBUG
                         Button {
                             StartingDatabase()
                         } label: {
                             Text("set.AddPacks")
                         }
-                        #endif
+                    #endif
                         Divider().padding(.vertical, 4)
                         Toggle("set.showLinks", isOn: $link)
                             .foregroundColor(.gray)

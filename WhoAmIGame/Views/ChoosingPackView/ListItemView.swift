@@ -40,9 +40,15 @@ struct ListItemView: View {
                 .mask(LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0)]), startPoint: .top, endPoint: .bottom))
             VStack{
                 HStack{
-                    Image(systemName: pack.isFavourite ? "heart.fill" : "heart")
-                        .font(.system(size: 25))
-                        .foregroundColor(pack.isFavourite ? .red : .white)
+                    Button {
+                        realmie.manageFavourite(id: pack.id)
+                        changed.toggle()
+                    } label: {
+                        Image(systemName: pack.isFavourite ? "heart.fill" : "heart")
+                            .font(.system(size: 25))
+                            .foregroundColor(pack.isFavourite ? .red : .white)
+                    }
+
                     Spacer()
                 }
                 Spacer()
