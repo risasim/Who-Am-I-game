@@ -41,6 +41,7 @@ final class GameModel: ObservableObject {
     
     // MARK: - Public methods
     func checkOrientation() {
+        resetGame()
         let isLandscape = UIDevice.current.orientation.isLandscape
         print("Checking orientation: current = \(landscape), device = \(isLandscape)")
         
@@ -132,5 +133,13 @@ final class GameModel: ObservableObject {
         question = "End of the Game"
         motionManager.stopDeviceMotionUpdates()
         index = 0
+    }
+    func resetGame() {
+        landscape = false
+        time = 0
+        index = 0
+        question = "game.TurnOver"
+        color = .accentColor
+        answers = AnswerPack()
     }
 }
