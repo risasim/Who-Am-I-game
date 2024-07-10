@@ -32,7 +32,7 @@ struct GameView: View {
         }
         //isPresented binded to StartedGameView to wait for str Game end
         .navigationDestination(isPresented: self.$isPresented, destination: {
-            ResultsView(ans: $banswers// active: $navi.isAcitve
+            ResultsView(ans: $banswers, gameModel: model// active: $navi.isAcitve
             )
         })
         .onDisappear{
