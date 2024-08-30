@@ -7,55 +7,55 @@
 */
 
 //Utilities
-"searchBarSearchPack"="Search pack...";
+"searchBarSearchPack"="搜尋包...";
 "emptyPackText"="
-            Oops\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0saved\U00A0packs... \n Create your own or download one.
+            哎呀\U00A0看起來\U00A0你\U00A0沒有\U00A0保存\U00A0任何\U00A0包... \n 創建你自己的包或下載一個。
             ";
-"enterUsername"="Enter here";
-"submitUsername"="Submit username";
+"enterUsername"="在此輸入";
+"submitUsername"="提交用戶名";
 "pleaseEnterUsername"="
-Please\U00A0enter\U00A0username. \nUsername will be used for publishing your own packs
+請\U00A0輸入\U00A0用戶名。 \n用戶名將用於發布你自己的包。
 ";
 
 //Settings
-"set.Username"="Username screen";
-"set.AddPacks"="Add packs";
-"set.showLinks"="Show links in results";
-"set.linkLang"="Link language";
-"set.gameDur"="Game duration";
-"set.username"="Username";
-"set.dev"="Developer";
-"set.compat"="Compatibility";
-"set.Ver"="Version";
-"set.app"="Application";
-"set.set"="Settings";
+"set.Username"="用戶名畫面";
+"set.AddPacks"="添加包";
+"set.showLinks"="在結果中顯示連結";
+"set.linkLang"="連結語言";
+"set.gameDur"="遊戲時長";
+"set.username"="用戶名";
+"set.dev"="開發者";
+"set.compat"="相容性";
+"set.Ver"="版本";
+"set.app"="應用程式";
+"set.set"="設置";
 ""="";
 
 //Packs
-"pack.makeFavourite" = "Make favourite";
-"pack.makeUnFavorite"="Make unfavourite";
-"pack.editPack" = "Edit pack";
-"pack.deletePack" = "Delete pack";
+"pack.makeFavourite" = "設為收藏";
+"pack.makeUnFavorite"="取消收藏";
+"pack.editPack" = "編輯包";
+"pack.deletePack" = "刪除包";
 "pack.noFavPacks"="
-Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can make pack favourite by long pressing on the icon.
+哎呀\U00A0看起來\U00A0你\U00A0沒有\U00A0收藏。 \n你可以通過長按圖示將包設為收藏。
 ";
-"pack.warninngSame"="Cannot have items with same name";
-"pack.noImage"="Image not selected";
-"pack.noName"="Name not entered";
-"pack.notEnoughQ"="Not enough question in pack";
+"pack.warninngSame"="不能有同名的項目";
+"pack.noImage"="未選擇圖片";
+"pack.noName"="未輸入名稱";
+"pack.notEnoughQ"="包中的問題不足";
 
 //Game
-"game.TurnOver"="Please turn over your phone to start the game";
-"game.Description"="Who am I? app was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis.";
-"game.end"="End of the Game";
-"game.score"="Your score was %lld from ";
-"game.playagain"="Play again";
-"game.res"="Results";
-"game.menu"="Menu";
-"game.ups"="Ups it looks like you got stuck on the first question. Better luck next time.";
+"game.TurnOver"="請翻轉手機開始遊戲";
+"game.Description"="“我是誰？”應用程式是作為使用Swift和SwiftUI構建應用程式的示範而開發的，用於最終畢業論文。";
+"game.end"="遊戲結束";
+"game.score"="你的得分是 %lld，滿分為 ";
+"game.playagain"="再玩一次";
+"game.res"="結果";
+"game.menu"="菜單";
+"game.ups"="哎呀，看起來你在第一個問題上卡住了。下次好運。";
 
 //Tabs
-"tab.Packs"="Packs";
-"tab.library"="Online library of packs";
+"tab.Packs"="包";
+"tab.library"="在線包庫";
 
 

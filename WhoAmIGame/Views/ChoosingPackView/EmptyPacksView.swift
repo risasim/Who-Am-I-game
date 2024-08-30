@@ -26,5 +26,6 @@ struct EmptyPacksView: View {
 struct EmptyPacksView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyPacksView()
+            .environment(\.locale, .init(identifier: "es"))
     }
 }

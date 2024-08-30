@@ -7,55 +7,55 @@
 */
 
 //Utilities
-"searchBarSearchPack"="Search pack...";
+"searchBarSearchPack"="Paket suchen...";
 "emptyPackText"="
-            Oops\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0saved\U00A0packs... \n Create your own or download one.
+            Ups\U00A0es\U00A0scheint\U00A0so,\U00A0als\U00A0hättest\U00A0du\U00A0keine\U00A0gespeicherten\U00A0Pakete... \n Erstelle dein eigenes oder lade eines herunter.
             ";
-"enterUsername"="Enter here";
-"submitUsername"="Submit username";
+"enterUsername"="Hier eingeben";
+"submitUsername"="Benutzernamen übermitteln";
 "pleaseEnterUsername"="
-Please\U00A0enter\U00A0username. \nUsername will be used for publishing your own packs
+Bitte\U00A0Benutzernamen\U00A0eingeben. \nDer Benutzername wird verwendet, um eigene Pakete zu veröffentlichen.
 ";
 
 //Settings
-"set.Username"="Username screen";
-"set.AddPacks"="Add packs";
-"set.showLinks"="Show links in results";
-"set.linkLang"="Link language";
-"set.gameDur"="Game duration";
-"set.username"="Username";
-"set.dev"="Developer";
-"set.compat"="Compatibility";
+"set.Username"="Benutzernamen Bildschirm";
+"set.AddPacks"="Pakete hinzufügen";
+"set.showLinks"="Links in Ergebnissen anzeigen";
+"set.linkLang"="Link-Sprache";
+"set.gameDur"="Spieldauer";
+"set.username"="Benutzername";
+"set.dev"="Entwickler";
+"set.compat"="Kompatibilität";
 "set.Ver"="Version";
-"set.app"="Application";
-"set.set"="Settings";
+"set.app"="Anwendung";
+"set.set"="Einstellungen";
 ""="";
 
 //Packs
-"pack.makeFavourite" = "Make favourite";
-"pack.makeUnFavorite"="Make unfavourite";
-"pack.editPack" = "Edit pack";
-"pack.deletePack" = "Delete pack";
+"pack.makeFavourite" = "Als Favorit markieren";
+"pack.makeUnFavorite"="Als nicht-Favorit markieren";
+"pack.editPack" = "Paket bearbeiten";
+"pack.deletePack" = "Paket löschen";
 "pack.noFavPacks"="
-Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can make pack favourite by long pressing on the icon.
+Ups\U00A0es\U00A0scheint\U00A0so,\U00A0als\U00A0hättest\U00A0du\U00A0keine\U00A0Favoriten. \nDu kannst ein Paket als Favorit markieren, indem du lange auf das Symbol drückst.
 ";
-"pack.warninngSame"="Cannot have items with same name";
-"pack.noImage"="Image not selected";
-"pack.noName"="Name not entered";
-"pack.notEnoughQ"="Not enough question in pack";
+"pack.warninngSame"="Elemente dürfen nicht denselben Namen haben";
+"pack.noImage"="Kein Bild ausgewählt";
+"pack.noName"="Kein Name eingegeben";
+"pack.notEnoughQ"="Nicht genügend Fragen im Paket";
 
 //Game
-"game.TurnOver"="Please turn over your phone to start the game";
-"game.Description"="Who am I? app was developed as a example of building apps with Swift and SwiftUI for the Final Maturita Thesis.";
-"game.end"="End of the Game";
-"game.score"="Your score was %lld from ";
-"game.playagain"="Play again";
-"game.res"="Results";
-"game.menu"="Menu";
-"game.ups"="Ups it looks like you got stuck on the first question. Better luck next time.";
+"game.TurnOver"="Bitte drehe dein Telefon um, um das Spiel zu starten";
+"game.Description"="Die 'Wer bin ich?' App wurde als Beispiel für den Bau von Apps mit Swift und SwiftUI für die Abschlussarbeit entwickelt.";
+"game.end"="Ende des Spiels";
+"game.score"="Deine Punktzahl war %lld von ";
+"game.playagain"="Noch einmal spielen";
+"game.res"="Ergebnisse";
+"game.menu"="Menü";
+"game.ups"="Ups, es sieht so aus, als wärst du bei der ersten Frage steckengeblieben. Viel Glück beim nächsten Mal.";
 
 //Tabs
-"tab.Packs"="Packs";
-"tab.library"="Online library of packs";
+"tab.Packs"="Pakete";
+"tab.library"="Online-Bibliothek von Paketen";
 
 

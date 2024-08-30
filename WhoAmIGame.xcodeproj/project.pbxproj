@@ -69,6 +69,14 @@
 		79A36E8B293FB787000308D3 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 		79A36E8D293FB8B4000308D3 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		79AB49FD29705CC500ED2F66 /* StartingAppStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingAppStruct.swift; sourceTree = "<group>"; };
+		79CAD8CD2C81EF5900BA33D0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		79CAD8CE2C81EFB400BA33D0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		79CAD8CF2C81F08400BA33D0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		79CAD8D02C81F0BD00BA33D0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		79CAD8D12C81F0C700BA33D0 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		79CAD8D22C81F2C000BA33D0 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		79CAD8D32C81F35C00BA33D0 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		79CAD8D42C81F3C000BA33D0 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		79DE3F34295A130600559151 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		79E03F88296188A700DF5976 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		79E03F8A2961892900DF5976 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -286,6 +294,14 @@
 				en,
 				Base,
 				cs,
+				de,
+				es,
+				"zh-Hans",
+				"zh-Hant",
+				nl,
+				"pt-BR",
+				"pt-PT",
+				"es-419",
 			);
 			mainGroup = 79E37965293CD8CD0080C98F;
 			packageReferences = (
@@ -361,6 +377,14 @@
 			children = (
 				7999B8F32B49BE89003BA1D2 /* en */,
 				7999B8F52B49BE8E003BA1D2 /* cs */,
+				79CAD8CD2C81EF5900BA33D0 /* de */,
+				79CAD8CE2C81EFB400BA33D0 /* es */,
+				79CAD8CF2C81F08400BA33D0 /* zh-Hans */,
+				79CAD8D02C81F0BD00BA33D0 /* zh-Hant */,
+				79CAD8D12C81F0C700BA33D0 /* nl */,
+				79CAD8D22C81F2C000BA33D0 /* pt-BR */,
+				79CAD8D32C81F35C00BA33D0 /* pt-PT */,
+				79CAD8D42C81F3C000BA33D0 /* es-419 */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -508,7 +532,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.richie.WhoAmIGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -539,7 +563,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.richie.WhoAmIGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
