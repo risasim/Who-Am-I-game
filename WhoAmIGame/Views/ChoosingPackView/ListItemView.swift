@@ -28,15 +28,15 @@ struct ListItemView: View {
         ZStack{
             Image(pack.imageStr)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: width, height: width)
+                .aspectRatio(1, contentMode: .fit)
+               // .frame(width: width, height: width)
             RoundedRectangle(cornerRadius: 23)
                 .foregroundColor(.white)
             Blur(style: colorScheme == .dark ? .prominent : .dark)
             Image(pack.imageStr)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: width, height: width)
+                .aspectRatio(1, contentMode: .fit)
+               // .frame(width: width, height: width)
                 .mask(LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0)]), startPoint: .top, endPoint: .bottom))
             VStack{
                 HStack{
@@ -63,7 +63,7 @@ struct ListItemView: View {
             .foregroundColor(.white)
             .padding(20)
         }
-        .frame(width: width, height: width)
+       // .frame(width: width, height: width)
         .cornerRadius(23)
         .contextMenu {
             Button {
