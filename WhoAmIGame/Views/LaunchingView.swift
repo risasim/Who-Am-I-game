@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+///View that is supposed to show when the app is booting
+///
+///-Warning:
+///This view isnt used in the app
 struct LaunchingView: View {
     
     @State var animation = false

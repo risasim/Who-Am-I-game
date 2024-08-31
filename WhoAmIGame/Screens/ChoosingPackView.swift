@@ -62,6 +62,7 @@ struct ChoosingPackView: View {
                     } label: {
                         Image(systemName: "list.star")
                             .font(.title2)
+                            .foregroundStyle(favourites ? Color.blue : Color.primary)
                     }
                 }
             }

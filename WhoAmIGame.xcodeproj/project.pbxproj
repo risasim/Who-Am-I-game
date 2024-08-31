@@ -21,7 +21,6 @@
 		797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F4294515AE006E3E74 /* ImageGridView.swift */; };
 		797882F729462131006E3E74 /* TurnOverPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F629462131006E3E74 /* TurnOverPhoneView.swift */; };
 		797882F92946216E006E3E74 /* StartedGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797882F82946216E006E3E74 /* StartedGameView.swift */; };
-		797E9606298192F1009120B1 /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797E9605298192F1009120B1 /* HelloWorldView.swift */; };
 		7999B8F22B49BE89003BA1D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7999B8F42B49BE89003BA1D2 /* Localizable.strings */; };
 		79A36E8A293FB5CE000308D3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A36E89293FB5CE000308D3 /* SettingsView.swift */; };
 		79A36E8C293FB787000308D3 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A36E8B293FB787000308D3 /* SettingsLabelView.swift */; };
@@ -62,7 +61,6 @@
 		797882F4294515AE006E3E74 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		797882F629462131006E3E74 /* TurnOverPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnOverPhoneView.swift; sourceTree = "<group>"; };
 		797882F82946216E006E3E74 /* StartedGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedGameView.swift; sourceTree = "<group>"; };
-		797E9605298192F1009120B1 /* HelloWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldView.swift; sourceTree = "<group>"; };
 		7999B8F32B49BE89003BA1D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7999B8F52B49BE8E003BA1D2 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		79A36E89293FB5CE000308D3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				797882FB29462198006E3E74 /* ChoosingPackView */,
 				797882FC294621A6006E3E74 /* SettingsView */,
 				797882F4294515AE006E3E74 /* ImageGridView.swift */,
-				797E9605298192F1009120B1 /* HelloWorldView.swift */,
 				797882FD294621B5006E3E74 /* GameView */,
 				7903292529A15C8400DBB5FF /* LaunchingView.swift */,
 			);
@@ -362,7 +359,6 @@
 				79E3798B293CE7AE0080C98F /* RealmGuess.swift in Sources */,
 				79A36E8C293FB787000308D3 /* SettingsLabelView.swift in Sources */,
 				794CD15D297D30A60002C143 /* SearchBarView.swift in Sources */,
-				797E9606298192F1009120B1 /* HelloWorldView.swift in Sources */,
 				797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */,
 				79E3798F293CE7FF0080C98F /* GameModel.swift in Sources */,
 				792F31352942359F00367FB9 /* Utility.swift in Sources */,

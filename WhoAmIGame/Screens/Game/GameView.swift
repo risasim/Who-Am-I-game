@@ -23,8 +23,11 @@ struct GameView: View {
     var body: some View {
         VStack{
       //      !model.landscape ? AnyView(TurnOverPhoneView()) : AnyView(StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers))
-            if !model.landscape{
+            if !model.gameStarted && !model.landscape{
                 TurnOverPhoneView()
+                    .onAppear(perform: {
+                        print("started = \(model.gameStarted) , landscape = \(model.landscape), overall \(!model.landscape && !model.gameStarted)")
+                    })
             }else{
                 StartedGameView(text: $model.question, time: $model.time, color: $model.color, active: self.$isPresented, ans: $banswers, rans: $model.answers)
             }

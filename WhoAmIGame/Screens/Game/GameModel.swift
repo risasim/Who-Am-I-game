@@ -15,6 +15,7 @@ final class GameModel: ObservableObject {
     @Published var time: Int = 0
     @Published var color: Color = .accentColor
     @Published var landscape = false
+    @Published var gameStarted = false
     
     // MARK: - Private properties
     private var readyPack: [String]
@@ -41,7 +42,9 @@ final class GameModel: ObservableObject {
     
     // MARK: - Public methods
     func checkOrientation() {
-        resetGame()
+        if !gameStarted {
+            resetGame()
+        }
         let isLandscape = UIDevice.current.orientation.isLandscape
         print("Checking orientation: current = \(landscape), device = \(isLandscape)")
         
@@ -55,6 +58,7 @@ final class GameModel: ObservableObject {
     }
 
     func startGame() {
+        gameStarted = true
         readyPack.shuffle()
         setupMotionUpdates()
         getQuestion()
@@ -133,8 +137,10 @@ final class GameModel: ObservableObject {
         question = "End of the Game"
         motionManager.stopDeviceMotionUpdates()
         index = 0
+        gameStarted = false
     }
     func resetGame() {
+        gameStarted = false
         landscape = false
         time = 0
         index = 0
