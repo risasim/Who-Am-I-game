@@ -23,7 +23,7 @@ struct ChoosingPackView: View {
     var body: some View {
         NavigationStack(path: $navi.path){
             VStack{
-                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites, outerChange: $outerChange).environmentObject(realm))
+                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites, outerChange: $outerChange).environmentObject(realm).navigationBarTitleDisplayMode(.inline))
             }
             .overlay(content: {
                 VStack{
