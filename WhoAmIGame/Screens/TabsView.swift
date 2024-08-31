@@ -16,7 +16,7 @@ struct TabsView: View {
                     .tabItem{
                         Label("tab.Packs", systemImage: "square.stack.3d.down.right")
                     }
-                Text("tab.library")
+               LibraryView()
                     .tabItem {
                         Label("Library", systemImage: "magnifyingglass")
                     }

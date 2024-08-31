@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7903292629A15C8400DBB5FF /* LaunchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903292529A15C8400DBB5FF /* LaunchingView.swift */; };
+		7908CF2F2C834FDF005ED50E /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908CF2E2C834FDF005ED50E /* LibraryView.swift */; };
+		7908CF312C834FF7005ED50E /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908CF302C834FF7005ED50E /* NetworkController.swift */; };
+		7908CF342C835210005ED50E /* ConnectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908CF332C835210005ED50E /* ConnectedView.swift */; };
+		7908CF362C83521A005ED50E /* NotConnectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908CF352C83521A005ED50E /* NotConnectedView.swift */; };
 		7924D89A295B273600A876C5 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D899295B273600A876C5 /* TabsView.swift */; };
 		7924D89C295B30CE00A876C5 /* AddingPackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924D89B295B30CE00A876C5 /* AddingPackModel.swift */; };
 		792F31352942359F00367FB9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F31342942359F00367FB9 /* Utility.swift */; };
@@ -47,6 +51,10 @@
 
 /* Begin PBXFileReference section */
 		7903292529A15C8400DBB5FF /* LaunchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingView.swift; sourceTree = "<group>"; };
+		7908CF2E2C834FDF005ED50E /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		7908CF302C834FF7005ED50E /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		7908CF332C835210005ED50E /* ConnectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedView.swift; sourceTree = "<group>"; };
+		7908CF352C83521A005ED50E /* NotConnectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotConnectedView.swift; sourceTree = "<group>"; };
 		7924D899295B273600A876C5 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		7924D89B295B30CE00A876C5 /* AddingPackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPackModel.swift; sourceTree = "<group>"; };
 		792F31342942359F00367FB9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -106,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7908CF322C8351FC005ED50E /* LibraryView */ = {
+			isa = PBXGroup;
+			children = (
+				7908CF332C835210005ED50E /* ConnectedView.swift */,
+				7908CF352C83521A005ED50E /* NotConnectedView.swift */,
+			);
+			path = LibraryView;
+			sourceTree = "<group>";
+		};
 		794CD15B297D19180002C143 /* Smaller models */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +228,7 @@
 		79E37984293CDA430080C98F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7908CF322C8351FC005ED50E /* LibraryView */,
 				797882FB29462198006E3E74 /* ChoosingPackView */,
 				797882FC294621A6006E3E74 /* SettingsView */,
 				797882F4294515AE006E3E74 /* ImageGridView.swift */,
@@ -226,6 +244,7 @@
 				79E3798A293CE7AE0080C98F /* RealmGuess.swift */,
 				79E37992293CE8640080C98F /* QuestionPack.swift */,
 				794CD15B297D19180002C143 /* Smaller models */,
+				7908CF302C834FF7005ED50E /* NetworkController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,6 +259,7 @@
 				79A36E89293FB5CE000308D3 /* SettingsView.swift */,
 				79C628ED295F2FAE0082FE67 /* Game */,
 				792F3138294245B500367FB9 /* ResultsView.swift */,
+				7908CF2E2C834FDF005ED50E /* LibraryView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -335,6 +355,7 @@
 				794CD15F297DC0560002C143 /* PlusButtonView.swift in Sources */,
 				7903292629A15C8400DBB5FF /* LaunchingView.swift in Sources */,
 				79E37998293CEEB20080C98F /* EmptyPacksView.swift in Sources */,
+				7908CF342C835210005ED50E /* ConnectedView.swift in Sources */,
 				79E03F8B2961892900DF5976 /* Navigator.swift in Sources */,
 				79E3799C293CEF230080C98F /* ListPackView.swift in Sources */,
 				79E37972293CD8CD0080C98F /* WhoAmIGameApp.swift in Sources */,
@@ -342,6 +363,7 @@
 				792F313B2942469900367FB9 /* NewPackView.swift in Sources */,
 				792F3137294245A100367FB9 /* GameView.swift in Sources */,
 				79AB49FE29705CC500ED2F66 /* StartingAppStruct.swift in Sources */,
+				7908CF312C834FF7005ED50E /* NetworkController.swift in Sources */,
 				79E03F89296188A700DF5976 /* Answer.swift in Sources */,
 				79A36E8E293FB8B4000308D3 /* SettingsRowView.swift in Sources */,
 				795796C8293E556B002782FC /* FirstUsernameScreen.swift in Sources */,
@@ -359,7 +381,9 @@
 				79E3798B293CE7AE0080C98F /* RealmGuess.swift in Sources */,
 				79A36E8C293FB787000308D3 /* SettingsLabelView.swift in Sources */,
 				794CD15D297D30A60002C143 /* SearchBarView.swift in Sources */,
+				7908CF2F2C834FDF005ED50E /* LibraryView.swift in Sources */,
 				797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */,
+				7908CF362C83521A005ED50E /* NotConnectedView.swift in Sources */,
 				79E3798F293CE7FF0080C98F /* GameModel.swift in Sources */,
 				792F31352942359F00367FB9 /* Utility.swift in Sources */,
 			);
