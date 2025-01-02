@@ -31,7 +31,6 @@ class PocketBaseHandler{
                 print("Error with the response, unexpected status code: \(String(describing: response))")
                 return
             }
-            print(httpResponse)
             
             if let data = data,
                let packs = try? JSONDecoder().decode(PocketBasePacks.self, from: data) {

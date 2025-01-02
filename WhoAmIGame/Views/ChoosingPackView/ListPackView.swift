@@ -30,7 +30,7 @@ struct ListPackView: View {
                         NavigationLink(value: pack) {
                             if #available(iOS 18.0, *) {
                                 ListItemView(pack: pack, changed: $change)
-                                    .matchedTransitionSource(id: "pack", in: namespace)
+                                    .matchedTransitionSource(id: pack.id, in: namespace)
                             } else {
                                 ListItemView(pack: pack, changed: $change)
                             }
@@ -40,7 +40,7 @@ struct ListPackView: View {
                 .navigationDestination(for: RealmQuestionPack.self, destination: { pack in
                     if #available(iOS 18.0, *) {
                         GameView(model: GameModel(pack: pack))
-                            .navigationTransition(.zoom(sourceID: "pack", in: namespace))
+                            .navigationTransition(.zoom(sourceID: pack.id, in: namespace))
                     } else {
                         GameView(model: GameModel(pack: pack))
                     }

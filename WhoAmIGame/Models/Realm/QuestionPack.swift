@@ -19,6 +19,7 @@ protocol QuestionPackProtocol{
 
 
 struct NormalQuestionPack:Codable,QuestionPackProtocol{
+    var id:String
     var name:String
     var author:String
     var isFavourite:Bool
@@ -29,7 +30,8 @@ struct NormalQuestionPack:Codable,QuestionPackProtocol{
         return names
     }
     
-    init(name: String = "", author: String = "", isFavourite: Bool = false, imageStr: String = "", names: [String] = []) {
+    init(id:String = "",name: String = "", author: String = "", isFavourite: Bool = false, imageStr: String = "", names: [String] = []) {
+        self.id = id
         self.name = name
         self.author = author
         self.isFavourite = isFavourite
@@ -38,6 +40,7 @@ struct NormalQuestionPack:Codable,QuestionPackProtocol{
     }
     
     mutating func getFromPocketBase(_ pack:PocketBasePack){
+        self.id = pack.id
         self.name = pack.name
         self.author = pack.author
         self.imageStr = pack.imageString

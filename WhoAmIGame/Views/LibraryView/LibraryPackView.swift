@@ -20,6 +20,8 @@ struct LibraryPackView: View {
     @Environment(\.colorScheme) var colorScheme
     @State var pack : NormalQuestionPack
     @State var showDetails = false
+    @EnvironmentObject var saved:SavedPacks
+    @EnvironmentObject var realm:RealmGuess
     
     var width: CGFloat {
           if UIDevice.current.userInterfaceIdiom == .phone {
@@ -45,15 +47,17 @@ struct LibraryPackView: View {
             VStack{
                 HStack{
                     Button {
-                       
+                        if(saved.isSaved(pack: pack)){
+                            saved.addPack(realm: realm, pack: pack)
+                        }
                     } label: {
                         if #available(iOS 17.0, *) {
-                            Image(systemName: pack.isFavourite ? "checkmark.diamond" : "square.and.arrow.down")
+                            Image(systemName: saved.isSaved(pack: pack) ? "checkmark.diamond" : "square.and.arrow.down")
                                 .contentTransition(.symbolEffect(.replace))
                                 .font(.system(size: 25))
                                 .foregroundColor(pack.isFavourite ? .red : .white)
                         } else {
-                            Image(systemName: pack.isFavourite ? "checkmark.diamond" : "square.and.arrow.down")
+                            Image(systemName: saved.isSaved(pack: pack) ? "checkmark.diamond" : "square.and.arrow.down")
                                 .font(.system(size: 25))
                                 .foregroundColor(pack.isFavourite ? .red : .white)
                         }

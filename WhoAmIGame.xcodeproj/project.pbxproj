@@ -10,6 +10,7 @@
 		4A50A3E12D26E1F00037D9FD /* LibraryPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E02D26E1F00037D9FD /* LibraryPackView.swift */; };
 		4A50A3E32D26E8210037D9FD /* LibraryPackOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E22D26E8210037D9FD /* LibraryPackOverview.swift */; };
 		4A50A3E52D26F12C0037D9FD /* ChooseConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */; };
+		4A50A3EB2D27127D0037D9FD /* SavedPackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3EA2D27127D0037D9FD /* SavedPackModel.swift */; };
 		4A6879322D26D9EB00FDF521 /* QuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6879312D26D9EB00FDF521 /* QuestionPack.swift */; };
 		4ADDCD112D26C00600E97CFD /* PocketBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */; };
 		4ADDCD132D26C01D00E97CFD /* PocketBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */; };
@@ -69,6 +70,7 @@
 		4A50A3E02D26E1F00037D9FD /* LibraryPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPackView.swift; sourceTree = "<group>"; };
 		4A50A3E22D26E8210037D9FD /* LibraryPackOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPackOverview.swift; sourceTree = "<group>"; };
 		4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseConnectionView.swift; sourceTree = "<group>"; };
+		4A50A3EA2D27127D0037D9FD /* SavedPackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPackModel.swift; sourceTree = "<group>"; };
 		4A6879312D26D9EB00FDF521 /* QuestionPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPack.swift; sourceTree = "<group>"; };
 		4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseHandler.swift; sourceTree = "<group>"; };
 		4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseModels.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A50A3E92D27126A0037D9FD /* SavedPacks */ = {
+			isa = PBXGroup;
+			children = (
+				4A50A3EA2D27127D0037D9FD /* SavedPackModel.swift */,
+			);
+			path = SavedPacks;
+			sourceTree = "<group>";
+		};
 		4ADDCD0D2D26BFAD00E97CFD /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +316,7 @@
 		79E37985293CDA490080C98F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4A50A3E92D27126A0037D9FD /* SavedPacks */,
 				4ADDCD0F2D26BFD900E97CFD /* PocketBase */,
 				4ADDCD0E2D26BFBF00E97CFD /* Realm */,
 				4ADDCD0D2D26BFAD00E97CFD /* Game */,
@@ -471,6 +482,7 @@
 				4A50A3E52D26F12C0037D9FD /* ChooseConnectionView.swift in Sources */,
 				79E3798D293CE7D30080C98F /* Migrator.swift in Sources */,
 				797322F4298EC6D400978FD7 /* NoFavView.swift in Sources */,
+				4A50A3EB2D27127D0037D9FD /* SavedPackModel.swift in Sources */,
 				79E379A2293D1CCB0080C98F /* VisualBlurEffect.swift in Sources */,
 				79E37993293CE8640080C98F /* RealmQuestionPack.swift in Sources */,
 				79DE3F35295A130600559151 /* Debouncer.swift in Sources */,
@@ -699,6 +711,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchingView;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -730,6 +743,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchingView;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

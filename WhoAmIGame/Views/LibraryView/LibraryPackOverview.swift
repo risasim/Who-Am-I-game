@@ -10,6 +10,8 @@ struct LibraryPackOVerView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Binding var pack:NormalQuestionPack
+    @EnvironmentObject var realm: RealmGuess
+    @EnvironmentObject var saved:SavedPacks
     
     
     var body: some View {
@@ -46,6 +48,9 @@ struct LibraryPackOVerView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
+                        if(!saved.isSaved(pack: pack)){
+                            saved.addPack(realm: realm, pack: pack)
+                        }
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Save")
