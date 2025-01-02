@@ -41,6 +41,16 @@ class RealmGuess: ObservableObject{
         }
     }
     
+    func addToDatabase(pack:NormalQuestionPack){
+        let newQuestionPack = RealmQuestionPack()
+        newQuestionPack.name = pack.name
+        newQuestionPack.isFavourite = pack.isFavourite
+        newQuestionPack.author = pack.author
+        newQuestionPack.imageStr = pack.imageStr
+        newQuestionPack.questions.append(objectsIn: pack.names)
+        addPack(pack: newQuestionPack)
+    }
+    
     func getPacks(){
         if let localRealm = localRealm{
             let packs = localRealm.objects(RealmQuestionPack.self)

@@ -12,7 +12,6 @@ struct TabsView: View {
         VStack{
             TabView {
                 ChoosingPackView()
-                //.environmentObject(router)
                     .tabItem{
                         Label("tab.Packs", systemImage: "square.stack.3d.down.right")
                     }

@@ -41,6 +41,7 @@ class PocketBaseHandler{
                     newPack.getFromPocketBase(pack)
                     normalPacks.append(newPack)
                 }
+                self.state = PocketBaseState.loaded
                 completionHandler(normalPacks)
             }
         })

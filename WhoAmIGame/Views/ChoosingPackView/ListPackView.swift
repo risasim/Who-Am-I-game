@@ -32,9 +32,8 @@ struct ListPackView: View {
                                 ListItemView(pack: pack, changed: $change)
                                     .matchedTransitionSource(id: "pack", in: namespace)
                             } else {
-                                // Fallback on earlier versions
+                                ListItemView(pack: pack, changed: $change)
                             }
-                            //.padding()
                         }
                     }
                 }
@@ -43,7 +42,7 @@ struct ListPackView: View {
                         GameView(model: GameModel(pack: pack))
                             .navigationTransition(.zoom(sourceID: "pack", in: namespace))
                     } else {
-                        // Fallback on earlier versions
+                        GameView(model: GameModel(pack: pack))
                     }
                 })
                 .padding()

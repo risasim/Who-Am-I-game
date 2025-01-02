@@ -13,14 +13,22 @@ struct ConnectedView: View {
     @State var packs:[NormalQuestionPack] = []
     
     var body: some View {
-        List(packs,id: \.name){pack in
-            Text(pack.name)
-        }
-        .onAppear{
-            handler.fetchPacks{ packs in
-                self.packs = packs
+        VStack{
+            ScrollView {
+                LazyVGrid(columns: gridLayout,spacing: 15) {
+                    ForEach(packs, id: \.name) { pack in
+                        LibraryPackView(pack: pack)
+                    }
+                }
+            }
+            .scrollIndicators(.hidden)
+            .onAppear{
+                handler.fetchPacks{ packs in
+                    self.packs = packs
+                }
             }
         }
+        .padding()
     }
 }
 

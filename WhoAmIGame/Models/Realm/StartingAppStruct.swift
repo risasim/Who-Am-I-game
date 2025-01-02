@@ -34,13 +34,7 @@ struct StartingDatabase{
     
     func addToDatabase(){
         for pack in readyData{
-            let newQuestionPack = RealmQuestionPack()
-            newQuestionPack.name = pack.name
-            newQuestionPack.isFavourite = pack.isFavourite
-            newQuestionPack.author = pack.author
-            newQuestionPack.imageStr = pack.imageStr
-            newQuestionPack.questions.append(objectsIn: pack.names)
-            realm.addPack(pack: newQuestionPack)
+            realm.addToDatabase(pack: pack)
         }
     }
     

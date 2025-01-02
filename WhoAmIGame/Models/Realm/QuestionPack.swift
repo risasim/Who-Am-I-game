@@ -41,6 +41,9 @@ struct NormalQuestionPack:Codable,QuestionPackProtocol{
         self.name = pack.name
         self.author = pack.author
         self.imageStr = pack.imageString
-        self.names = pack.questions
+        for name in pack.expand.questions{
+            self.names.append(name.question)
+        }
+        
     }
 }
