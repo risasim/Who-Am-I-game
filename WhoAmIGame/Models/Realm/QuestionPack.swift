@@ -7,8 +7,18 @@
 
 import Foundation
 
-///Protocol for the views, so that the Realm and the one form API can be displayed by the same View.
-struct UniversalQuestionPack:Codable,QP{
+///Protocol for the views, so that the Realm and the one form API can be displayed by the same View./
+protocol QuestionPackProtocol{
+    var name:String {get set}
+    var author:String {get set}
+    var isFavourite:Bool {get set}
+    var imageStr:String {get set}
+    
+    func getNames() -> [String]
+}
+
+
+struct NormalQuestionPack:Codable,QuestionPackProtocol{
     var name:String
     var author:String
     var isFavourite:Bool

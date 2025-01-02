@@ -11,7 +11,7 @@ struct StartingDatabase{
     
     private var realm : RealmGuess
     private var data: Data
-    private var readyData : [UniversalQuestionPack] = []
+    private var readyData : [NormalQuestionPack] = []
     
     init(){
         self.realm = RealmGuess()
@@ -24,7 +24,7 @@ struct StartingDatabase{
         let decoder = JSONDecoder()
 
         do {
-            let packs = try decoder.decode([UniversalQuestionPack].self, from: data)
+            let packs = try decoder.decode([NormalQuestionPack].self, from: data)
             readyData = packs
             addToDatabase()
         } catch {

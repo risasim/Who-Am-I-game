@@ -14,7 +14,7 @@ class PocketBaseHandler{
     
     ///Function that fetches the packs from the PocketBase.
     //Using escaping so that the rest of the app does not wait for the packs
-    func fetchPacks(completionHandler: @escaping ([PocketBasePack])-> Void){
+    func fetchPacks(completionHandler: @escaping ([NormalQuestionPack])-> Void){
         self.state = PocketBaseState.loading
         //Fetching from the PocketBase
         let url = URL(string: BASEURL+"/api/collections/packs/records?expand=questions&fields=*,expand.questions.question")!
@@ -35,8 +35,13 @@ class PocketBaseHandler{
             
             if let data = data,
                let packs = try? JSONDecoder().decode(PocketBasePacks.self, from: data) {
-                print(data)
-                completionHandler(packs.items)
+                var normalPacks:[NormalQuestionPack] = []
+                for pack in packs.items{
+                    var newPack = NormalQuestionPack()
+                    newPack.getFromPocketBase(pack)
+                    normalPacks.append(newPack)
+                }
+                completionHandler(normalPacks)
             }
         })
         task.resume()

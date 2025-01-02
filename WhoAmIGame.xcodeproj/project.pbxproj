@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A6879302D26D7F900FDF521 /* ProtocolQuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A68792F2D26D7F900FDF521 /* ProtocolQuestionPack.swift */; };
-		4A6879322D26D9EB00FDF521 /* UniversalQuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6879312D26D9EB00FDF521 /* UniversalQuestionPack.swift */; };
+		4A6879322D26D9EB00FDF521 /* QuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6879312D26D9EB00FDF521 /* QuestionPack.swift */; };
 		4ADDCD112D26C00600E97CFD /* PocketBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */; };
 		4ADDCD132D26C01D00E97CFD /* PocketBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */; };
 		7903292629A15C8400DBB5FF /* LaunchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903292529A15C8400DBB5FF /* LaunchingView.swift */; };
@@ -65,7 +65,7 @@
 
 /* Begin PBXFileReference section */
 		4A68792F2D26D7F900FDF521 /* ProtocolQuestionPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolQuestionPack.swift; sourceTree = "<group>"; };
-		4A6879312D26D9EB00FDF521 /* UniversalQuestionPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalQuestionPack.swift; sourceTree = "<group>"; };
+		4A6879312D26D9EB00FDF521 /* QuestionPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPack.swift; sourceTree = "<group>"; };
 		4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseHandler.swift; sourceTree = "<group>"; };
 		4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseModels.swift; sourceTree = "<group>"; };
 		4ADDCD182D26C5F400E97CFD /* WhoAmIGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhoAmIGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +161,7 @@
 				79E3798C293CE7D30080C98F /* Migrator.swift */,
 				79E37992293CE8640080C98F /* RealmQuestionPack.swift */,
 				7924D89B295B30CE00A876C5 /* AddingPackModel.swift */,
-				4A6879312D26D9EB00FDF521 /* UniversalQuestionPack.swift */,
+				4A6879312D26D9EB00FDF521 /* QuestionPack.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -443,7 +443,7 @@
 				79E37998293CEEB20080C98F /* EmptyPacksView.swift in Sources */,
 				7908CF342C835210005ED50E /* ConnectedView.swift in Sources */,
 				79E03F8B2961892900DF5976 /* Navigator.swift in Sources */,
-				4A6879322D26D9EB00FDF521 /* UniversalQuestionPack.swift in Sources */,
+				4A6879322D26D9EB00FDF521 /* QuestionPack.swift in Sources */,
 				79E3799C293CEF230080C98F /* ListPackView.swift in Sources */,
 				79E37972293CD8CD0080C98F /* WhoAmIGameApp.swift in Sources */,
 				79E379A0293CF7000080C98F /* ListItemView.swift in Sources */,

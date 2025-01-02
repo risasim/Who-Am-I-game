@@ -8,16 +8,8 @@
 import Foundation
 import RealmSwift
 
-protocol QP{
-    var name:String {get set}
-    var author:String {get set}
-    var isFavourite:Bool {get set}
-    var imageStr:String {get set}
-    
-    func getNames() -> [String]
-}
 
-class RealmQuestionPack: Object, ObjectKeyIdentifiable, Codable, QP{
+class RealmQuestionPack: Object, ObjectKeyIdentifiable, Codable, QuestionPackProtocol{
     @Persisted var id: ObjectId
     @Persisted var name: String = "President"
     @Persisted var author: String = specString

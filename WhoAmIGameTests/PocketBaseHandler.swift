@@ -15,14 +15,6 @@ struct PocketBaseHandlerTesting {
         handler = PocketBaseHandler()
     }
     
-//    @Test func fetchPacks() async throws {
-//        var packs:[PocketBasePack] = []
-//        handler.fetchPacks { result in
-//            packs = result
-//        }
-//        #expect(packs.count > 0)
-//    }
-    
 
     @Test func decodeJSON() async throws {
         //It is to test the Structs

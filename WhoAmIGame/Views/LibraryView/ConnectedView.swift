@@ -10,10 +10,10 @@ import SwiftUI
 struct ConnectedView: View {
     
     var handler = PocketBaseHandler()
-    @State var packs:[PocketBasePack] = []
+    @State var packs:[NormalQuestionPack] = []
     
     var body: some View {
-        List(packs,id: \.id){pack in
+        List(packs,id: \.name){pack in
             Text(pack.name)
         }
         .onAppear{
