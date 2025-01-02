@@ -8,17 +8,33 @@
 import Foundation
 import RealmSwift
 
-class RealmQuestionPack: Object, ObjectKeyIdentifiable, Codable{
+protocol QP{
+    var name:String {get set}
+    var author:String {get set}
+    var isFavourite:Bool {get set}
+    var imageStr:String {get set}
+    
+    func getNames() -> [String]
+}
+
+class RealmQuestionPack: Object, ObjectKeyIdentifiable, Codable, QP{
     @Persisted var id: ObjectId
     @Persisted var name: String = "President"
     @Persisted var author: String = specString
     @Persisted var isFavourite:Bool = false
     @Persisted var imageStr:String = "cinema"
     @Persisted var questions: List<String> = List<String>()
-    // @Persisted var names: List<Question> = List<Question>()
     
     override class func primaryKey() -> String? {
         "id"
+    }
+    
+    func getNames() -> [String] {
+        var res:[String] = []
+        for q in questions{
+            res.append(q)
+        }
+        return res
     }
     
     func toJSON() -> String? {

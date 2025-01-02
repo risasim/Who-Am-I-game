@@ -23,7 +23,7 @@ final class EditAddModel: ObservableObject{
     var realmie : RealmGuess
     
     //Constants
-    private let warningText = "pack.warninngSame"
+    private let warningText = String(localized: "pack.warninngSame")
     private let userDefaults = UserDefaults.standard
     private var customPack = false
     
