@@ -9,14 +9,30 @@ import Testing
 import Foundation
 @testable import WhoAmIGame
 
-struct JSONDecodingTesting {
+struct PocketBaseHandlerTesting {
+    var handler:PocketBaseHandler
+    init(){
+        handler = PocketBaseHandler()
+    }
+    
+//    @Test func fetchPacks() async throws {
+//        var packs:[PocketBasePack] = []
+//        handler.fetchPacks { result in
+//            packs = result
+//        }
+//        #expect(packs.count > 0)
+//    }
+    
 
     @Test func decodeJSON() async throws {
+        //It is to test the Structs
         let jsonData = JSON.data(using: .utf8)!
         let packs:PocketBasePacks = try JSONDecoder().decode(PocketBasePacks.self, from: jsonData)
         #expect(packs.items.first?.questions.count == 2)
         #expect(packs.items.first?.expand.questions.first?.question == "Prague")
     }
+    
+    
     
     let JSON = """
     {

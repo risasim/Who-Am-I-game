@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct ConnectedView: View {
+    
+    var handler = PocketBaseHandler()
+    @State var packs:[PocketBasePack] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(packs,id: \.id){pack in
+            Text(pack.name)
+        }
+        .onAppear{
+            handler.fetchPacks{ packs in
+                self.packs = packs
+            }
+        }
     }
 }
 

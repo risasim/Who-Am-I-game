@@ -36,3 +36,6 @@ var gridLayout:[GridItem] {
 let specString = "6jbw81euPQMuckOJZSekflU5j"
 
 
+let BASEURL = "https://pb.n.oidq.dev"
+
+
