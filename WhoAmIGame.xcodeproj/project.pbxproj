@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A50A3E12D26E1F00037D9FD /* LibraryPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E02D26E1F00037D9FD /* LibraryPackView.swift */; };
 		4A50A3E32D26E8210037D9FD /* LibraryPackOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E22D26E8210037D9FD /* LibraryPackOverview.swift */; };
+		4A50A3E52D26F12C0037D9FD /* ChooseConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */; };
 		4A6879322D26D9EB00FDF521 /* QuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6879312D26D9EB00FDF521 /* QuestionPack.swift */; };
 		4ADDCD112D26C00600E97CFD /* PocketBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */; };
 		4ADDCD132D26C01D00E97CFD /* PocketBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		4A50A3E02D26E1F00037D9FD /* LibraryPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPackView.swift; sourceTree = "<group>"; };
 		4A50A3E22D26E8210037D9FD /* LibraryPackOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPackOverview.swift; sourceTree = "<group>"; };
+		4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseConnectionView.swift; sourceTree = "<group>"; };
 		4A6879312D26D9EB00FDF521 /* QuestionPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPack.swift; sourceTree = "<group>"; };
 		4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseHandler.swift; sourceTree = "<group>"; };
 		4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseModels.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				7908CF332C835210005ED50E /* ConnectedView.swift */,
 				7908CF352C83521A005ED50E /* NotConnectedView.swift */,
 				7908CF2E2C834FDF005ED50E /* LibraryView.swift */,
+				4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */,
 			);
 			path = LibraryView;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				79E37987293CDA600080C98F /* ChoosingPackView.swift in Sources */,
 				79A36E8A293FB5CE000308D3 /* SettingsView.swift in Sources */,
 				797882F729462131006E3E74 /* TurnOverPhoneView.swift in Sources */,
+				4A50A3E52D26F12C0037D9FD /* ChooseConnectionView.swift in Sources */,
 				79E3798D293CE7D30080C98F /* Migrator.swift in Sources */,
 				797322F4298EC6D400978FD7 /* NoFavView.swift in Sources */,
 				79E379A2293D1CCB0080C98F /* VisualBlurEffect.swift in Sources */,

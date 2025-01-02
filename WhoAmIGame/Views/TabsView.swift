@@ -15,7 +15,7 @@ struct TabsView: View {
                     .tabItem{
                         Label("tab.Packs", systemImage: "square.stack.3d.down.right")
                     }
-               LibraryView()
+                LibraryView()
                     .tabItem {
                         Label("Library", systemImage: "magnifyingglass")
                     }
@@ -27,5 +27,6 @@ struct TabsView: View {
 struct TabView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
+            .environmentObject(RealmGuess())
     }
 }

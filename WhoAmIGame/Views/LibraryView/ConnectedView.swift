@@ -28,7 +28,7 @@ struct ConnectedView: View {
                 }
             }
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
 

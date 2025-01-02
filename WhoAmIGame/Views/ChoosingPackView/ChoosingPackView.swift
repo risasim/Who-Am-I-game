@@ -81,5 +81,6 @@ struct ChoosingPackView: View {
 struct ChoosingPackView_Previews: PreviewProvider {
     static var previews: some View {
         ChoosingPackView()
+            .environmentObject(RealmGuess())
     }
 }
