@@ -28,11 +28,11 @@ final class EditAddModel: ObservableObject{
     private var customPack = false
     
     //Internal
-    private var newQuestionPack:QuestionPack
+    private var newQuestionPack:RealmQuestionPack
     var names: [String]
     
     
-    init(realm: RealmGuess, pack: QuestionPack = QuestionPack()){
+    init(realm: RealmGuess, pack: RealmQuestionPack = RealmQuestionPack()){
         self.names = []
         self.realmie = realm
         self.newQuestionPack = pack

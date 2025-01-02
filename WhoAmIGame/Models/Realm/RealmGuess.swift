@@ -11,7 +11,7 @@ import SwiftUI
 
 class RealmGuess: ObservableObject{
     
-    @Published private(set) var questionPacks: [QuestionPack] = []
+    @Published private(set) var questionPacks: [RealmQuestionPack] = []
     private(set) var localRealm: Realm?
     
     init() {
@@ -27,7 +27,7 @@ class RealmGuess: ObservableObject{
         }
     }
     
-    func addPack(pack: QuestionPack){
+    func addPack(pack: RealmQuestionPack){
         if let localRealm = localRealm{
             do{
                 try localRealm.write({
@@ -43,7 +43,7 @@ class RealmGuess: ObservableObject{
     
     func getPacks(){
         if let localRealm = localRealm{
-            let packs = localRealm.objects(QuestionPack.self)
+            let packs = localRealm.objects(RealmQuestionPack.self)
             questionPacks = []
             packs.forEach { pack in
                 if !pack.isInvalidated{
@@ -56,7 +56,7 @@ class RealmGuess: ObservableObject{
     func updatePack(id: ObjectId, name:String, names: [String], imgStr: String){
         if let localRealm = localRealm{
             do{
-                let updatePack = localRealm.objects(QuestionPack.self).filter(NSPredicate(format: "id == %@", id))
+                let updatePack = localRealm.objects(RealmQuestionPack.self).filter(NSPredicate(format: "id == %@", id))
                 guard !updatePack.isEmpty else {return}
                 try localRealm.write({
                     updatePack[0].name = name
@@ -79,7 +79,7 @@ class RealmGuess: ObservableObject{
     func manageFavourite(id:ObjectId){
         if let localRealm = localRealm{
             do{
-                let updatePack = localRealm.objects(QuestionPack.self).filter(NSPredicate(format: "id == %@", id))
+                let updatePack = localRealm.objects(RealmQuestionPack.self).filter(NSPredicate(format: "id == %@", id))
                 guard !updatePack.isEmpty else {return}
                 try localRealm.write({
                     updatePack[0].isFavourite.toggle()
@@ -94,7 +94,7 @@ class RealmGuess: ObservableObject{
     func deletePack(id:ObjectId){
         if let localRealm = localRealm{
             do{
-                let delPack = localRealm.objects(QuestionPack.self).filter(NSPredicate(format: "id == %@", id))
+                let delPack = localRealm.objects(RealmQuestionPack.self).filter(NSPredicate(format: "id == %@", id))
                 guard !delPack.isEmpty else {return}
                 
                 try localRealm.write({

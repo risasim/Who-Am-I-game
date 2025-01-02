@@ -36,7 +36,7 @@ final class GameModel: ObservableObject {
     var answers = AnswerPack()
     
     // MARK: - Initialization
-    init(pack: QuestionPack) {
+    init(pack: RealmQuestionPack) {
         self.readyPack = pack.questions.shuffled()
     }
     
