@@ -55,6 +55,7 @@ struct ChoosingPackView: View {
                 ToolbarItem(placement: .principal) {
                     Text("Who Am I ?")
                         .font(.system(size: 27, weight: .bold, design: .rounded))
+                        .padding(.bottom, 0)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button {

@@ -16,6 +16,7 @@ struct ListPackView: View {
     @State var change: Bool = false
     @State var noFavourites = false
     @Binding var outerChange:Bool
+    @Namespace var namespace
     
     @ObservedResults(QuestionPack.self) var questionPacks
     @State var filteredResults:[QuestionPack] = []
@@ -27,13 +28,23 @@ struct ListPackView: View {
                 LazyVGrid(columns: gridLayout,spacing: 15) {
                     ForEach(filteredResults) { pack in
                         NavigationLink(value: pack) {
-                            ListItemView(pack: pack, changed: $change)
+                            if #available(iOS 18.0, *) {
+                                ListItemView(pack: pack, changed: $change)
+                                    .matchedTransitionSource(id: "pack", in: namespace)
+                            } else {
+                                // Fallback on earlier versions
+                            }
                             //.padding()
                         }
                     }
                 }
                 .navigationDestination(for: QuestionPack.self, destination: { pack in
-                    GameView(model: GameModel(pack: pack))
+                    if #available(iOS 18.0, *) {
+                        GameView(model: GameModel(pack: pack))
+                            .navigationTransition(.zoom(sourceID: "pack", in: namespace))
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 })
                 .padding()
             }

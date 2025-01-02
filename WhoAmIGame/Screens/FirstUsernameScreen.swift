@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FirstUsernameScreen: View {
     @AppStorage("isFirstTime") var isFirstTime : Bool?
-    @AppStorage ("username") var username: String = ""
+    @AppStorage("username") var username: String = ""
     var body: some View {
         VStack(alignment: .center){
             Text("pleaseEnterUsername")
