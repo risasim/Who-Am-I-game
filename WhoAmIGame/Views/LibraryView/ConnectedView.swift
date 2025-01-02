@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///View that is shown, if the app is connected to internet. Shows the packs that could be saved.
 struct ConnectedView: View {
     
     var handler = PocketBaseHandler()

@@ -17,7 +17,7 @@ struct TabsView: View {
                     }
                 LibraryView()
                     .tabItem {
-                        Label("Library", systemImage: "magnifyingglass")
+                        Label("Library", systemImage: "books.vertical.fill")
                     }
             }
         }
@@ -28,5 +28,6 @@ struct TabView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
             .environmentObject(RealmGuess())
+            .environmentObject(SavedPacks())
     }
 }

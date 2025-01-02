@@ -1,25 +1,11 @@
-//
-//  ListItemView.swift
-//  WhoAmIGame
-//
-//  Created by Richard Šimoník on 02.01.2025.
-//
-
-
-//
-//  ListItemView.swift
-//  WhoAmIGame
-//
-//  Created by Richard on 04.12.2022.
-//
-
 import SwiftUI
-
+///View that represents the pack in the library, same as in ``ChoosingPackView``, simplified ``ListItemView``.
 struct LibraryPackView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @State var pack : NormalQuestionPack
     @State var showDetails = false
+    @State private var change = false
     @EnvironmentObject var saved:SavedPacks
     @EnvironmentObject var realm:RealmGuess
     
@@ -30,7 +16,6 @@ struct LibraryPackView: View {
               return UIScreen.main.bounds.width * 0.2
           }
       }
-    
     
     var body: some View {
         ZStack{
@@ -47,15 +32,19 @@ struct LibraryPackView: View {
             VStack{
                 HStack{
                     Button {
-                        if(saved.isSaved(pack: pack)){
+                    if(!saved.isSaved(pack: pack)){
                             saved.addPack(realm: realm, pack: pack)
                         }
+                        change.toggle()
                     } label: {
                         if #available(iOS 17.0, *) {
                             Image(systemName: saved.isSaved(pack: pack) ? "checkmark.diamond" : "square.and.arrow.down")
                                 .contentTransition(.symbolEffect(.replace))
                                 .font(.system(size: 25))
                                 .foregroundColor(pack.isFavourite ? .red : .white)
+                                .if(saved.isSaved(pack: pack)) { view in
+                                    view.symbolEffect(.bounce.up, value: change)
+                                }
                         } else {
                             Image(systemName: saved.isSaved(pack: pack) ? "checkmark.diamond" : "square.and.arrow.down")
                                 .font(.system(size: 25))

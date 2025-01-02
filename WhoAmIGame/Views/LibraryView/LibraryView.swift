@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///View presenting the library of the packs from the PocketBase.
 struct LibraryView: View {
     @State var isSettingsShown: Bool = false
     var body: some View {
@@ -40,4 +41,5 @@ struct LibraryView: View {
 #Preview {
     LibraryView()
         .environmentObject(RealmGuess())
+        .environmentObject(SavedPacks())
 }

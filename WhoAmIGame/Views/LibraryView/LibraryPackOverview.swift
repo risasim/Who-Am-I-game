@@ -53,8 +53,9 @@ struct LibraryPackOVerView: View {
                         }
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("Save")
+                        Text(saved.isSaved(pack: pack) ? "Saved" : "Save")
                     }
+                    .disabled(saved.isSaved(pack: pack))
                 }
             }
         }
