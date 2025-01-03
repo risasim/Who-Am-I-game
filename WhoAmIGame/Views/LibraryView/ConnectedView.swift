@@ -7,9 +7,29 @@
 
 import SwiftUI
 
+///View that is shown, if the app is connected to internet. Shows the packs that could be saved.
 struct ConnectedView: View {
+    
+    var handler = PocketBaseHandler()
+    @State var packs:[NormalQuestionPack] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            ScrollView {
+                LazyVGrid(columns: gridLayout,spacing: 15) {
+                    ForEach(packs, id: \.name) { pack in
+                        LibraryPackView(pack: pack)
+                    }
+                }
+            }
+            .scrollIndicators(.hidden)
+            .onAppear{
+                handler.fetchPacks{ packs in
+                    self.packs = packs
+                }
+            }
+        }
+        .padding(.horizontal)
     }
 }
 

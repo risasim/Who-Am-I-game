@@ -12,13 +12,12 @@ struct TabsView: View {
         VStack{
             TabView {
                 ChoosingPackView()
-                //.environmentObject(router)
                     .tabItem{
                         Label("tab.Packs", systemImage: "square.stack.3d.down.right")
                     }
-               LibraryView()
+                LibraryView()
                     .tabItem {
-                        Label("Library", systemImage: "magnifyingglass")
+                        Label("Library", systemImage: "books.vertical.fill")
                     }
             }
         }
@@ -28,5 +27,7 @@ struct TabsView: View {
 struct TabView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
+            .environmentObject(RealmGuess())
+            .environmentObject(SavedPacks())
     }
 }

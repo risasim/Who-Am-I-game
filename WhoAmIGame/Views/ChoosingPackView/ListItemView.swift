@@ -10,7 +10,7 @@ import SwiftUI
 struct ListItemView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    var pack : QuestionPack
+    var pack : RealmQuestionPack
     @EnvironmentObject var realmie: RealmGuess
     @Binding var changed : Bool
     @State var editPack: Bool = false
@@ -102,7 +102,7 @@ struct ListItemView: View {
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        let pack = QuestionPack()
+        let pack = RealmQuestionPack()
         ListItemView(pack: pack,changed: .constant(false))
             .onAppear {
                 pack.author = "Richie"
