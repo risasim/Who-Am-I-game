@@ -17,7 +17,7 @@ struct TabsView: View {
                     }
                 LibraryView()
                     .tabItem {
-                        Label("Library", systemImage: "books.vertical.fill")
+                        Label("tab.Icon.Library", systemImage: "books.vertical.fill")
                     }
             }
         }
@@ -29,5 +29,6 @@ struct TabView_Previews: PreviewProvider {
         TabsView()
             .environmentObject(RealmGuess())
             .environmentObject(SavedPacks())
+            .environment(\.locale, .init(identifier: "zh-Hans"))
     }
 }

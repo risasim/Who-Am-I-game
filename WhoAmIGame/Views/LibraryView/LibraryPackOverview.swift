@@ -18,7 +18,7 @@ struct LibraryPackOVerView: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 Form{
-                    Section("Info") {
+                    Section("game.Info") {
                         Text(pack.name)
                     }
                     Section {
@@ -29,7 +29,7 @@ struct LibraryPackOVerView: View {
                         }
                     } header: {
                         VStack{
-                            Text("Items")
+                            Text("game.Items")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
@@ -42,7 +42,7 @@ struct LibraryPackOVerView: View {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("Cancel")
+                        Text("game.Cancel")
                     }
                     
                 }
@@ -53,7 +53,7 @@ struct LibraryPackOVerView: View {
                         }
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text(saved.isSaved(pack: pack) ? "Saved" : "Save")
+                        Text(saved.isSaved(pack: pack) ?  "game.Saved" : "game.Save")
                     }
                     .disabled(saved.isSaved(pack: pack))
                 }

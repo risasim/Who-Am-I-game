@@ -53,6 +53,15 @@ Oeps\U00A0het\U00A0lijkt\U00A0erop\U00A0dat\U00A0je\U00A0geen\U00A0favorieten\U0
 "game.res"="Resultaten";
 "game.menu"="Menu";
 "game.ups"="Oeps, het lijkt erop dat je vastzit bij de eerste vraag. Meer geluk de volgende keer.";
+"game.Cancel"="Annuleren";
+"game.Save"="Opslaan";
+"tab.Icon.Library"="Bibliotheek";
+"game.Info"="Info";
+"game.Saved"="Opgeslagen";
+"game.Items"="Items";
+"game.Title"="Titel";
+"game.Image"="Afbeelding";
+"game.AddItem"="Item toevoegen";
 
 //Tabs
 "tab.Packs"="Pakketten";

@@ -53,6 +53,15 @@ Opa,\U00A0parece\U00A0que\U00A0você\U00A0não\U00A0tem\U00A0favoritos. \nVocê 
 "game.res"="Resultados";
 "game.menu"="Menu";
 "game.ups"="Opa, parece que você ficou preso na primeira pergunta. Mais sorte da próxima vez.";
+"game.Cancel"="Cancelar";
+"game.Save"="Salvar";
+"tab.Icon.Library"="Biblioteca";
+"game.Info"="Informações";
+"game.Saved"="Salvo";
+"game.Items"="Itens";
+"game.Title"="Título";
+"game.Image"="Imagem";
+"game.AddItem"="Adicionar item";
 
 //Tabs
 "tab.Packs"="Pacotes";

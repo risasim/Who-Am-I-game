@@ -53,6 +53,15 @@ Ups\U00A0es\U00A0scheint\U00A0so,\U00A0als\U00A0hättest\U00A0du\U00A0keine\U00A
 "game.res"="Ergebnisse";
 "game.menu"="Menü";
 "game.ups"="Ups, es sieht so aus, als wärst du bei der ersten Frage steckengeblieben. Viel Glück beim nächsten Mal.";
+"game.Cancel"="Abbrechen";
+"game.Save"="Speichern";
+"tab.Icon.Library"="Bibliothek";
+"game.Info"="Info";
+"game.Saved"="Gespeichert";
+"game.Items"="Gegenstände";
+"game.Title"="Titel";
+"game.Image"="Bild";
+"game.AddItem"="Element hinzufügen";
 
 //Tabs
 "tab.Packs"="Pakete";

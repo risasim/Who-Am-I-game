@@ -53,6 +53,15 @@
 "game.res"="结果";
 "game.menu"="菜单";
 "game.ups"="哎呀，看起来你在第一个问题上卡住了。下次好运。";
+"game.Cancel"="取消";
+"game.Save"="保存";
+"tab.Icon.Library"="资料库";
+"game.Info"="信息";
+"game.Saved"="已保存";
+"game.Items"="物品";
+"game.Title"="标题";
+"game.Image"="图片";
+"game.AddItem"="添加物品";
 
 //Tabs
 "tab.Packs"="包";

@@ -53,6 +53,15 @@ Oops,\U00A0parece\U00A0que\U00A0não\U00A0tens\U00A0favoritos. \nPodes marcar um
 "game.res"="Resultados";
 "game.menu"="Menu";
 "game.ups"="Oops, parece que ficaste preso na primeira pergunta. Mais sorte na próxima vez.";
+"game.Cancel"="Cancelar";
+"game.Save"="Guardar";
+"tab.Icon.Library"="Biblioteca";
+"game.Info"="Informações";
+"game.Saved"="Guardado";
+"game.Items"="Itens";
+"game.Title"="Título";
+"game.Image"="Imagem";
+"game.AddItem"="Adicionar item";
 
 //Tabs
 "tab.Packs"="Pacotes";

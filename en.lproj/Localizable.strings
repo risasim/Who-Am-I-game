@@ -53,9 +53,18 @@ Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can ma
 "game.res"="Results";
 "game.menu"="Menu";
 "game.ups"="Ups it looks like you got stuck on the first question. Better luck next time.";
+"game.Cancel"="Cancel";
+"game.Save"="Save";
+"game.Info"="Info";
+"game.Saved"="Saved";
+"game.Items"="Items";
+"game.Title"="Title";
+"game.Image"="Image";
+"game.AddItem"="Add item";
 
 //Tabs
 "tab.Packs"="Packs";
 "tab.library"="Online library of packs";
+"tab.Icon.Library"="Library";
 
 
