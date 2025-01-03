@@ -10,20 +10,19 @@ import RealmSwift
 
 struct ChoosingPackView: View {
     
-    @ObservedObject var realm = RealmGuess()
-    
     
     @State var isSettingsShown:Bool = false
     @State var isNewPackShown: Bool = false
     @State var favourites:Bool = false
     @State var outerChange: Bool = false 
     
+    @EnvironmentObject var realm: RealmGuess
     @ObservedObject var navi = Navigator()
     
     var body: some View {
         NavigationStack(path: $navi.path){
             VStack{
-                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites, outerChange: $outerChange).environmentObject(realm).navigationBarTitleDisplayMode(.inline))
+                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites, outerChange: $outerChange).navigationBarTitleDisplayMode(.inline))
             }
             .overlay(content: {
                 VStack{
@@ -82,5 +81,7 @@ struct ChoosingPackView: View {
 struct ChoosingPackView_Previews: PreviewProvider {
     static var previews: some View {
         ChoosingPackView()
+            .environmentObject(RealmGuess())
+            .environmentObject(SavedPacks())
     }
 }

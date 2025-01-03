@@ -12,6 +12,8 @@ struct WhoAmIGameApp: App {
     @AppStorage("isFirstTime") var isFirstTime = true
     @AppStorage("wasUploaded") var upload = false
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @ObservedObject var realm = RealmGuess()
+    @State var saved = SavedPacks()
     
     var body: some Scene {
         WindowGroup {
@@ -24,8 +26,9 @@ struct WhoAmIGameApp: App {
                         }
                     }
             }else{
-                //ChoosingPackView()
                 TabsView()
+                    .environmentObject(realm)
+                    .environmentObject(saved)
             }
         }
     }

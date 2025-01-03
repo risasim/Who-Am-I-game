@@ -18,8 +18,8 @@ struct ListPackView: View {
     @Binding var outerChange:Bool
     @Namespace var namespace
     
-    @ObservedResults(QuestionPack.self) var questionPacks
-    @State var filteredResults:[QuestionPack] = []
+    @ObservedResults(RealmQuestionPack.self) var questionPacks
+    @State var filteredResults:[RealmQuestionPack] = []
     
     
     var body: some View {
@@ -30,20 +30,19 @@ struct ListPackView: View {
                         NavigationLink(value: pack) {
                             if #available(iOS 18.0, *) {
                                 ListItemView(pack: pack, changed: $change)
-                                    .matchedTransitionSource(id: "pack", in: namespace)
+                                    .matchedTransitionSource(id: pack.id, in: namespace)
                             } else {
-                                // Fallback on earlier versions
+                                ListItemView(pack: pack, changed: $change)
                             }
-                            //.padding()
                         }
                     }
                 }
-                .navigationDestination(for: QuestionPack.self, destination: { pack in
+                .navigationDestination(for: RealmQuestionPack.self, destination: { pack in
                     if #available(iOS 18.0, *) {
                         GameView(model: GameModel(pack: pack))
-                            .navigationTransition(.zoom(sourceID: "pack", in: namespace))
+                            .navigationTransition(.zoom(sourceID: pack.id, in: namespace))
                     } else {
-                        // Fallback on earlier versions
+                        GameView(model: GameModel(pack: pack))
                     }
                 })
                 .padding()
@@ -92,7 +91,7 @@ struct ListPackView: View {
     }
     func getFavs(){
         if favourites{
-            var favPacks: [QuestionPack] = []
+            var favPacks: [RealmQuestionPack] = []
             for pack in questionPacks{
                 if pack.isFavourite{
                     favPacks.append(pack)

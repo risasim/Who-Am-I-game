@@ -23,16 +23,16 @@ final class EditAddModel: ObservableObject{
     var realmie : RealmGuess
     
     //Constants
-    private let warningText = "pack.warninngSame"
+    private let warningText = String(localized: "pack.warninngSame")
     private let userDefaults = UserDefaults.standard
     private var customPack = false
     
     //Internal
-    private var newQuestionPack:QuestionPack
+    private var newQuestionPack:RealmQuestionPack
     var names: [String]
     
     
-    init(realm: RealmGuess, pack: QuestionPack = QuestionPack()){
+    init(realm: RealmGuess, pack: RealmQuestionPack = RealmQuestionPack()){
         self.names = []
         self.realmie = realm
         self.newQuestionPack = pack
