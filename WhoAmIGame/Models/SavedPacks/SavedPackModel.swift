@@ -57,14 +57,14 @@ class SavedPacks:ObservableObject{
     
     func addPack(realm:RealmGuess, pack:NormalQuestionPack){
         DispatchQueue.main.async{
-            var newPack = RealmQuestionPack()
+            let newPack = RealmQuestionPack()
             newPack.imageStr = pack.imageStr
             newPack.questions.append(objectsIn: pack.getNames())
             newPack.name = pack.name
             newPack.author = pack.author
             realm.addPack(pack: newPack)
             
-            var newSavedPack = SavedPack(pocketBaseId: pack.id, realmId: newPack.id.stringValue, saved: .now)
+            let newSavedPack = SavedPack(pocketBaseId: pack.id, realmId: newPack.id.stringValue, saved: .now)
             self.savedPacks.append(newSavedPack)
             writeSavedPacksData(self.savedPacks)
             self.savedPacks = readSavedPacksData()
@@ -73,6 +73,15 @@ class SavedPacks:ObservableObject{
     
     func isSaved(pack:NormalQuestionPack) -> Bool{
         return savedPacks.contains(where: { $0.pocketBaseId == pack.id })
+    }
+    
+    func removePack(realm:RealmGuess, pack:NormalQuestionPack){
+        if(!isSaved(pack: pack)){
+            return
+        }
+        //find in saved
+        //remove
+        //save
     }
 }
 

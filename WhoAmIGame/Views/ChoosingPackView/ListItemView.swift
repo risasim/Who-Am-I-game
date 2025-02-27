@@ -11,6 +11,7 @@ struct ListItemView: View {
     
     @Environment(\.colorScheme) var colorScheme
     var pack : RealmQuestionPack
+    
     @EnvironmentObject var realmie: RealmGuess
     @Binding var changed : Bool
     @State var editPack: Bool = false
@@ -84,6 +85,7 @@ struct ListItemView: View {
             }
             
             Button(role: .destructive) {
+                //TODO call to find if in saved
                 realmie.deletePack(id: pack.id)
                 changed.toggle()
             } label: {
