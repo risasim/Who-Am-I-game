@@ -9,6 +9,7 @@ import Foundation
 
 import Foundation
 
+///Packs taken from pocketbase
 struct PocketBasePacks: Codable {
     let items: [PocketBasePack]
     let page: Int
@@ -17,6 +18,7 @@ struct PocketBasePacks: Codable {
     let totalPages: Int
 }
 
+///Pack that is fetched from PocketBase
 struct PocketBasePack: Codable {
     let author: String
     let collectionId: String
@@ -28,12 +30,15 @@ struct PocketBasePack: Codable {
     let name: String
     let questions: [String]
     let updated: String
+    
 }
 
+///Questions that are in pack
 struct PocketBaseExpand: Codable {
     let questions: [PocketBaseQuestion]
 }
 
+///One question in pack
 struct PocketBaseQuestion: Codable {
     let question: String
 }

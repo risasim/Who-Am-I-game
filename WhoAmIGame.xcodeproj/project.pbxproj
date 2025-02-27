@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A4ACC292D2A7F8100CC6B10 /* LibraryOnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4ACC282D2A7F8100CC6B10 /* LibraryOnBoardingView.swift */; };
 		4A50A3E12D26E1F00037D9FD /* LibraryPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E02D26E1F00037D9FD /* LibraryPackView.swift */; };
 		4A50A3E32D26E8210037D9FD /* LibraryPackOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E22D26E8210037D9FD /* LibraryPackOverview.swift */; };
 		4A50A3E52D26F12C0037D9FD /* ChooseConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A4ACC282D2A7F8100CC6B10 /* LibraryOnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryOnBoardingView.swift; sourceTree = "<group>"; };
 		4A50A3E02D26E1F00037D9FD /* LibraryPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPackView.swift; sourceTree = "<group>"; };
 		4A50A3E22D26E8210037D9FD /* LibraryPackOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPackOverview.swift; sourceTree = "<group>"; };
 		4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseConnectionView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				7908CF352C83521A005ED50E /* NotConnectedView.swift */,
 				7908CF2E2C834FDF005ED50E /* LibraryView.swift */,
 				4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */,
+				4A4ACC282D2A7F8100CC6B10 /* LibraryOnBoardingView.swift */,
 			);
 			path = LibraryView;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				4ADDCD112D26C00600E97CFD /* PocketBaseHandler.swift in Sources */,
 				794CD15D297D30A60002C143 /* SearchBarView.swift in Sources */,
 				7908CF2F2C834FDF005ED50E /* LibraryView.swift in Sources */,
+				4A4ACC292D2A7F8100CC6B10 /* LibraryOnBoardingView.swift in Sources */,
 				4A50A3E12D26E1F00037D9FD /* LibraryPackView.swift in Sources */,
 				797882F5294515AE006E3E74 /* ImageGridView.swift in Sources */,
 				7908CF362C83521A005ED50E /* NotConnectedView.swift in Sources */,
