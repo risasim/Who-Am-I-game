@@ -51,7 +51,7 @@ class SavedPacks:ObservableObject{
     
 #if DEBUG
     init() {
-        self.savedPacks = []
+        self.savedPacks = readSavedPacksData()
     }
 #endif
     
@@ -75,13 +75,14 @@ class SavedPacks:ObservableObject{
         return savedPacks.contains(where: { $0.pocketBaseId == pack.id })
     }
     
-    func removePack(realm:RealmGuess, pack:NormalQuestionPack){
-        if(!isSaved(pack: pack)){
+    func removePack(packID:String){
+        if let packOffset = savedPacks.firstIndex(where: {$0.realmId == packID}) {
+            savedPacks.remove(at: packOffset)
+            writeSavedPacksData(self.savedPacks)
+            self.savedPacks = readSavedPacksData()
+        }else{
             return
         }
-        //find in saved
-        //remove
-        //save
     }
 }
 
