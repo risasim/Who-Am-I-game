@@ -21,7 +21,7 @@ struct WhoAmIGameApp: App {
                 FirstUsernameScreen()
                     .onAppear {
                         if !upload{
-                            StartingDatabase()
+                            StartingDatabase(realm: realm)
                             upload = true
                         }
                     }

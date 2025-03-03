@@ -19,7 +19,7 @@ protocol QuestionPackProtocol{
 
 
 struct NormalQuestionPack:Codable,QuestionPackProtocol{
-    var id:String
+    var id:String?
     var name:String
     var author:String
     var isFavourite:Bool

@@ -13,8 +13,8 @@ struct StartingDatabase{
     private var data: Data
     private var readyData : [NormalQuestionPack] = []
     
-    init(){
-        self.realm = RealmGuess()
+    init(realm:RealmGuess){
+        self.realm = realm
         self.data = Data(jsonData.utf8)
         getJSON()
         
@@ -24,12 +24,20 @@ struct StartingDatabase{
         let decoder = JSONDecoder()
 
         do {
-            let packs = try decoder.decode([NormalQuestionPack].self, from: data)
-            readyData = packs
-            addToDatabase()
-        } catch {
-            print(error.localizedDescription)
-        }
+               let packs = try decoder.decode([NormalQuestionPack].self, from: data)
+               readyData = packs
+               addToDatabase()
+           } catch DecodingError.dataCorrupted(let context) {
+               print("Data corrupted: \(context.debugDescription)")
+           } catch DecodingError.keyNotFound(let key, let context) {
+               print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
+           } catch DecodingError.typeMismatch(let type, let context) {
+               print("Type '\(type)' mismatch: \(context.debugDescription)")
+           } catch DecodingError.valueNotFound(let type, let context) {
+               print("Value of type '\(type)' not found: \(context.debugDescription)")
+           } catch {
+               print("Unknown error: \(error.localizedDescription)")
+           }
     }
     
     func addToDatabase(){

@@ -64,7 +64,7 @@ class SavedPacks:ObservableObject{
             newPack.author = pack.author
             realm.addPack(pack: newPack)
             
-            let newSavedPack = SavedPack(pocketBaseId: pack.id, realmId: newPack.id.stringValue, saved: .now)
+            let newSavedPack = SavedPack(pocketBaseId: pack.id ?? "not provided", realmId: newPack.id.stringValue, saved: .now)
             self.savedPacks.append(newSavedPack)
             writeSavedPacksData(self.savedPacks)
             self.savedPacks = readSavedPacksData()
