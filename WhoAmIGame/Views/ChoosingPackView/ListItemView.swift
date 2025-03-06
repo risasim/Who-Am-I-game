@@ -14,6 +14,7 @@ struct ListItemView: View {
     
     @EnvironmentObject var realmie: RealmGuess
     @EnvironmentObject var saved:SavedPacks
+    @EnvironmentObject var pbHandler:PocketBaseHandler
     @Binding var changed : Bool
     @State var editPack: Bool = false
     
@@ -84,7 +85,11 @@ struct ListItemView: View {
             } label: {
                 Label("pack.editPack", systemImage: "pencil")
             }
-            
+            Button{
+                pbHandler.share(pack:pack)
+            }label:{
+                Label("pack.share", systemImage: "square.and.arrow.up")
+            }
             Button(role: .destructive) {
                 saved.removePack(packID: pack.id.stringValue)
                 realmie.deletePack(id: pack.id)

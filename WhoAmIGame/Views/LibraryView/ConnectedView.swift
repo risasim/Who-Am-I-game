@@ -10,8 +10,8 @@ import SwiftUI
 ///View that is shown, if the app is connected to internet. Shows the packs that could be saved.
 struct ConnectedView: View {
     
-    var handler = PocketBaseHandler()
     @State var packs:[NormalQuestionPack] = []
+    @EnvironmentObject var handler:PocketBaseHandler
     
     var body: some View {
         VStack{
@@ -35,4 +35,5 @@ struct ConnectedView: View {
 
 #Preview {
     ConnectedView()
+        .environmentObject(PocketBaseHandler())
 }

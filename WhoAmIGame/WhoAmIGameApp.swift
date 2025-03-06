@@ -14,6 +14,7 @@ struct WhoAmIGameApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var realm = RealmGuess()
     @State var saved = SavedPacks()
+    @State var pbHandler = PocketBaseHandler()
     
     var body: some Scene {
         WindowGroup {
@@ -29,6 +30,7 @@ struct WhoAmIGameApp: App {
                 TabsView()
                     .environmentObject(realm)
                     .environmentObject(saved)
+                    .environmentObject(pbHandler)
             }
         }
     }

@@ -9,7 +9,7 @@ import Foundation
 import Network
 
 
-class PocketBaseHandler{
+class PocketBaseHandler:ObservableObject{
     var state:PocketBaseState = PocketBaseState.notLoaded
     
     ///Function that fetches the packs from the PocketBase.
@@ -45,6 +45,14 @@ class PocketBaseHandler{
             }
         })
         task.resume()
+    }
+    
+    func share(pack:RealmQuestionPack){
+        do{
+            let data = try JSONEncoder().encode(pack)
+        }catch{
+            print("There has been error creating JSON")
+        }
     }
 }
 

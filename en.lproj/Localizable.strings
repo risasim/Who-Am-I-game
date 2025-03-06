@@ -68,3 +68,11 @@ Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can ma
 "tab.Icon.Library"="Library";
 
 
+//WhatsNew
+"whatsnew.title"="Whats new:";
+"whatsnew.text"="
+ • You can now share packs created by you with others. If you want to share a pack long-press it and select share.
+ • You can now download and play created by others. To see what are the avaiable packs, press Library tab and then on the download symbol of a pack.
+";
+
+
