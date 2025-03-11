@@ -47,12 +47,52 @@ class PocketBaseHandler:ObservableObject{
         task.resume()
     }
     
-    func share(pack:RealmQuestionPack){
-        do{
-            let data = try JSONEncoder().encode(pack)
-        }catch{
-            print("There has been error creating JSON")
+    ///Share a pack via first creating pack and then sendin each question, and at the end updating the pack with the iDs of the quesitons
+    func share(pack:QuestionPackProtocol){
+        var questionIDs:[String] = []
+        if let questionPackID = postPack(name: pack.name, author: pack.author, imageString: pack.imageStr){
+            for q in pack.getNames(){
+                if let qID = postQuestion(question: q, id: questionPackID){
+                    questionIDs.append(qID)
+                }
+            }
         }
+    }
+    
+    ///Post a question to a API, receiving back the id or nil whether it was succesful
+    private func postQuestion(question:String, id:String)->String?{
+        let sendQ = PocketBaseQuestion(question: question, pack: id)
+        let url = URL(string: BASEURL+"/api/collections/questions/records")!
+        var questionID:String? = nil
+        do{
+            let data = try JSONEncoder().encode(sendQ)
+            let task = URLSession.shared.dataTask(with: url) { data, response, err in
+                if let error = err{
+                    print(error)
+                }else{
+                    guard let htttpResponse = response as? HTTPURLResponse,(200...299).contains(htttpResponse.statusCode) else {
+                        print("Error with the response, unexpected status code: \(response)")
+                        return
+                    }
+                    if let data = data,
+                       let question = try? JSONDecoder().decode(PocketBaseQuestion.self, from: data) {
+                        questionID = question.collectionId
+                    }
+                }
+            }
+        }catch{
+            print("Error posting the question")
+        }
+        return questionID
+    }
+    private func postPack(name:String, author:String, imageString:String)->String?{
+        let url = URL(string: BASEURL+"/api/collections/packs/records")!
+        let packID:String? = nil
+        let task = URLSession.shared.dataTask(with: url) { data, response, err in
+            print(data)
+        }
+        task.resume()
+        return packID
     }
 }
 

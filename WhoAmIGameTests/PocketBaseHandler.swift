@@ -21,7 +21,13 @@ struct PocketBaseHandlerTesting {
         let jsonData = JSON.data(using: .utf8)!
         let packs:PocketBasePacks = try JSONDecoder().decode(PocketBasePacks.self, from: jsonData)
         #expect(packs.items.first?.questions.count == 2)
-        #expect(packs.items.first?.expand.questions.first?.question == "Prague")
+        if let packQuestions = packs.items.first?.expand{
+            #expect(packQuestions.questions.first?.question == "Prague")
+        }
+    }
+    
+    @Test func testPost() async throws {
+        
     }
     
     
