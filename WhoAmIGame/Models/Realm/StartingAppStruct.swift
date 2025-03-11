@@ -11,7 +11,7 @@ struct StartingDatabase{
     
     private var realm : RealmGuess
     private var data: Data
-    private var readyData : [NormalQuestionPack] = []
+    var readyData : [NormalQuestionPack] = []
     
     init(realm:RealmGuess){
         self.realm = realm

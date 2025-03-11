@@ -27,7 +27,8 @@ struct PocketBaseHandlerTesting {
     }
     
     @Test func testPost() async throws {
-        
+        let pack = StartingDatabase(realm: RealmGuess()).readyData.first!
+        #expect( handler.share(pack: pack)==PocketBaseState.loaded)
     }
     
     

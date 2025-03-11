@@ -48,24 +48,30 @@ class PocketBaseHandler:ObservableObject{
     }
     
     ///Share a pack via first creating pack and then sendin each question, and at the end updating the pack with the iDs of the quesitons
-    func share(pack:QuestionPackProtocol){
+    func share(pack:QuestionPackProtocol)->PocketBaseState{
         var questionIDs:[String] = []
         if let questionPackID = postPack(name: pack.name, author: pack.author, imageString: pack.imageStr){
             for q in pack.getNames(){
                 if let qID = postQuestion(question: q, id: questionPackID){
                     questionIDs.append(qID)
+                }else{
+                    return PocketBaseState.error
                 }
             }
         }
+        return PocketBaseState.uploaded
     }
     
     ///Post a question to a API, receiving back the id or nil whether it was succesful
     private func postQuestion(question:String, id:String)->String?{
         let sendQ = PocketBaseQuestion(question: question, pack: id)
         let url = URL(string: BASEURL+"/api/collections/questions/records")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
         var questionID:String? = nil
         do{
             let data = try JSONEncoder().encode(sendQ)
+            urlRequest.httpBody = data
             let task = URLSession.shared.dataTask(with: url) { data, response, err in
                 if let error = err{
                     print(error)
@@ -85,6 +91,7 @@ class PocketBaseHandler:ObservableObject{
         }
         return questionID
     }
+    ///Post post to the PocketBase via Post request
     private func postPack(name:String, author:String, imageString:String)->String?{
         let url = URL(string: BASEURL+"/api/collections/packs/records")!
         let packID:String? = nil
@@ -97,7 +104,7 @@ class PocketBaseHandler:ObservableObject{
 }
 
 
-
+///State of the PocketBase communication
 enum PocketBaseState{
-    case notLoaded, loading, error, loaded
+    case notLoaded, loading, error, loaded, uploaded
 }
