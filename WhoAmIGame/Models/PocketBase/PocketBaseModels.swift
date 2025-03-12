@@ -20,7 +20,7 @@ struct PocketBasePacks: Codable {
 
 ///Pack that is fetched from PocketBase
 struct PocketBasePack: Codable {
-    let author: String
+    let author: String?
     let collectionId: String?
     let collectionName: String?
     let created: String?
@@ -28,8 +28,23 @@ struct PocketBasePack: Codable {
     let id: String?
     let imageString: String
     let name: String
-    let questions: [String]
+    let questions: [String]?
     let updated: String?
+    let isPublic:Bool
+    
+    init(author: String?=nil, collectionId: String?=nil, collectionName: String?=nil, created: String?=nil, expand: PocketBaseExpand?=nil, id: String?=nil, imageString: String, name: String, questions: [String]?=nil, updated: String?=nil, isPublic:Bool) {
+        self.author = author
+        self.collectionId = collectionId
+        self.collectionName = collectionName
+        self.created = created
+        self.expand = expand
+        self.id = id
+        self.imageString = imageString
+        self.name = name
+        self.questions = questions
+        self.updated = updated
+        self.isPublic = isPublic
+    }
     
 }
 

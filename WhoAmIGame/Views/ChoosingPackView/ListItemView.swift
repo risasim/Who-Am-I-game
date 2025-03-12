@@ -86,7 +86,16 @@ struct ListItemView: View {
                 Label("pack.editPack", systemImage: "pencil")
             }
             Button{
-                pbHandler.share(pack:pack)
+                pbHandler.share(pack:pack, completion:  { state in
+                    DispatchQueue.main.async {
+                        if state == .uploaded {
+                            print("Pack successfully uploaded!") // Replace with UI feedback
+                        } else {
+                            print("Failed to upload pack.") // Replace with alert
+                        }
+                    }
+                }
+                )
             }label:{
                 Label("pack.share", systemImage: "square.and.arrow.up")
             }

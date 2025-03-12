@@ -42,7 +42,9 @@ struct NormalQuestionPack:Codable,QuestionPackProtocol{
     mutating func getFromPocketBase(_ pack:PocketBasePack){
         self.id = pack.id
         self.name = pack.name
-        self.author = pack.author
+        if let author = pack.author{
+            self.author = author
+        }
         self.imageStr = pack.imageString
         if let expand = pack.expand{
             for name in expand.questions{
