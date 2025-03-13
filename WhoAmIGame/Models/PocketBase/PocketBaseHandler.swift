@@ -31,19 +31,35 @@ class PocketBaseHandler:ObservableObject{
                 print("Error with the response, unexpected status code: \(String(describing: response))")
                 return
             }
-            print(data!)
-            if let data = data,
-               let packs = try? JSONDecoder().decode(PocketBasePacks.self, from: data) {
-                var normalPacks:[NormalQuestionPack] = []
-                for pack in packs.items{
-                    var newPack = NormalQuestionPack()
-                    newPack.getFromPocketBase(pack)
-                    normalPacks.append(newPack)
+            
+            let decoder = JSONDecoder()
+            if let data = data {
+                do {
+                    let packs = try? JSONDecoder().decode(PocketBasePacks.self, from: data)
+                     var normalPacks:[NormalQuestionPack] = []
+                    if let ps = packs{
+                        for pack in ps.items{
+                             var newPack = NormalQuestionPack()
+                             newPack.getFromPocketBase(pack)
+                             normalPacks.append(newPack)
+                         }
+                    }
+                     self.state = PocketBaseState.loaded
+                     completionHandler(normalPacks)
+                } catch let DecodingError.dataCorrupted(context) {
+                    print(context)
+                } catch let DecodingError.keyNotFound(key, context) {
+                    print("Key '\(key)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.valueNotFound(value, context) {
+                    print("Value '\(value)' not found:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch let DecodingError.typeMismatch(type, context)  {
+                    print("Type '\(type)' mismatch:", context.debugDescription)
+                    print("codingPath:", context.codingPath)
+                } catch {
+                    print("error: ", error)
                 }
-                self.state = PocketBaseState.loaded
-                completionHandler(normalPacks)
-            }else{
-                print("Fucked up decoding new")
             }
         })
         task.resume()
@@ -165,10 +181,6 @@ class PocketBaseHandler:ObservableObject{
             } catch {
                 print("Failed to decode JSON: \(error)")
                 completion(nil)
-            }
-            
-            if let res = response {
-                print("Response: \(res)")
             }
         }
         task.resume()

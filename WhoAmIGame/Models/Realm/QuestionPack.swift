@@ -26,10 +26,6 @@ struct NormalQuestionPack:Codable,QuestionPackProtocol{
     var imageStr:String
     var names:[String]
     
-    func getNames() -> [String] {
-        return names
-    }
-    
     init(id:String = "",name: String = "", author: String = "", isFavourite: Bool = false, imageStr: String = "", names: [String] = []) {
         self.id = id
         self.name = name
@@ -39,6 +35,12 @@ struct NormalQuestionPack:Codable,QuestionPackProtocol{
         self.names = names
     }
     
+    ///Get the questions
+    func getNames() -> [String] {
+        return names
+    }
+
+    ///Creates from JSON response objects that can be used
     mutating func getFromPocketBase(_ pack:PocketBasePack){
         self.id = pack.id
         self.name = pack.name
@@ -47,8 +49,10 @@ struct NormalQuestionPack:Codable,QuestionPackProtocol{
         }
         self.imageStr = pack.imageString
         if let expand = pack.expand{
-            for name in expand.questions{
-                self.names.append(name.question)
+            if let qs = expand.questions{
+                for name in qs{
+                    self.names.append(name.question)
+                }
             }
         }
         

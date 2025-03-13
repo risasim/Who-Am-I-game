@@ -50,7 +50,7 @@ struct PocketBasePack: Codable {
 
 ///Questions that are in pack
 struct PocketBaseExpand: Codable {
-    let questions: [PocketBaseQuestion]
+    let questions: [PocketBaseQuestion]?
 }
 
 ///One question in pack
