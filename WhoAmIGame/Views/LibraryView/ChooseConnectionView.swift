@@ -9,7 +9,7 @@ import SwiftUI
 
 ///View in library, that decides what UI to show depending on the network connection.
 struct ChooseConnectionView: View {
-    @ObservedObject var network = NetworkController()
+    @EnvironmentObject var network: NetworkController
     var body: some View {
         if network.isConnected{
             ConnectedView()
@@ -22,4 +22,5 @@ struct ChooseConnectionView: View {
 #Preview {
     ChooseConnectionView()
         .environmentObject(RealmGuess())
+        .environmentObject(NetworkController())
 }

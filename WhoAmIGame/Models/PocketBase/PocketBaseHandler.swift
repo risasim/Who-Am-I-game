@@ -11,24 +11,27 @@ import Network
 
 class PocketBaseHandler:ObservableObject{
     var state:PocketBaseState = PocketBaseState.notLoaded
+    @Published var sharePackInfo:String = ""
     
     ///Function that fetches the packs from the PocketBase.
     //Using escaping so that the rest of the app does not wait for the packs
-    func fetchPacks(completionHandler: @escaping ([NormalQuestionPack])-> Void){
+    func fetchPacks(completionHandler: @escaping ([NormalQuestionPack]?,String?)-> Void){
         self.state = PocketBaseState.loading
         //Fetching from the PocketBase
-        let url = URL(string: BASEURL+"/api/collections/packs/records?filter=(isPublic=trueC)&expand=questions&fields=*,expand.questions.question")!
+        let url = URL(string: BASEURL+"/api/collections/packs/records?filter=(isPublic=true)&expand=questions&fields=*,expand.questions.question")!
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error {
 #warning("Not ideal solution for the error")
                 print("Error fetching packs: \(error)")
                 self.state = PocketBaseState.error
+                completionHandler(nil,"library.server.error")
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 print("Error with the response, unexpected status code: \(String(describing: response))")
+                completionHandler(nil,"library.server.error")
                 return
             }
             if let data = data {
@@ -43,7 +46,7 @@ class PocketBaseHandler:ObservableObject{
                          }
                     }
                      self.state = PocketBaseState.loaded
-                     completionHandler(normalPacks)
+                     completionHandler(normalPacks,nil)
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
                 } catch let DecodingError.keyNotFound(key, context) {
@@ -64,7 +67,7 @@ class PocketBaseHandler:ObservableObject{
     }
     
     ///Share a pack via first creating pack and then sendin each question, and at the end updating the pack with the iDs of the quesitons
-    func share(pack: QuestionPackProtocol, completion: @escaping (PocketBaseState) -> Void) {
+    func share(pack: RealmQuestionPack,savePacks:SavedPacks,realm: RealmGuess, completion: @escaping (PocketBaseState) -> Void) {
         postPack(name: pack.name, author: pack.author, imageString: pack.imageStr) { questionPackID in
             guard let questionPackID = questionPackID else {
                 print("Pack creation failed!")
@@ -93,9 +96,10 @@ class PocketBaseHandler:ObservableObject{
                 self.updatePack(id: questionPackID ,name: pack.name, author: pack.author, imageString: pack.imageStr, questions: questionIDs) { packID in
                     if packID == nil {
                         hasError = true
-                        print("executed not good")
                     }
-                    print("executed")
+                    if let packID = packID {
+                        savePacks.addPack(pack: pack, pbID: packID)
+                    }
                 }
                 completion(hasError ? .error : .uploaded)
             }

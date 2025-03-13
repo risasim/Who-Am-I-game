@@ -12,6 +12,7 @@ struct ConnectedView: View {
     
     @State var packs:[NormalQuestionPack] = []
     @EnvironmentObject var handler:PocketBaseHandler
+    @State var showMessage:String = ""
     
     var body: some View {
         VStack{
@@ -24,8 +25,13 @@ struct ConnectedView: View {
             }
             .scrollIndicators(.hidden)
             .onAppear{
-                handler.fetchPacks{ packs in
-                    self.packs = packs
+                handler.fetchPacks{ packs,err in
+                    if let packs = packs{
+                        self.packs = packs
+                    }
+                    if let err = err{
+                        showMessage = err
+                    }
                 }
             }
         }

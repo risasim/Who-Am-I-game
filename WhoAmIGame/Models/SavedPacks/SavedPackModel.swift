@@ -55,6 +55,7 @@ class SavedPacks:ObservableObject{
     }
 #endif
     
+    ///To have an account of those that are uploaded
     func addPack(realm:RealmGuess, pack:NormalQuestionPack){
         DispatchQueue.main.async{
             let newPack = RealmQuestionPack()
@@ -71,8 +72,22 @@ class SavedPacks:ObservableObject{
         }
     }
     
+    ///For adding the ones that are shared
+    func addPack(pack:RealmQuestionPack,pbID:String){
+        DispatchQueue.main.async{
+            let newSavedPack = SavedPack(pocketBaseId: pbID, realmId: pack.id.stringValue, saved: .now)
+            self.savedPacks.append(newSavedPack)
+            writeSavedPacksData(self.savedPacks)
+            self.savedPacks = readSavedPacksData()
+        }
+    }
+    
     func isSaved(pack:NormalQuestionPack) -> Bool{
         return savedPacks.contains(where: { $0.pocketBaseId == pack.id })
+    }
+    
+    func isSaved(pack:RealmQuestionPack) -> Bool{
+        return savedPacks.contains(where: { $0.realmId == pack.id.stringValue })
     }
     
     func removePack(packID:String){

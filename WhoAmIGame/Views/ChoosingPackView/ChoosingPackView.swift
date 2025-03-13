@@ -14,9 +14,11 @@ struct ChoosingPackView: View {
     @State var isSettingsShown:Bool = false
     @State var isNewPackShown: Bool = false
     @State var favourites:Bool = false
-    @State var outerChange: Bool = false 
+    @State var outerChange: Bool = false
+    @State var sharepPackInfo = ""
     
     @EnvironmentObject var realm: RealmGuess
+    @EnvironmentObject var handler: PocketBaseHandler
     @ObservedObject var navi = Navigator()
     
     var body: some View {
@@ -33,6 +35,13 @@ struct ChoosingPackView: View {
                     }
                 }
             })
+            //To show toast after sharing
+            .if(sharepPackInfo != "", transform: { view in
+                view.overlay(content: {
+                    SharePackToastView(show: $sharepPackInfo)
+                })
+            })
+            //Settings
             .sheet(isPresented: $isSettingsShown, content: {
                 SettingsView()
             })
@@ -42,6 +51,7 @@ struct ChoosingPackView: View {
                         outerChange.toggle()
                     }
             })
+            //Toolbar
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -83,5 +93,6 @@ struct ChoosingPackView_Previews: PreviewProvider {
         ChoosingPackView()
             .environmentObject(RealmGuess())
             .environmentObject(SavedPacks())
+            .environmentObject(PocketBaseHandler())
     }
 }

@@ -15,6 +15,7 @@ struct ListItemView: View {
     @EnvironmentObject var realmie: RealmGuess
     @EnvironmentObject var saved:SavedPacks
     @EnvironmentObject var pbHandler:PocketBaseHandler
+    @EnvironmentObject var network: NetworkController
     @Binding var changed : Bool
     @State var editPack: Bool = false
     
@@ -86,7 +87,7 @@ struct ListItemView: View {
                 Label("pack.editPack", systemImage: "pencil")
             }
             Button{
-                pbHandler.share(pack:pack, completion:  { state in
+                pbHandler.share(pack:pack, savePacks: saved,realm:realmie, completion:  { state in
                     DispatchQueue.main.async {
                         if state == .uploaded {
                             print("Pack successfully uploaded!") // Replace with UI feedback
@@ -99,6 +100,7 @@ struct ListItemView: View {
             }label:{
                 Label("pack.share", systemImage: "square.and.arrow.up")
             }
+            .disabled(!network.isConnected || saved.isSaved(pack: pack))
             Button(role: .destructive) {
                 saved.removePack(packID: pack.id.stringValue)
                 realmie.deletePack(id: pack.id)

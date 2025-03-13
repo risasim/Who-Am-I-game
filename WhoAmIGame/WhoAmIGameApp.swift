@@ -13,6 +13,7 @@ struct WhoAmIGameApp: App {
     @AppStorage("wasUploaded") var upload = false
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var realm = RealmGuess()
+    @ObservedObject var network = NetworkController()
     @State var saved = SavedPacks()
     @State var pbHandler = PocketBaseHandler()
     
@@ -31,6 +32,7 @@ struct WhoAmIGameApp: App {
                     .environmentObject(realm)
                     .environmentObject(saved)
                     .environmentObject(pbHandler)
+                    .environmentObject(network)
             }
         }
     }

@@ -16,6 +16,11 @@
 		4A6879322D26D9EB00FDF521 /* QuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6879312D26D9EB00FDF521 /* QuestionPack.swift */; };
 		4ADDCD112D26C00600E97CFD /* PocketBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */; };
 		4ADDCD132D26C01D00E97CFD /* PocketBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */; };
+		4AECE5732D83427A0057F22D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AECE5722D83427A0057F22D /* RealmSwift */; };
+		4AECE5742D8342840057F22D /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 4AECE5722D83427A0057F22D /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4AECE5782D8342A80057F22D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AECE5772D8342A80057F22D /* RealmSwift */; };
+		4AECE5792D8342A80057F22D /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 4AECE5772D8342A80057F22D /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		4AECE57C2D83456C0057F22D /* SharePackToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AECE57B2D83456C0057F22D /* SharePackToastView.swift */; };
 		7903292629A15C8400DBB5FF /* LaunchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903292529A15C8400DBB5FF /* LaunchingView.swift */; };
 		7908CF2F2C834FDF005ED50E /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908CF2E2C834FDF005ED50E /* LibraryView.swift */; };
 		7908CF312C834FF7005ED50E /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7908CF302C834FF7005ED50E /* NetworkController.swift */; };
@@ -45,8 +50,6 @@
 		79E37972293CD8CD0080C98F /* WhoAmIGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37971293CD8CD0080C98F /* WhoAmIGameApp.swift */; };
 		79E37976293CD8CF0080C98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79E37975293CD8CF0080C98F /* Assets.xcassets */; };
 		79E37979293CD8CF0080C98F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79E37978293CD8CF0080C98F /* Preview Assets.xcassets */; };
-		79E37981293CDA120080C98F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 79E37980293CDA120080C98F /* Realm */; };
-		79E37983293CDA120080C98F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79E37982293CDA120080C98F /* RealmSwift */; };
 		79E37987293CDA600080C98F /* ChoosingPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E37986293CDA5F0080C98F /* ChoosingPackView.swift */; };
 		79E3798B293CE7AE0080C98F /* RealmGuess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3798A293CE7AE0080C98F /* RealmGuess.swift */; };
 		79E3798D293CE7D30080C98F /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3798C293CE7D30080C98F /* Migrator.swift */; };
@@ -68,6 +71,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4AECE56E2D83424D0057F22D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4AECE5742D8342840057F22D /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AECE57A2D8342A80057F22D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4AECE5792D8342A80057F22D /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4A0B5A022D75BC2E00D01014 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		4A4ACC282D2A7F8100CC6B10 /* LibraryOnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryOnBoardingView.swift; sourceTree = "<group>"; };
@@ -79,6 +107,7 @@
 		4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseHandler.swift; sourceTree = "<group>"; };
 		4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseModels.swift; sourceTree = "<group>"; };
 		4ADDCD182D26C5F400E97CFD /* WhoAmIGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhoAmIGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AECE57B2D83456C0057F22D /* SharePackToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePackToastView.swift; sourceTree = "<group>"; };
 		7903292529A15C8400DBB5FF /* LaunchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingView.swift; sourceTree = "<group>"; };
 		7908CF2E2C834FDF005ED50E /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		7908CF302C834FF7005ED50E /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
@@ -139,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AECE5782D8342A80057F22D /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79E37983293CDA120080C98F /* RealmSwift in Frameworks */,
-				79E37981293CDA120080C98F /* Realm in Frameworks */,
+				4AECE5732D83427A0057F22D /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +232,13 @@
 			path = PocketBase;
 			sourceTree = "<group>";
 		};
+		4AECE5762D8342A80057F22D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7908CF322C8351FC005ED50E /* LibraryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +276,7 @@
 				797882F4294515AE006E3E74 /* ImageGridView.swift */,
 				79E37986293CDA5F0080C98F /* ChoosingPackView.swift */,
 				79C628EE295F2FC80082FE67 /* NewPack */,
+				4AECE57B2D83456C0057F22D /* SharePackToastView.swift */,
 			);
 			path = ChoosingPackView;
 			sourceTree = "<group>";
@@ -279,6 +316,7 @@
 				7999B8F42B49BE89003BA1D2 /* Localizable.strings */,
 				79E37970293CD8CD0080C98F /* WhoAmIGame */,
 				4ADDCD192D26C5F400E97CFD /* WhoAmIGameTests */,
+				4AECE5762D8342A80057F22D /* Frameworks */,
 				79E3796F293CD8CD0080C98F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -349,6 +387,7 @@
 				4ADDCD142D26C5F400E97CFD /* Sources */,
 				4ADDCD152D26C5F400E97CFD /* Frameworks */,
 				4ADDCD162D26C5F400E97CFD /* Resources */,
+				4AECE57A2D8342A80057F22D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +399,7 @@
 			);
 			name = WhoAmIGameTests;
 			packageProductDependencies = (
+				4AECE5772D8342A80057F22D /* RealmSwift */,
 			);
 			productName = WhoAmIGameTests;
 			productReference = 4ADDCD182D26C5F400E97CFD /* WhoAmIGameTests.xctest */;
@@ -372,6 +412,7 @@
 				79E3796A293CD8CD0080C98F /* Sources */,
 				79E3796B293CD8CD0080C98F /* Frameworks */,
 				79E3796C293CD8CD0080C98F /* Resources */,
+				4AECE56E2D83424D0057F22D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,8 +420,7 @@
 			);
 			name = WhoAmIGame;
 			packageProductDependencies = (
-				79E37980293CDA120080C98F /* Realm */,
-				79E37982293CDA120080C98F /* RealmSwift */,
+				4AECE5722D83427A0057F22D /* RealmSwift */,
 			);
 			productName = WhoAmIGame;
 			productReference = 79E3796E293CD8CD0080C98F /* WhoAmIGame.app */;
@@ -424,7 +464,7 @@
 			);
 			mainGroup = 79E37965293CD8CD0080C98F;
 			packageReferences = (
-				79E3797F293CDA120080C98F /* XCRemoteSwiftPackageReference "realm-swift" */,
+				4AECE56F2D83427A0057F22D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 79E3796F293CD8CD0080C98F /* Products */;
 			projectDirPath = "";
@@ -471,6 +511,7 @@
 				797882F92946216E006E3E74 /* StartedGameView.swift in Sources */,
 				794CD15F297DC0560002C143 /* PlusButtonView.swift in Sources */,
 				7903292629A15C8400DBB5FF /* LaunchingView.swift in Sources */,
+				4AECE57C2D83456C0057F22D /* SharePackToastView.swift in Sources */,
 				79E37998293CEEB20080C98F /* EmptyPacksView.swift in Sources */,
 				7908CF342C835210005ED50E /* ConnectedView.swift in Sources */,
 				79E03F8B2961892900DF5976 /* Navigator.swift in Sources */,
@@ -806,7 +847,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		79E3797F293CDA120080C98F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		4AECE56F2D83427A0057F22D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -817,14 +858,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		79E37980293CDA120080C98F /* Realm */ = {
+		4AECE5722D83427A0057F22D /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 79E3797F293CDA120080C98F /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
+			package = 4AECE56F2D83427A0057F22D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
-		79E37982293CDA120080C98F /* RealmSwift */ = {
+		4AECE5772D8342A80057F22D /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 79E3797F293CDA120080C98F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 4AECE56F2D83427A0057F22D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
