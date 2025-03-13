@@ -18,7 +18,7 @@ final class EditAddModel: ObservableObject{
     @Published var packName = ""
     @Published var isSame = false
     @Published var alertBool = false
-    @Published var alert: Alert = Alert(title: Text("Default aler"), message: Text("Message"))
+    @Published var alert: Alert = Alert(title: Text("Default alert"), message: Text("Message"))
     @Published var selectedImage = ""
     var realmie : RealmGuess
     
@@ -61,7 +61,7 @@ final class EditAddModel: ObservableObject{
         }
     }
     
-    
+    ///Check the whole pack for potentially unwanted properties, ie number of questions, selection of title, image,
     func checkPack() -> Bool{
         if selectedImage != ""{
             if packName != "" {
@@ -83,6 +83,7 @@ final class EditAddModel: ObservableObject{
     
     }
     
+    ///Saves teh whole pack to the Realm database
     func savePack(){
         if customPack{
             print(names)
@@ -96,7 +97,7 @@ final class EditAddModel: ObservableObject{
         }
     }
        
-    
+    ///Checks on of the questions while the user types
     func checkItem(){
         if names.contains(currentTextField){
             warning = warningText
@@ -107,10 +108,12 @@ final class EditAddModel: ObservableObject{
         }
     }
     
+    ///Deletes question from teh questions
     func deleteItem(at offsets: IndexSet){
         names.remove(atOffsets: offsets)
     }
     
+    ///Adds question to the questoins if its not empty or same as previous one
     func addItem(){
         if !isSame{
             if currentTextField != ""{

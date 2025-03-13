@@ -17,7 +17,7 @@ protocol QuestionPackProtocol{
     func getNames() -> [String]
 }
 
-
+///Standard issue of the QuestionPack used when uploaded from PocketBase I think?
 struct NormalQuestionPack:Codable,QuestionPackProtocol{
     var id:String?
     var name:String

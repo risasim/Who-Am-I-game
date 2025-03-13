@@ -35,6 +35,16 @@ struct ConnectedView: View {
                 }
             }
         }
+        .refreshable {
+            handler.fetchPacks{ packs,err in
+                if let packs = packs{
+                    self.packs = packs
+                }
+                if let err = err{
+                    showMessage = err
+                }
+            }
+        }
         .padding(.horizontal)
     }
 }
@@ -42,4 +52,5 @@ struct ConnectedView: View {
 #Preview {
     ConnectedView()
         .environmentObject(PocketBaseHandler())
+        .environmentObject(SavedPacks())
 }

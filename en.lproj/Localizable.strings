@@ -75,4 +75,9 @@ Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can ma
  • You can now download and play created by others. To see what are the avaiable packs, press Library tab and then on the download symbol of a pack.
 ";
 
+//Update 2.0
+"library.server.error"="Something went wrong on the server";
+"pack.share"="Share pack";
+"library.waitForApproval"="The pack needs to be approved, after which you will be able to find it in the library.";
+
 
