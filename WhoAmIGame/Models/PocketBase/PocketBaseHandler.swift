@@ -17,7 +17,7 @@ class PocketBaseHandler:ObservableObject{
     func fetchPacks(completionHandler: @escaping ([NormalQuestionPack])-> Void){
         self.state = PocketBaseState.loading
         //Fetching from the PocketBase
-        let url = URL(string: BASEURL+"/api/collections/packs/records?expand=questions&fields=*,expand.questions.question")!
+        let url = URL(string: BASEURL+"/api/collections/packs/records?filter=(isPublic=trueC)&expand=questions&fields=*,expand.questions.question")!
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error {
 #warning("Not ideal solution for the error")
