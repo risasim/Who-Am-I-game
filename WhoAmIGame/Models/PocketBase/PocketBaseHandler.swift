@@ -31,8 +31,6 @@ class PocketBaseHandler:ObservableObject{
                 print("Error with the response, unexpected status code: \(String(describing: response))")
                 return
             }
-            
-            let decoder = JSONDecoder()
             if let data = data {
                 do {
                     let packs = try? JSONDecoder().decode(PocketBasePacks.self, from: data)
@@ -92,12 +90,64 @@ class PocketBaseHandler:ObservableObject{
             }
 
             group.notify(queue: .main) {
+                self.updatePack(id: questionPackID ,name: pack.name, author: pack.author, imageString: pack.imageStr, questions: questionIDs) { packID in
+                    if packID == nil {
+                        hasError = true
+                        print("executed not good")
+                    }
+                    print("executed")
+                }
                 completion(hasError ? .error : .uploaded)
             }
         }
     }
     
-   // private func updatePack
+    /// Update the pack with the questions
+    private func updatePack(id: String,name: String, author: String, imageString: String, questions:[String],completion: @escaping (String?) -> Void){
+        let pack = PocketBasePack(imageString: imageString, name: name, questions:questions, isPublic: false)
+        let url = URL(string: BASEURL + "/api/collections/packs/records/\(id)")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PATCH"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let data = try JSONEncoder().encode(pack)
+            urlRequest.httpBody = data
+        } catch {
+            print("Failed to encode JSON")
+            completion(nil)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, err in
+            if let err = err {
+                print("Request error: \(err.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("Unexpected status code: \(String(describing: response))")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                completion(nil)
+                return
+            }
+            
+            do {
+                let responseData = try JSONDecoder().decode(PocketBasePack.self, from: data)
+                completion(responseData.id)  // Use decoded value
+            } catch {
+                print("Failed to decode JSON: \(error)")
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
     
     ///Post a question to a API, receiving back the id or nil whether it was succesful
     private func postQuestion(question: String, id: String, completion: @escaping (String?) -> Void) {
@@ -165,6 +215,12 @@ class PocketBaseHandler:ObservableObject{
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, err in
             if let err = err {
                 print("Request error: \(err.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("Unexpected status code: \(String(describing: response))")
                 completion(nil)
                 return
             }
