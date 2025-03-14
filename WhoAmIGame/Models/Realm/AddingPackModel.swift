@@ -44,6 +44,7 @@ final class EditAddModel: ObservableObject{
         }
     }
     
+    ///Possible alerts while trying to save a pack
     enum Alerts: String{
         case Image = "pack.noImage"
         case Name = "pack.noName"

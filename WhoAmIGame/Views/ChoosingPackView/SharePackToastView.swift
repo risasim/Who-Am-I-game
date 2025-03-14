@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///View that is presented after pushing the share button informing user about the state of the upload what happens afterwards
 struct SharePackToastView: View {
     @Binding var show:String
     var body: some View {

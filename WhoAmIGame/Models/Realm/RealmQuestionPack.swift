@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 
+///Model for Realm
 class RealmQuestionPack: Object, ObjectKeyIdentifiable, Codable, QuestionPackProtocol{
     @Persisted var id: ObjectId
     @Persisted var name: String = "President"
@@ -17,10 +18,12 @@ class RealmQuestionPack: Object, ObjectKeyIdentifiable, Codable, QuestionPackPro
     @Persisted var imageStr:String = "cinema"
     @Persisted var questions: List<String> = List<String>()
     
+    ///Unique ID
     override class func primaryKey() -> String? {
         "id"
     }
     
+    ///Get all of the questions from a pack
     func getNames() -> [String] {
         var res:[String] = []
         for q in questions{
@@ -29,6 +32,7 @@ class RealmQuestionPack: Object, ObjectKeyIdentifiable, Codable, QuestionPackPro
         return res
     }
     
+    ///Does convert it to json
     func toJSON() -> String? {
         let dictionary: [String: Any] = [
             "id": id.stringValue,
