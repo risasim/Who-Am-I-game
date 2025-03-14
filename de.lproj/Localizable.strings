@@ -67,4 +67,22 @@ Ups\U00A0es\U00A0scheint\U00A0so,\U00A0als\U00A0hättest\U00A0du\U00A0keine\U00A
 "tab.Packs"="Pakete";
 "tab.library"="Online-Bibliothek von Paketen";
 
+//Whats new
+"whatsnew.title"="Was gibt's Neues:";
+"whatsnew.text"="
+ • Du kannst jetzt von dir erstellte Pakete mit anderen teilen. Halte ein Paket lange gedrückt und wähle 'Teilen'.
+ • Du kannst jetzt von anderen erstellte Pakete herunterladen und spielen. Um die verfügbaren Pakete zu sehen, gehe auf den Bibliothek-Tab und tippe auf das Download-Symbol eines Pakets.
 
+Falls du Fehler bemerkst, melde sie bitte an johnsonpicardo@gmail.com, um die App zu verbessern.
+";
+
+//Update 2.0
+"library.server.error"="Es ist ein Fehler auf dem Server aufgetreten";
+"pack.share"="Paket teilen";
+"library.waitForApproval"="Das Paket muss genehmigt werden, danach kannst du es in der Bibliothek finden.";
+"library.notLoaded"="Bibliothek nicht geladen";
+"library.loading"="Bibliothek wird geladen";
+"library.error"="Serverfehler";
+"library.loaded"="Bibliothek geladen";
+"library.uploaded"="Erfolgreich hochgeladen";
+"library.uploading"="Hochladen in die Bibliothek";

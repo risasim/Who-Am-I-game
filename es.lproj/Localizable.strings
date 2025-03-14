@@ -67,3 +67,23 @@ Ups,\U00A0parece\U00A0que\U00A0no\U00A0tienes\U00A0favoritos. \nPuedes marcar un
 "tab.Packs"="Paquetes";
 "tab.library"="Biblioteca en línea de paquetes";
 
+//Whats new
+"whatsnew.title"="Novedades:";
+"whatsnew.text"="
+ • Ahora puedes compartir paquetes creados por ti con otros. Si quieres compartir un paquete, mantenlo presionado y selecciona 'Compartir'.
+ • Ahora puedes descargar y jugar paquetes creados por otros. Para ver los paquetes disponibles, presiona la pestaña Biblioteca y luego toca el símbolo de descarga de un paquete.
+
+Si encuentras algún error, repórtalo a johnsonpicardo@gmail.com para ayudar a mejorar esta aplicación.
+";
+
+//Update 2.0
+"library.server.error"="Algo salió mal en el servidor";
+"pack.share"="Compartir paquete";
+"library.waitForApproval"="El paquete necesita ser aprobado; después podrás encontrarlo en la biblioteca.";
+"library.notLoaded"="Biblioteca no cargada";
+"library.loading"="Cargando biblioteca";
+"library.error"="Error del servidor";
+"library.loaded"="Biblioteca cargada";
+"library.uploaded"="Subido con éxito";
+"library.uploading"="Subiendo a la biblioteca";
+
