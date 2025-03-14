@@ -10,12 +10,22 @@ import SwiftUI
 ///View that is presented after pushing the share button informing user about the state of the upload what happens afterwards
 struct SharePackToastView: View {
     @EnvironmentObject var pbHandler :PocketBaseHandler
+    @State var toastState:PocketBaseState
     var body: some View {
         VStack{
-            Text(pbHandler.uploadState.getDescription())
+            Text(LocalizedStringResource(stringLiteral: pbHandler.uploadState.getDescription()))
+                .font(.title2)
+                .bold()
+            if(pbHandler.uploadState == .uploading){
+                ProgressView()
+            }else{
+                Image(systemName: pbHandler.uploadState.getIcon())
+                    .foregroundStyle(pbHandler.uploadState.getColor())
+                    .padding()
+                    .font(.custom("Arial", size: 40, relativeTo: .body))
+            }
         }
-        
-        .frame(minWidth: 200,minHeight: 200)
+        .frame(minWidth: 300,minHeight: 300)
         .background(
             .ultraThinMaterial,
             in: RoundedRectangle(cornerRadius: 23, style: .continuous)
@@ -29,6 +39,7 @@ struct SharePackToastView: View {
                     }label: {
                         Image(systemName: "xmark")
                             .padding()
+                            .font(.title2)
                             .bold()
                             .foregroundColor(.red)
                     }
@@ -36,9 +47,6 @@ struct SharePackToastView: View {
                 Spacer()
             }
         })
-#if DEBUG
-        .onAppear(perform: pbHandler.showForPreview)
-#endif
     }
 }
 

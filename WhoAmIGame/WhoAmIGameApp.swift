@@ -15,7 +15,7 @@ struct WhoAmIGameApp: App {
     @ObservedObject var realm = RealmGuess()
     @ObservedObject var network = NetworkController()
     @State var saved = SavedPacks()
-    @State var pbHandler = PocketBaseHandler()
+    @StateObject var pbHandler = PocketBaseHandler()
     
     var body: some Scene {
         WindowGroup {

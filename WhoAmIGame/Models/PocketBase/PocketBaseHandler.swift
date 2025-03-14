@@ -10,6 +10,7 @@ import Network
 import SwiftUI
 
 
+///Handler for PocketBase, handles the sharing of a pack, fetching them and passing the state of it to the app
 class PocketBaseHandler:ObservableObject{
     @Published var state:PocketBaseState = PocketBaseState.notLoaded
     @Published var uploadState = PocketBaseState.waiting
@@ -45,6 +46,9 @@ class PocketBaseHandler:ObservableObject{
                              newPack.getFromPocketBase(pack)
                              normalPacks.append(newPack)
                          }
+                    }else{
+                        completionHandler(nil,"library.server.error")
+                        return
                     }
                      self.state = PocketBaseState.loaded
                      completionHandler(normalPacks,nil)
@@ -252,7 +256,7 @@ class PocketBaseHandler:ObservableObject{
     ///Call just to debug interface
     ////> Warning: Should only be used in debuging
     func showForPreview(){
-        uploadState = .uploading
+        uploadState = .uploaded
     }
 }
 
@@ -269,7 +273,7 @@ enum PocketBaseState{
         case .loading:
             return "library.loading"
         case .error:
-            return "library.error"
+            return "library.server.error"
         case .loaded:
             return "library.loaded"
         case .uploaded:
@@ -298,6 +302,25 @@ enum PocketBaseState{
             return Color.yellow
         case .waiting:
             return Color.yellow
+        }
+    }
+    
+    func getIcon() -> String{
+        switch self {
+        case .notLoaded:
+            return "exclamationmark.triangle.fill"
+        case .loading:
+            return "arrow.clockwise.circle.fill"
+        case .error:
+            return "exclamationmark.triangle"
+        case .loaded:
+            return "checkmark.circle.fill"
+        case .uploaded:
+            return "checkmark.circle"
+        case .waiting:
+            return ""
+        case .uploading:
+            return ""
         }
     }
 }
