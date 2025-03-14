@@ -7,11 +7,12 @@
 
 import Foundation
 import Network
+import SwiftUI
 
 
 class PocketBaseHandler:ObservableObject{
-    var state:PocketBaseState = PocketBaseState.notLoaded
-    @Published var sharePackInfo:String = ""
+    @Published var state:PocketBaseState = PocketBaseState.notLoaded
+    @Published var uploadState = PocketBaseState.waiting
     
     ///Function that fetches the packs from the PocketBase.
     //Using escaping so that the rest of the app does not wait for the packs
@@ -67,11 +68,12 @@ class PocketBaseHandler:ObservableObject{
     }
     
     ///Share a pack via first creating pack and then sendin each question, and at the end updating the pack with the iDs of the quesitons
-    func share(pack: RealmQuestionPack,savePacks:SavedPacks,realm: RealmGuess, completion: @escaping (PocketBaseState) -> Void) {
+    func share(pack: RealmQuestionPack,savePacks:SavedPacks,realm: RealmGuess, completion: @escaping () -> Void) {
         postPack(name: pack.name, author: pack.author, imageString: pack.imageStr) { questionPackID in
             guard let questionPackID = questionPackID else {
                 print("Pack creation failed!")
-                completion(.error)
+                self.uploadState = .error
+                completion()
                 return
             }
 
@@ -101,7 +103,8 @@ class PocketBaseHandler:ObservableObject{
                         savePacks.addPack(pack: pack, pbID: packID)
                     }
                 }
-                completion(hasError ? .error : .uploaded)
+                self.uploadState = hasError ? .error : .uploaded
+                completion()
             }
         }
     }
@@ -245,10 +248,56 @@ class PocketBaseHandler:ObservableObject{
         }
         task.resume()
     }
+    
+    ///Call just to debug interface
+    ////> Warning: Should only be used in debuging
+    func showForPreview(){
+        uploadState = .uploading
+    }
 }
 
 
 ///State of the PocketBase communication
 enum PocketBaseState{
-    case notLoaded, loading, error, loaded, uploaded
+    case notLoaded, loading, error, loaded, uploaded,waiting,uploading
+    
+    ///Switch to get a description
+    func getDescription() -> String{
+        switch self {
+        case .notLoaded:
+            return "library.notLoaded"
+        case .loading:
+            return "library.loading"
+        case .error:
+            return "library.error"
+        case .loaded:
+            return "library.loaded"
+        case .uploaded:
+            return "library.uploaded"
+        case .uploading:
+            return "library.uploading"
+        case .waiting:
+            return ""
+        }
+    }
+    
+    ///Switch to get a coor shown on the toast
+    func getColor() -> Color{
+        switch self {
+        case .notLoaded:
+            return Color.red
+        case .loading:
+            return Color.blue
+        case .error:
+            return Color.red
+        case .loaded:
+            return Color.green
+        case .uploaded:
+            return Color.green
+        case.uploading:
+            return Color.yellow
+        case .waiting:
+            return Color.yellow
+        }
+    }
 }

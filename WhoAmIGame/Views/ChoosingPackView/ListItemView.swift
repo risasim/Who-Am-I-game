@@ -87,16 +87,7 @@ struct ListItemView: View {
                 Label("pack.editPack", systemImage: "pencil")
             }
             Button{
-                pbHandler.share(pack:pack, savePacks: saved,realm:realmie, completion:  { state in
-                    DispatchQueue.main.async {
-                        if state == .uploaded {
-                            print("Pack successfully uploaded!") // Replace with UI feedback
-                        } else {
-                            print("Failed to upload pack.") // Replace with alert
-                        }
-                    }
-                }
-                )
+                pbHandler.share(pack:pack, savePacks: saved,realm:realmie, completion:  {})
             }label:{
                 Label("pack.share", systemImage: "square.and.arrow.up")
             }
@@ -126,5 +117,7 @@ struct ListItemView_Previews: PreviewProvider {
             .onAppear {
                 pack.author = "Richie"
             }
+            .environmentObject(NetworkController())
+            .environmentObject(SavedPacks())
     }
 }

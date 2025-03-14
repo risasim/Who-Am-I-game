@@ -79,5 +79,11 @@ Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can ma
 "library.server.error"="Something went wrong on the server";
 "pack.share"="Share pack";
 "library.waitForApproval"="The pack needs to be approved, after which you will be able to find it in the library.";
+"library.notLoaded"="";
+"library.loading"="";
+"library.error"="";
+"library.loaded"="";
+"library.uploaded"="Sucessfully uploaded";
+"library.uploading"="Uploading to the library";
 
 

@@ -15,7 +15,6 @@ struct ChoosingPackView: View {
     @State var isNewPackShown: Bool = false
     @State var favourites:Bool = false
     @State var outerChange: Bool = false
-    @State var sharepPackInfo = ""
     
     @EnvironmentObject var realm: RealmGuess
     @EnvironmentObject var handler: PocketBaseHandler
@@ -36,9 +35,9 @@ struct ChoosingPackView: View {
                 }
             })
             //To show toast after sharing
-            .if(sharepPackInfo != "", transform: { view in
+            .if(handler.uploadState != .waiting, transform: { view in
                 view.overlay(content: {
-                    SharePackToastView(show: $sharepPackInfo)
+                    SharePackToastView()
                 })
             })
             //Settings
