@@ -17,57 +17,57 @@ class PocketBaseHandler:ObservableObject{
     
     ///Function that fetches the packs from the PocketBase.
     //Using escaping so that the rest of the app does not wait for the packs
-    func fetchPacks(completionHandler: @escaping ([NormalQuestionPack]?,String?)-> Void){
-        self.state = PocketBaseState.loading
-        //Fetching from the PocketBase
-        let url = URL(string: BASEURL+"/api/collections/packs/records?filter=(isPublic=true)&expand=questions&fields=*,expand.questions.question")!
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            if let error {
-#warning("Not ideal solution for the error")
+    func fetchPacks(completionHandler: @escaping ([NormalQuestionPack]?, String?) -> Void) {
+        DispatchQueue.main.async {
+            self.state = PocketBaseState.loading
+        }
+        let url = URL(string: BASEURL + "/api/collections/packs/records?filter=(isPublic=true)&expand=questions&fields=*,expand.questions.question")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
                 print("Error fetching packs: \(error)")
-                self.state = PocketBaseState.error
-                completionHandler(nil,"library.server.error")
+                DispatchQueue.main.async {
+                    self.state = PocketBaseState.error
+                }
+                completionHandler(nil, "library.server.error")
                 return
             }
-            
+
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 print("Error with the response, unexpected status code: \(String(describing: response))")
-                completionHandler(nil,"library.server.error")
+                completionHandler(nil, "library.server.error")
                 return
             }
+
             if let data = data {
                 do {
                     let packs = try? JSONDecoder().decode(PocketBasePacks.self, from: data)
-                     var normalPacks:[NormalQuestionPack] = []
-                    if let ps = packs{
-                        for pack in ps.items{
-                             var newPack = NormalQuestionPack()
-                             newPack.getFromPocketBase(pack)
-                             normalPacks.append(newPack)
-                         }
-                    }else{
-                        completionHandler(nil,"library.server.error")
+                    var normalPacks: [NormalQuestionPack] = []
+                    if let ps = packs {
+                        for pack in ps.items {
+                            var newPack = NormalQuestionPack()
+                            newPack.getFromPocketBase(pack)
+                            normalPacks.append(newPack)
+                        }
+                    } else {
+                        completionHandler(nil, "library.server.error")
                         return
                     }
-                     self.state = PocketBaseState.loaded
-                     completionHandler(normalPacks,nil)
-                } catch let DecodingError.dataCorrupted(context) {
-                    print(context)
-                } catch let DecodingError.keyNotFound(key, context) {
-                    print("Key '\(key)' not found:", context.debugDescription)
-                    print("codingPath:", context.codingPath)
-                } catch let DecodingError.valueNotFound(value, context) {
-                    print("Value '\(value)' not found:", context.debugDescription)
-                    print("codingPath:", context.codingPath)
-                } catch let DecodingError.typeMismatch(type, context)  {
-                    print("Type '\(type)' mismatch:", context.debugDescription)
-                    print("codingPath:", context.codingPath)
+
+                    DispatchQueue.main.async {
+                        self.state = PocketBaseState.loaded
+                    }
+                    completionHandler(normalPacks, nil)
+
                 } catch {
-                    print("error: ", error)
+                    print("Decoding error: \(error)")
+                    DispatchQueue.main.async {
+                        self.state = PocketBaseState.error
+                    }
+                    completionHandler(nil, "library.server.error")
                 }
             }
-        })
+        }
         task.resume()
     }
     

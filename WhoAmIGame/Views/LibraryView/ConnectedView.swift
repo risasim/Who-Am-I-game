@@ -25,27 +25,28 @@ struct ConnectedView: View {
             }
             .scrollIndicators(.hidden)
             .onAppear{
-                handler.fetchPacks{ packs,err in
-                    if let packs = packs{
-                        self.packs = packs
-                    }
-                    if let err = err{
-                        showMessage = err
-                    }
-                }
+                getPacks()
             }
         }
         .refreshable {
-            handler.fetchPacks{ packs,err in
-                if let packs = packs{
+            getPacks()
+        }
+        .padding(.horizontal)
+    }
+    
+    private func getPacks(){
+        handler.fetchPacks{ packs,err in
+            if let packs = packs{
+                DispatchQueue.main.async {
                     self.packs = packs
                 }
-                if let err = err{
+            }
+            if let err = err{
+                DispatchQueue.main.async {
                     showMessage = err
                 }
             }
         }
-        .padding(.horizontal)
     }
 }
 
