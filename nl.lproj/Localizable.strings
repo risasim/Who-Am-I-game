@@ -79,7 +79,7 @@ Als je bugs opmerkt, meld ze dan aan johnsonpicardo@gmail.com om de app te verbe
 //Update 2.0
 "library.server.error"="Er is iets misgegaan op de server";
 "pack.share"="Pakket delen";
-"library.waitForApproval"="Het pakket moet worden goedgekeurd, waarna je het in de bibliotheek kunt vinden.";
+"library.waitForApproval"="Het pakket wordt na goedkeuring binnen 24 uur aan de bibliotheek toegevoegd";
 "library.notLoaded"="Bibliotheek niet geladen";
 "library.loading"="Bibliotheek wordt geladen";
 "library.error"="Serverfout";

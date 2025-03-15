@@ -80,7 +80,7 @@ If you notice any bug, please report to johnsonpicardo@gmail.com to help improve
 //Update 2.0
 "library.server.error"="Something went wrong on the server";
 "pack.share"="Share pack";
-"library.waitForApproval"="The pack needs to be approved, after which you will be able to find it in the library.";
+"library.waitForApproval"="Pack will be added to library after approval in next 24 hours";
 "library.notLoaded"="Library not loaded";
 "library.loading"="Loading library";
 "library.error"="Server error";

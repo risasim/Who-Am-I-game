@@ -79,7 +79,7 @@ Si encuentras algún error, repórtalo a johnsonpicardo@gmail.com para ayudar a 
 //Update 2.0
 "library.server.error"="Algo salió mal en el servidor";
 "pack.share"="Compartir paquete";
-"library.waitForApproval"="El paquete necesita ser aprobado; después podrás encontrarlo en la biblioteca.";
+"library.waitForApproval"="El paquete se añadirá a la biblioteca después de la aprobación en las próximas 24 horas";
 "library.notLoaded"="Biblioteca no cargada";
 "library.loading"="Cargando biblioteca";
 "library.error"="Error del servidor";

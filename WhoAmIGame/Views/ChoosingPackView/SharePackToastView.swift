@@ -24,6 +24,12 @@ struct SharePackToastView: View {
                     .padding()
                     .font(.custom("Arial", size: 40, relativeTo: .body))
             }
+            if(pbHandler.uploadState == .uploaded){
+                Text(LocalizedStringResource("library.waitForApproval"))
+                    .font(.callout)
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
         }
         .frame(minWidth: 300,minHeight: 300)
         .background(
@@ -35,7 +41,9 @@ struct SharePackToastView: View {
                 HStack{
                     Spacer()
                     Button{
-                        pbHandler.uploadState = .waiting
+                        withAnimation {
+                            pbHandler.uploadState = .waiting
+                        }
                     }label: {
                         Image(systemName: "xmark")
                             .padding()

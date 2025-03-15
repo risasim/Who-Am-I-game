@@ -79,7 +79,7 @@
 //Update 2.0
 "library.server.error"="服务器出现问题";
 "pack.share"="分享包";
-"library.waitForApproval"="该包需要审批，之后你就可以在图书馆找到它。";
+"library.waitForApproval"="数据包将在批准后的 24 小时内添加到库中";
 "library.notLoaded"="图书馆未加载";
 "library.loading"="正在加载图书馆";
 "library.error"="服务器错误";

@@ -79,7 +79,7 @@ Se encontrar algum erro, reporte para johnsonpicardo@gmail.com para ajudar a mel
 //Update 2.0
 "library.server.error"="Algo deu errado no servidor";
 "pack.share"="Compartilhar pacote";
-"library.waitForApproval"="O pacote precisa ser aprovado, depois disso você poderá encontrá-lo na biblioteca.";
+"library.waitForApproval"="O pacote será adicionado à biblioteca após aprovação nas próximas 24 horas";
 "library.notLoaded"="Biblioteca não carregada";
 "library.loading"="Carregando biblioteca";
 "library.error"="Erro no servidor";

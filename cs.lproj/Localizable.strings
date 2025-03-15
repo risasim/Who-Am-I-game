@@ -79,7 +79,7 @@ Pokud si všimnete nějaké chyby, nahlaste ji na johnsonpicardo@gmail.com, abys
 //Update 2.0
 "library.server.error"="Něco se pokazilo na serveru";
 "pack.share"="Sdílet balíček";
-"library.waitForApproval"="Balíček musí být schválen, poté jej budete moci najít v knihovně.";
+"library.waitForApproval"="Balíček bude přidán do knihovny po schválení během následujících 24 hodin";
 "library.notLoaded"="Knihovna nebyla načtena";
 "library.loading"="Načítání knihovny";
 "library.error"="Chyba serveru";

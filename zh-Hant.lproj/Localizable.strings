@@ -79,7 +79,7 @@
 //Update 2.0
 "library.server.error"="伺服器發生錯誤";
 "pack.share"="分享包";
-"library.waitForApproval"="此包需要審核，之後你就可以在圖書館找到它。";
+"library.waitForApproval"="數據包將在批准後的 24 小時內添加到庫中";
 "library.notLoaded"="圖書館未載入";
 "library.loading"="正在載入圖書館";
 "library.error"="伺服器錯誤";
