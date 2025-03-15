@@ -34,12 +34,6 @@ struct ChoosingPackView: View {
                     }
                 }
             })
-            //To show toast after sharing
-            .if(handler.uploadState != .waiting, transform: { view in
-                view.overlay(content: {
-                    SharePackToastView(toastState: handler.uploadState)
-                })
-            })
             //Settings
             .sheet(isPresented: $isSettingsShown, content: {
                 SettingsView()
@@ -84,9 +78,6 @@ struct ChoosingPackView: View {
         .onAppear(perform: {
             AppDelegate.orientationLock = .all
         })
-#if DEBUG
-        .onAppear(perform: handler.showForPreview)
-#endif
     }
 }
 

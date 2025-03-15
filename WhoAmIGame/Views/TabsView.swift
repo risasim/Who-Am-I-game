@@ -11,7 +11,7 @@ struct TabsView: View {
     var body: some View {
         VStack{
             TabView {
-                ChoosingPackView()
+                MainPacksView()
                     .tabItem{
                         Label("tab.Packs", systemImage: "square.stack.3d.down.right")
                     }
@@ -29,6 +29,7 @@ struct TabView_Previews: PreviewProvider {
         TabsView()
             .environmentObject(RealmGuess())
             .environmentObject(SavedPacks())
+            .environmentObject(PocketBaseHandler())
             .environment(\.locale, .init(identifier: "zh-Hans"))
     }
 }

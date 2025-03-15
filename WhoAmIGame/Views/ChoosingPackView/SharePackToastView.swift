@@ -10,7 +10,6 @@ import SwiftUI
 ///View that is presented after pushing the share button informing user about the state of the upload what happens afterwards
 struct SharePackToastView: View {
     @EnvironmentObject var pbHandler :PocketBaseHandler
-    @State var toastState:PocketBaseState
     var body: some View {
         VStack{
             Text(LocalizedStringResource(stringLiteral: pbHandler.uploadState.getDescription()))

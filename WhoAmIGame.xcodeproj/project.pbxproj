@@ -14,6 +14,7 @@
 		4A50A3E52D26F12C0037D9FD /* ChooseConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */; };
 		4A50A3EB2D27127D0037D9FD /* SavedPackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A50A3EA2D27127D0037D9FD /* SavedPackModel.swift */; };
 		4A6879322D26D9EB00FDF521 /* QuestionPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6879312D26D9EB00FDF521 /* QuestionPack.swift */; };
+		4A73AD092D85EA8200C123E1 /* MainPacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A73AD082D85EA8200C123E1 /* MainPacksView.swift */; };
 		4ADDCD112D26C00600E97CFD /* PocketBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */; };
 		4ADDCD132D26C01D00E97CFD /* PocketBaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */; };
 		4AECE5732D83427A0057F22D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AECE5722D83427A0057F22D /* RealmSwift */; };
@@ -104,6 +105,7 @@
 		4A50A3E42D26F12C0037D9FD /* ChooseConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseConnectionView.swift; sourceTree = "<group>"; };
 		4A50A3EA2D27127D0037D9FD /* SavedPackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPackModel.swift; sourceTree = "<group>"; };
 		4A6879312D26D9EB00FDF521 /* QuestionPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPack.swift; sourceTree = "<group>"; };
+		4A73AD082D85EA8200C123E1 /* MainPacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPacksView.swift; sourceTree = "<group>"; };
 		4ADDCD102D26C00600E97CFD /* PocketBaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseHandler.swift; sourceTree = "<group>"; };
 		4ADDCD122D26C01D00E97CFD /* PocketBaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBaseModels.swift; sourceTree = "<group>"; };
 		4ADDCD182D26C5F400E97CFD /* WhoAmIGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhoAmIGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +279,7 @@
 				79E37986293CDA5F0080C98F /* ChoosingPackView.swift */,
 				79C628EE295F2FC80082FE67 /* NewPack */,
 				4AECE57B2D83456C0057F22D /* SharePackToastView.swift */,
+				4A73AD082D85EA8200C123E1 /* MainPacksView.swift */,
 			);
 			path = ChoosingPackView;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				7908CF342C835210005ED50E /* ConnectedView.swift in Sources */,
 				79E03F8B2961892900DF5976 /* Navigator.swift in Sources */,
 				4A6879322D26D9EB00FDF521 /* QuestionPack.swift in Sources */,
+				4A73AD092D85EA8200C123E1 /* MainPacksView.swift in Sources */,
 				79E3799C293CEF230080C98F /* ListPackView.swift in Sources */,
 				79E37972293CD8CD0080C98F /* WhoAmIGameApp.swift in Sources */,
 				4A50A3E32D26E8210037D9FD /* LibraryPackOverview.swift in Sources */,
