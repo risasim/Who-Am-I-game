@@ -29,6 +29,7 @@ Bitte\U00A0Benutzernamen\U00A0eingeben. \nDer Benutzername wird verwendet, um ei
 "set.Ver"="Version";
 "set.app"="Anwendung";
 "set.set"="Einstellungen";
+"set.improve"="Falls du Fehler bemerkst, melde sie bitte an whoamibugs@gmail.com, um die App zu verbessern.";
 ""="";
 
 //Packs
@@ -73,7 +74,7 @@ Ups\U00A0es\U00A0scheint\U00A0so,\U00A0als\U00A0hättest\U00A0du\U00A0keine\U00A
  • Du kannst jetzt von dir erstellte Pakete mit anderen teilen. Halte ein Paket lange gedrückt und wähle 'Teilen'.
  • Du kannst jetzt von anderen erstellte Pakete herunterladen und spielen. Um die verfügbaren Pakete zu sehen, gehe auf den Bibliothek-Tab und tippe auf das Download-Symbol eines Pakets.
 
-Falls du Fehler bemerkst, melde sie bitte an johnsonpicardo@gmail.com, um die App zu verbessern.
+Falls du Fehler bemerkst, melde sie bitte an whoamibugs@gmail.com, um die App zu verbessern.
 ";
 
 //Update 2.0

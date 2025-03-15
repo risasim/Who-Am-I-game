@@ -29,6 +29,7 @@ Please\U00A0enter\U00A0username. \nUsername will be used for publishing your own
 "set.Ver"="Version";
 "set.app"="Application";
 "set.set"="Settings";
+"set.improve"="If you notice any bug, please report to whoamibugs@gmail.com to help improve this app.";
 ""="";
 
 //Packs
@@ -74,7 +75,7 @@ Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can ma
  • You can now share packs created by you with others. If you want to share a pack long-press it and select share.
  • You can now download and play created by others. To see what are the avaiable packs, press Library tab and then on the download symbol of a pack.
 
-If you notice any bug, please report to johnsonpicardo@gmail.com to help improve this app.
+If you notice any bug, please report to whoamibugs@gmail.com to help improve this app.
 ";
 
 //Update 2.0
@@ -87,5 +88,6 @@ If you notice any bug, please report to johnsonpicardo@gmail.com to help improve
 "library.loaded"="Library loaded";
 "library.uploaded"="Sucessfully uploaded";
 "library.uploading"="Uploading to the library";
+"library.welcome"="";
 
 

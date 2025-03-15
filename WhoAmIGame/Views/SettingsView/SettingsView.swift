@@ -94,6 +94,9 @@ struct SettingsView: View {
                     }, label: {
                         SettingsLabelView(label: "set.app", image: "apps.iphone")
                     })
+                    Text("set.improve")
+                        .font(.caption)
+                        .multilineTextAlignment(.center)
                 }
             }
             .navigationTitle("set.set")

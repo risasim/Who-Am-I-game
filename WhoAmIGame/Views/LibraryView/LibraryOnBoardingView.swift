@@ -10,7 +10,7 @@ import SwiftUI
 struct LibraryOnBoardingView: View {
     var body: some View {
         VStack{
-            Text("Welcome to Packs library")
+            Text("library.welcome")
             Text("")
             Text("Welcome to Packs library")
         }

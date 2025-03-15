@@ -29,6 +29,7 @@ Prosím\U00A0zadejte\U00A0jméno. \nUživatelské jméno bude použito pro sdíl
 "set.Ver"="Verze";
 "set.app"="Aplikace";
 "set.set"="Nastavení";
+"set.improve"="Pokud si všimnete nějaké chyby, nahlaste ji na whoamibugs@gmail.com, abyste pomohli vylepšit tuto aplikaci.";
 ""="";
 
 //Packs
@@ -73,7 +74,7 @@ Ups\U00A0vypadá\U00A0to\U00A0že\U00A0nemáte\U00A0žádné\U00A0oblíbence. \n
  • Nyní můžete sdílet balíčky, které jste vytvořili, s ostatními. Pokud chcete sdílet balíček, podržte jej a vyberte 'Sdílet'.
  • Nyní si můžete stáhnout a hrát balíčky vytvořené ostatními. Chcete-li zobrazit dostupné balíčky, stiskněte kartu Knihovna a poté ikonu stahování u balíčku.
 
-Pokud si všimnete nějaké chyby, nahlaste ji na johnsonpicardo@gmail.com, abyste pomohli vylepšit tuto aplikaci.
+Pokud si všimnete nějaké chyby, nahlaste ji na whoamibugs@gmail.com, abyste pomohli vylepšit tuto aplikaci.
 ";
 
 //Update 2.0

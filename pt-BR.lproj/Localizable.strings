@@ -29,6 +29,7 @@ Por\U00A0favor,\U00A0insira\U00A0um\U00A0nome\U00A0de\U00A0usuário. \nO nome de
 "set.Ver"="Versão";
 "set.app"="Aplicativo";
 "set.set"="Configurações";
+"set.improve"="Se encontrar algum erro, reporte para whoamibugs@gmail.com para ajudar a melhorar este aplicativo.";
 ""="";
 
 //Packs
@@ -73,7 +74,7 @@ Opa,\U00A0parece\U00A0que\U00A0você\U00A0não\U00A0tem\U00A0favoritos. \nVocê 
  • Agora você pode compartilhar pacotes criados por você com outras pessoas. Para compartilhar um pacote, pressione-o e selecione 'Compartilhar'.
  • Agora você pode baixar e jogar pacotes criados por outras pessoas. Para ver os pacotes disponíveis, toque na aba Biblioteca e depois no símbolo de download de um pacote.
 
-Se encontrar algum erro, reporte para johnsonpicardo@gmail.com para ajudar a melhorar este aplicativo.
+Se encontrar algum erro, reporte para whoamibugs@gmail.com para ajudar a melhorar este aplicativo.
 ";
 
 //Update 2.0
