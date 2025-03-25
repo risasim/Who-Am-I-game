@@ -87,3 +87,6 @@
 "library.loaded"="图书馆已加载";
 "library.uploaded"="上传成功";
 "library.uploading"="正在上传到图书馆";
+"library.welcome"="欢迎来到题库";
+"library.explanation"="在这里，你可以下载其他用户创建的问题包，或者上传你自己创建的包。";
+"library.enter"="进入";

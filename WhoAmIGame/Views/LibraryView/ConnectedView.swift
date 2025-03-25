@@ -15,23 +15,28 @@ struct ConnectedView: View {
     @State var showMessage:String = ""
     
     var body: some View {
-        VStack{
-            ScrollView {
-                LazyVGrid(columns: gridLayout,spacing: 15) {
-                    ForEach(packs, id: \.name) { pack in
-                        LibraryPackView(pack: pack)
+        ZStack{
+            if(showMessage != ""){
+                Text(showMessage)
+            }
+            VStack{
+                ScrollView {
+                    LazyVGrid(columns: gridLayout,spacing: 15) {
+                        ForEach(packs, id: \.name) { pack in
+                            LibraryPackView(pack: pack)
+                        }
                     }
                 }
+                .scrollIndicators(.hidden)
+                .onAppear{
+                    getPacks()
+                }
             }
-            .scrollIndicators(.hidden)
-            .onAppear{
+            .refreshable {
                 getPacks()
             }
+            .padding(.horizontal)
         }
-        .refreshable {
-            getPacks()
-        }
-        .padding(.horizontal)
     }
     
     private func getPacks(){

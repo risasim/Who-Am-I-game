@@ -87,3 +87,6 @@ Se encontrar algum erro, reporte para whoamibugs@gmail.com para ajudar a melhora
 "library.loaded"="Biblioteca carregada";
 "library.uploaded"="Enviado com sucesso";
 "library.uploading"="Enviando para a biblioteca";
+"library.welcome"="Bem-vindo à biblioteca de pacotes";
+"library.explanation"="Aqui você pode baixar pacotes de perguntas criados por outros usuários ou postar os pacotes que você criou.";
+"library.enter"="Entrar";

@@ -87,3 +87,6 @@
 "library.loaded"="圖書館已載入";
 "library.uploaded"="成功上傳";
 "library.uploading"="正在上傳到圖書館";
+"library.welcome"="歡迎來到題庫";
+"library.explanation"="在這裡，你可以下載其他使用者創建的問題包，或上傳你自己創建的包。";
+"library.enter"="進入";

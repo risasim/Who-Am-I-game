@@ -23,4 +23,5 @@ struct ChooseConnectionView: View {
     ChooseConnectionView()
         .environmentObject(RealmGuess())
         .environmentObject(NetworkController())
+        .environmentObject(PocketBaseHandler())
 }

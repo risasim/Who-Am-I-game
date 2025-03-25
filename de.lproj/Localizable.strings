@@ -87,3 +87,6 @@ Falls du Fehler bemerkst, melde sie bitte an whoamibugs@gmail.com, um die App zu
 "library.loaded"="Bibliothek geladen";
 "library.uploaded"="Erfolgreich hochgeladen";
 "library.uploading"="Hochladen in die Bibliothek";
+"library.welcome"="Willkommen in der Pakete-Bibliothek";
+"library.explanation"="Hier kannst du Fragenpakete herunterladen, die von anderen Nutzern erstellt wurden, oder deine eigenen Pakete hochladen.";
+"library.enter"="Eintreten";

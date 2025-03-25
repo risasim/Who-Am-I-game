@@ -87,3 +87,6 @@ Pokud si všimnete nějaké chyby, nahlaste ji na whoamibugs@gmail.com, abyste p
 "library.loaded"="Knihovna načtena";
 "library.uploaded"="Úspěšně nahráno";
 "library.uploading"="Nahrávání do knihovny";
+"library.welcome"="Vítejte v knihovně balíčků";
+"library.explanation"="Zde si můžete stáhnout balíčky otázek vytvořené ostatními uživateli nebo zde můžete zveřejnit balíčky, které jste vytvořili.";
+"library.enter"="Vstoupit";

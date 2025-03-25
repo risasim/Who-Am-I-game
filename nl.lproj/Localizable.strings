@@ -87,3 +87,6 @@ Als je bugs opmerkt, meld ze dan aan whoamibugs@gmail.com om de app te verbetere
 "library.loaded"="Bibliotheek geladen";
 "library.uploaded"="Succesvol geüpload";
 "library.uploading"="Bezig met uploaden naar de bibliotheek";
+"library.welcome"="Welkom in de Pakkettenbibliotheek";
+"library.explanation"="Hier kun je vragenpakketten downloaden die door andere gebruikers zijn gemaakt, of je kunt hier zelfgemaakte pakketten plaatsen.";
+"library.enter"="Betreden";

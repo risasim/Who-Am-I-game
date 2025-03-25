@@ -84,10 +84,12 @@ If you notice any bug, please report to whoamibugs@gmail.com to help improve thi
 "library.waitForApproval"="Pack will be added to library after approval in next 24 hours";
 "library.notLoaded"="Library not loaded";
 "library.loading"="Loading library";
-"library.error"="Server error";
+"library.error"="Server error,try later";
 "library.loaded"="Library loaded";
 "library.uploaded"="Sucessfully uploaded";
 "library.uploading"="Uploading to the library";
-"library.welcome"="";
+"library.welcome"="Welcome to Packs library";
+"library.explanation"="Here you can download pack of questions that were created by other users or you can post here packs you have created.";
+"library.enter"="Enter";
 
 
