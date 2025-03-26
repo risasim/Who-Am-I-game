@@ -15,6 +15,7 @@ struct SharePackToastView: View {
             Text(LocalizedStringResource(stringLiteral: pbHandler.uploadState.getDescription()))
                 .font(.title2)
                 .bold()
+                .padding(.horizontal)
             if(pbHandler.uploadState == .uploading){
                 ProgressView()
             }else{
@@ -30,7 +31,7 @@ struct SharePackToastView: View {
                     .padding()
             }
         }
-        .frame(minWidth: 300,minHeight: 300)
+        .frame(maxWidth: 300,maxHeight: 300)
         .background(
             .ultraThinMaterial,
             in: RoundedRectangle(cornerRadius: 23, style: .continuous)
@@ -59,7 +60,7 @@ struct SharePackToastView: View {
 
 #Preview {
     ZStack{
-        ChoosingPackView()
+        SharePackToastView()
     }
     .environmentObject(RealmGuess())
     .environmentObject(NetworkController())
