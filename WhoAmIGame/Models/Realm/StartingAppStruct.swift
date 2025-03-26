@@ -16,6 +16,9 @@ struct StartingDatabase{
     init(realm:RealmGuess){
         self.realm = realm
         self.data = Data(jsonData.utf8)
+#if DEBUG
+        self.data = Data(libaryUploadJSON.utf8)
+#endif
         getJSON()
         
     }
@@ -50,28 +53,27 @@ struct StartingDatabase{
 
 let jsonData = """
 [
-   {
-     "name" : "Presidents",
+{
+     "name" : "Sports",
      "author" : "Richie",
      "isFavourite": false,
-     "imageStr": "presidents",
+     "imageStr": "sports",
      "names": [
-        "JFK",
-        "Ronald Reagan",
-        "Barrack Obama",
-        "Donald Trump",
-        "George W.Bush",
-        "Woodrow Wilson",
-        "George Washington",
-        "Theodor Roosevelt",
-        "Thomas Jefferson",
-        "Richard Nixon",
-        "Abraham Lincoln",
-        "F. D. Roosevelt",
-        "Dwight Eisenhower",
-        "Gerald Ford",
-        "Jimmy Carter",
-        "Bill Clinton"
+        "Soccer",
+        "Basketball",
+        "Tennis",
+        "Baseball",
+        "Golf",
+        "Boxing",
+        "Cycling",
+        "Formula 1",
+        "Ice Hockey",
+        "Wrestling",
+        "Skiing",
+        "Snowboarding",
+        "Table Tennis",
+        "Surfing",
+        "Badminton"
      ]
    },
     {
@@ -391,6 +393,309 @@ let jsonData = """
         "Rammstein",
         "Bee Gees",
         "Green Day"
+     ]
+   }
+]
+"""
+let libaryUploadJSON = """
+[
+   {
+     "name" : "Fictional Characters",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "celebrit",
+     "names": [
+        "Harry Potter",
+        "Sherlock Holmes",
+        "Darth Vader",
+        "Spider-Man",
+        "Batman",
+        "Superman",
+        "Wonder Woman",
+        "The Joker",
+        "Frodo Baggins",
+        "Hannibal Lecter",
+        "Willy Wonka",
+        "Indiana Jones",
+        "Mickey Mouse",
+        "Homer Simpson",
+        "Lara Croft"
+     ]
+   },
+   {
+     "name" : "Mythology",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "fantasy",
+     "names": [
+        "Zeus",
+        "Thor",
+        "Hercules",
+        "Medusa",
+        "Anubis",
+        "Poseidon",
+        "Aphrodite",
+        "Loki",
+        "Odin",
+        "Persephone",
+        "Ra",
+        "Fenrir",
+        "Hades",
+        "Achilles",
+        "Minotaur"
+     ]
+   },
+   {
+     "name" : "Video Game Characters",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "art",
+     "names": [
+        "Mario",
+        "Luigi",
+        "Link",
+        "Master Chief",
+        "Kratos",
+        "Solid Snake",
+        "Pikachu",
+        "Lara Croft",
+        "Geralt of Rivia",
+        "Samus Aran",
+        "Pac-Man",
+        "Nathan Drake",
+        "Ezio Auditore",
+        "Sonic the Hedgehog",
+        "Steve (Minecraft)"
+     ]
+   },
+   {
+     "name" : "Sports Legends",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "sports",
+     "names": [
+        "Michael Jordan",
+        "Muhammad Ali",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Serena Williams",
+        "Roger Federer",
+        "Usain Bolt",
+        "LeBron James",
+        "Kobe Bryant",
+        "Tom Brady",
+        "Pele",
+        "Tiger Woods",
+        "Diego Maradona",
+        "Simone Biles",
+        "Lewis Hamilton"
+     ]
+   },{
+     "name" : "Cartoon Characters",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "cartoon",
+     "names": [
+        "Bugs Bunny",
+        "Scooby-Doo",
+        "Tom (Tom & Jerry)",
+        "Jerry (Tom & Jerry)",
+        "Donald Duck",
+        "Goofy",
+        "SpongeBob SquarePants",
+        "Patrick Star",
+        "Dexter (Dexter's Laboratory)",
+        "Johnny Bravo",
+        "Finn (Adventure Time)",
+        "Jake (Adventure Time)",
+        "Rick Sanchez",
+        "Morty Smith",
+        "Shaggy (Scooby-Doo)"
+     ]
+   },
+   {
+     "name" : "Scientists & Inventors",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "discovery",
+     "names": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Nikola Tesla",
+        "Marie Curie",
+        "Stephen Hawking",
+        "Galileo Galilei",
+        "Leonardo da Vinci",
+        "Charles Darwin",
+        "Alan Turing",
+        "Thomas Edison",
+        "Benjamin Franklin",
+        "Alexander Graham Bell",
+        "Johannes Kepler",
+        "Carl Sagan",
+        "James Watt"
+     ]
+   },
+   {
+     "name" : "Superheroes & Villains",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "cinema",
+     "names": [
+        "Superman",
+        "Batman",
+        "Wonder Woman",
+        "The Flash",
+        "Green Lantern",
+        "Aquaman",
+        "Doctor Doom",
+        "Lex Luthor",
+        "The Riddler",
+        "Harley Quinn",
+        "Green Goblin",
+        "Doctor Octopus",
+        "Black Adam",
+        "Captain Marvel",
+        "Venom"
+     ]
+   },
+   {
+     "name" : "TV Show Characters",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "films",
+     "names": [
+        "Walter White (Breaking Bad)",
+        "Jesse Pinkman (Breaking Bad)",
+        "Tony Soprano",
+        "Michael Scott (The Office)",
+        "Dwight Schrute (The Office)",
+        "Chandler Bing (Friends)",
+        "Ross Geller (Friends)",
+        "Rachel Green (Friends)",
+        "Joey Tribbiani (Friends)",
+        "Ted Mosby (How I Met Your Mother)",
+        "Barney Stinson (How I Met Your Mother)",
+        "Daenerys Targaryen (Game of Thrones)",
+        "Jon Snow (Game of Thrones)",
+        "Arya Stark (Game of Thrones)",
+        "Tyrion Lannister (Game of Thrones)"
+     ]
+   },
+   {
+     "name" : "Famous Authors",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "literature",
+     "names": [
+        "William Shakespeare",
+        "J.K. Rowling",
+        "George R.R. Martin",
+        "J.R.R. Tolkien",
+        "Agatha Christie",
+        "Stephen King",
+        "Mark Twain",
+        "Jane Austen",
+        "Ernest Hemingway",
+        "Charles Dickens",
+        "Leo Tolstoy",
+        "Harper Lee",
+        "Oscar Wilde",
+        "Edgar Allan Poe",
+        "H.P. Lovecraft"
+     ]
+   },
+   {
+     "name" : "Fantasy Creatures",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "fantasy",
+     "names": [
+        "Dragon",
+        "Unicorn",
+        "Phoenix",
+        "Mermaid",
+        "Werewolf",
+        "Vampire",
+        "Griffin",
+        "Troll",
+        "Elf",
+        "Orc",
+        "Fairy",
+        "Goblin",
+        "Kraken",
+        "Minotaur",
+        "Centaur"
+     ]
+   }
+,
+   {
+     "name" : "US Presidents",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "presidents",
+     "names": [
+        "JFK",
+        "Ronald Reagan",
+        "Barrack Obama",
+        "Joe Biden",
+        "George W.Bush",
+        "Woodrow Wilson",
+        "George Washington",
+        "Theodor Roosevelt",
+        "Thomas Jefferson",
+        "Richard Nixon",
+        "Abraham Lincoln",
+        "F. D. Roosevelt",
+        "Dwight Eisenhower",
+        "Gerald Ford",
+        "Jimmy Carter",
+        "Bill Clinton"
+     ]
+   },
+   {
+     "name" : "Video Games",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "games",
+     "names": [
+        "Minecraft",
+        "Fortnite",
+        "The Legend of Zelda",
+        "Super Mario",
+        "Call of Duty",
+        "League of Legends",
+        "World of Warcraft",
+        "Halo",
+        "Counter-Strike",
+        "Grand Theft Auto",
+        "Elden Ring",
+        "The Witcher 3",
+        "Among Us",
+        "Pac-Man",
+        "Tetris"
+     ]
+   },
+   {
+     "name" : "Science & Space",
+     "author" : "Richie",
+     "isFavourite": false,
+     "imageStr": "science",
+     "names": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Galileo Galilei",
+        "Marie Curie",
+        "Stephen Hawking",
+        "Nikola Tesla",
+        "Charles Darwin",
+        "NASA",
+        "Apollo 11",
+        "Hubble Telescope",
+        "Black Hole",
+        "Mars Rover",
+        "The Big Bang",
+        "Neutron Star"
      ]
    }
 ]

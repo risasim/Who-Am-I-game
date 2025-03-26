@@ -11,7 +11,7 @@ import SwiftUI
 
 //constant arrays
 //array of the name of pictures in assets
-let images: [String] = ["films", "literature", "presidents", "art", "lab","animals", "comics", "bands", "celebrit","classic", "literature 1", "cinema", "nature", "discovery", "notes"]
+let images: [String] = ["films","games", "literature","cartoon", "presidents", "art", "lab","animals", "comics", "bands", "celebrit","classic", "literature 1", "cinema", "nature", "discovery", "notes","fantasy","sports","history"]
 //maybe delete later
 let times: [Int] = [10 ,30, 45, 60, 90]
 let languages: [String] = ["en", "cz", "sk"]
