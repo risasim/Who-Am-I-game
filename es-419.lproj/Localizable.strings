@@ -29,6 +29,7 @@ Por\U00A0favor,\U00A0ingresa\U00A0un\U00A0nombre\U00A0de\U00A0usuario. \nEl nomb
 "set.Ver"="Versión";
 "set.app"="Aplicación";
 "set.set"="Configuraciones";
+"set.improve"="Si encuentras algún error, por favor repórtalo a whoamibugs@gmail.com para ayudar a mejorar esta aplicación.";
 ""="";
 
 //Packs
@@ -53,9 +54,39 @@ Ups,\U00A0parece\U00A0que\U00A0no\U00A0tienes\U00A0favoritos. \nPuedes marcar un
 "game.res"="Resultados";
 "game.menu"="Menú";
 "game.ups"="Ups, parece que te quedaste atascado en la primera pregunta. Mejor suerte la próxima vez.";
+"game.Cancel"="Cancelar";
+"game.Save"="Guardar";
+"tab.Icon.Library"="Biblioteca";
+"game.Info"="Información";
+"game.Saved"="Guardado";
+"game.Items"="Artículos";
+"game.Title"="Título";
+"game.Image"="Imagen";
+"game.AddItem"="Añadir artículo";
 
 //Tabs
 "tab.Packs"="Paquetes";
 "tab.library"="Biblioteca en línea de paquetes";
 
+//Whats new
+"whatsnew.title"="Novedades:";
+"whatsnew.text"="
+ • Ahora puedes compartir los paquetes que creaste con otras personas. Si quieres compartir un paquete, mantenlo presionado y selecciona 'Compartir'.
+ • Ahora puedes descargar y jugar paquetes creados por otras personas. Para ver los paquetes disponibles, presiona la pestaña Biblioteca y luego toca el icono de descarga de un paquete.
 
+Si encuentras algún error, por favor repórtalo a whoamibugs@gmail.com para ayudar a mejorar esta aplicación.
+";
+
+//Update 2.0
+"library.server.error"="Algo salió mal en el servidor";
+"pack.share"="Compartir paquete";
+"library.waitForApproval"="El paquete se agregará a la biblioteca después de la aprobación en las próximas 24 horas";
+"library.notLoaded"="Biblioteca no cargada";
+"library.loading"="Cargando biblioteca";
+"library.error"="Error del servidor";
+"library.loaded"="Biblioteca cargada";
+"library.uploaded"="Subido exitosamente";
+"library.uploading"="Subiendo a la biblioteca";
+"library.welcome"="Bienvenido a la biblioteca de paquetes";
+"library.explanation"="Aquí puedes descargar paquetes de preguntas creados por otros usuarios o publicar los paquetes que has creado.";
+"library.enter"="Entrar";

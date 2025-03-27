@@ -10,8 +10,12 @@ import SwiftUI
 struct ListItemView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    var pack : QuestionPack
+    var pack : RealmQuestionPack
+    
     @EnvironmentObject var realmie: RealmGuess
+    @EnvironmentObject var saved:SavedPacks
+    @EnvironmentObject var pbHandler:PocketBaseHandler
+    @EnvironmentObject var network: NetworkController
     @Binding var changed : Bool
     @State var editPack: Bool = false
     
@@ -82,8 +86,14 @@ struct ListItemView: View {
             } label: {
                 Label("pack.editPack", systemImage: "pencil")
             }
-            
+            Button{
+                pbHandler.share(pack:pack, savePacks: saved,realm:realmie, completion:  {})
+            }label:{
+                Label("pack.share", systemImage: "square.and.arrow.up")
+            }
+            .disabled(!network.isConnected || saved.isSaved(pack: pack))
             Button(role: .destructive) {
+                saved.removePack(packID: pack.id.stringValue)
                 realmie.deletePack(id: pack.id)
                 changed.toggle()
             } label: {
@@ -102,10 +112,12 @@ struct ListItemView: View {
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        let pack = QuestionPack()
+        let pack = RealmQuestionPack()
         ListItemView(pack: pack,changed: .constant(false))
             .onAppear {
                 pack.author = "Richie"
             }
+            .environmentObject(NetworkController())
+            .environmentObject(SavedPacks())
     }
 }

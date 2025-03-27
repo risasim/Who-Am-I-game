@@ -8,6 +8,7 @@
 import Foundation
 import Network
 
+
 class NetworkController:ObservableObject{
     @Published var isConnected:Bool = false
     

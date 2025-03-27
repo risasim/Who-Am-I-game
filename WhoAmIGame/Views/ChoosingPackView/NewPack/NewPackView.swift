@@ -18,15 +18,15 @@ struct NewPackView: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 Form{
-                    Section("Info") {
-                        TextField("Add title", text: $packModel.packName)
+                    Section("game.Info") {
+                        TextField("game.Title", text: $packModel.packName)
                     }
-                    Section("Image"){
+                    Section("game.Image"){
                         ImageGridView(select: $packModel.selectedImage)
                     }
                     Section {
                         HStack{
-                            TextField("Add item", text: $packModel.currentTextField)
+                            TextField("game.AddItem", text: $packModel.currentTextField)
                                 .onChange(of: packModel.currentTextField) { _ in
                                     packModel.checkItem()
                                 }
@@ -52,7 +52,7 @@ struct NewPackView: View {
                         }
                     } header: {
                         VStack{
-                            Text("Items")
+                            Text("game.Items")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             if packModel.isSame{
                                 Text(packModel.warning)
@@ -72,13 +72,13 @@ struct NewPackView: View {
             })
             // For no differenciantions in color in list
             //.background(Color("listBack"))
-            .navigationTitle(packModel.packName == "" ? "Title" : packModel.packName)
+            .navigationTitle(packModel.packName == "" ?  String(localized:"game.Title") : packModel.packName)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("Cancel")
+                        Text("game.Cancel")
                     }
                     
                 }
@@ -88,7 +88,7 @@ struct NewPackView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                     } label: {
-                        Text("Save")
+                        Text("game.Save")
                     }
                     .alert(isPresented: $packModel.alertBool) {
                         packModel.alert
@@ -104,6 +104,7 @@ struct NewPackView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
             NewPackView(packModel: EditAddModel(realm: RealmGuess()))
+                .environment(\.locale, .init(identifier: "zh-Hans"))
         }
     }
 }

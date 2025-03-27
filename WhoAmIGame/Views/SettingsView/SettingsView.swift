@@ -16,6 +16,8 @@ struct SettingsView: View {
     @AppStorage("showLinks")var link = true
     @AppStorage("localLanguage")var selectedLanguage:String = "en"
     
+    @EnvironmentObject var realm: RealmGuess
+    
     var body: some View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
@@ -45,7 +47,7 @@ struct SettingsView: View {
                             .foregroundColor(.gray)
                         Divider().padding(.vertical, 4)
                         Button {
-                            StartingDatabase()
+                            StartingDatabase(realm:realm)
                         } label: {
                             Text("set.AddPacks")
                         }
@@ -92,6 +94,9 @@ struct SettingsView: View {
                     }, label: {
                         SettingsLabelView(label: "set.app", image: "apps.iphone")
                     })
+                    Text("set.improve")
+                        .font(.caption)
+                        .multilineTextAlignment(.center)
                 }
             }
             .navigationTitle("set.set")

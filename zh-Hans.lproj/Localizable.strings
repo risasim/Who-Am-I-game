@@ -29,6 +29,7 @@
 "set.Ver"="版本";
 "set.app"="应用程序";
 "set.set"="设置";
+"set.improve"="如果你发现任何错误，请报告至 whoamibugs@gmail.com，以帮助改进此应用。";
 ""="";
 
 //Packs
@@ -53,7 +54,39 @@
 "game.res"="结果";
 "game.menu"="菜单";
 "game.ups"="哎呀，看起来你在第一个问题上卡住了。下次好运。";
+"game.Cancel"="取消";
+"game.Save"="保存";
+"tab.Icon.Library"="资料库";
+"game.Info"="信息";
+"game.Saved"="已保存";
+"game.Items"="物品";
+"game.Title"="标题";
+"game.Image"="图片";
+"game.AddItem"="添加物品";
 
 //Tabs
 "tab.Packs"="包";
 "tab.library"="在线包库";
+
+//Whats new
+"whatsnew.title"="更新内容:";
+"whatsnew.text"="
+ • 你现在可以与他人分享你创建的包。长按一个包，然后选择'分享'。
+ • 你现在可以下载并游玩他人创建的包。要查看可用的包，请点击“图书馆”选项卡，然后点击包的下载图标。
+
+如果你发现任何错误，请报告至 whoamibugs@gmail.com，以帮助改进此应用。
+";
+
+//Update 2.0
+"library.server.error"="服务器出现问题";
+"pack.share"="分享包";
+"library.waitForApproval"="数据包将在批准后的 24 小时内添加到库中";
+"library.notLoaded"="图书馆未加载";
+"library.loading"="正在加载图书馆";
+"library.error"="服务器错误";
+"library.loaded"="图书馆已加载";
+"library.uploaded"="上传成功";
+"library.uploading"="正在上传到图书馆";
+"library.welcome"="欢迎来到题库";
+"library.explanation"="在这里，你可以下载其他用户创建的问题包，或者上传你自己创建的包。";
+"library.enter"="进入";

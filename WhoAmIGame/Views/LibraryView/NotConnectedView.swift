@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///View that is shown if the app is not connected to internet.
 struct NotConnectedView: View {
     
     var network: NetworkController
