@@ -29,6 +29,7 @@ Por\U00A0favor,\U00A0introduz\U00A0um\U00A0nome\U00A0de\U00A0utilizador. \nO nom
 "set.Ver"="Versão";
 "set.app"="Aplicação";
 "set.set"="Configurações";
+"set.improve"="Se encontrar algum erro, reporte para whoamibugs@gmail.com para ajudar a melhorar esta aplicação.";
 ""="";
 
 //Packs
@@ -53,10 +54,39 @@ Oops,\U00A0parece\U00A0que\U00A0não\U00A0tens\U00A0favoritos. \nPodes marcar um
 "game.res"="Resultados";
 "game.menu"="Menu";
 "game.ups"="Oops, parece que ficaste preso na primeira pergunta. Mais sorte na próxima vez.";
+"game.Cancel"="Cancelar";
+"game.Save"="Guardar";
+"tab.Icon.Library"="Biblioteca";
+"game.Info"="Informações";
+"game.Saved"="Guardado";
+"game.Items"="Itens";
+"game.Title"="Título";
+"game.Image"="Imagem";
+"game.AddItem"="Adicionar item";
 
 //Tabs
 "tab.Packs"="Pacotes";
 "tab.library"="Biblioteca online de pacotes";
 
+//Whats new
+"whatsnew.title"="Novidades:";
+"whatsnew.text"="
+ • Agora pode partilhar pacotes criados por si com outras pessoas. Para partilhar um pacote, mantenha-o pressionado e selecione 'Partilhar'.
+ • Agora pode descarregar e jogar pacotes criados por outras pessoas. Para ver os pacotes disponíveis, toque no separador Biblioteca e depois no ícone de transferência de um pacote.
 
+Se encontrar algum erro, reporte para whoamibugs@gmail.com para ajudar a melhorar esta aplicação.
+";
 
+//Update 2.0
+"library.server.error"="Algo correu mal no servidor";
+"pack.share"="Partilhar pacote";
+"library.waitForApproval"="O pacote será adicionado à biblioteca após aprovação nas próximas 24 horas";
+"library.notLoaded"="Biblioteca não carregada";
+"library.loading"="A carregar biblioteca";
+"library.error"="Erro no servidor";
+"library.loaded"="Biblioteca carregada";
+"library.uploaded"="Carregado com sucesso";
+"library.uploading"="A carregar para a biblioteca";
+"library.welcome"="Bem-vindo à biblioteca de pacotes";
+"library.explanation"="Aqui pode descarregar pacotes de perguntas criados por outros utilizadores ou publicar aqui os pacotes que criou.";
+"library.enter"="Entrar";

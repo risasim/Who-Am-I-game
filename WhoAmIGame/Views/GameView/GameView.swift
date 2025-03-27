@@ -61,7 +61,7 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(model: GameModel(pack: QuestionPack()))
+        GameView(model: GameModel(pack: RealmQuestionPack()))
     }
 }
 

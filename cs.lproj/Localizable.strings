@@ -29,6 +29,7 @@ Prosím\U00A0zadejte\U00A0jméno. \nUživatelské jméno bude použito pro sdíl
 "set.Ver"="Verze";
 "set.app"="Aplikace";
 "set.set"="Nastavení";
+"set.improve"="Pokud si všimnete nějaké chyby, nahlaste ji na whoamibugs@gmail.com, abyste pomohli vylepšit tuto aplikaci.";
 ""="";
 
 //Packs
@@ -53,7 +54,39 @@ Ups\U00A0vypadá\U00A0to\U00A0že\U00A0nemáte\U00A0žádné\U00A0oblíbence. \n
 "game.res"="Výsledky";
 "game.menu"="Menu";
 "game.ups"="Zdá se, že jste se zasekli u první otázky. Příště se vám bude dařit lépe.";
+"game.Cancel"="Zrušit";
+"game.Save"="Uložit";
+"tab.Icon.Library"="Knihovna";
+"game.Info"="Informace";
+"game.Saved"="Uloženo";
+"game.Items"="Položky";
+"game.Title"="Název";
+"game.Image"="Obrázek";
+"game.AddItem"="Přidat položku";
 
 //Tabs
 "tab.Packs"="Balíčky";
 "tab.library"="Knihovna balíčků";
+
+//Whats new
+"whatsnew.title"="Co je nového:";
+"whatsnew.text"="
+ • Nyní můžete sdílet balíčky, které jste vytvořili, s ostatními. Pokud chcete sdílet balíček, podržte jej a vyberte 'Sdílet'.
+ • Nyní si můžete stáhnout a hrát balíčky vytvořené ostatními. Chcete-li zobrazit dostupné balíčky, stiskněte kartu Knihovna a poté ikonu stahování u balíčku.
+
+Pokud si všimnete nějaké chyby, nahlaste ji na whoamibugs@gmail.com, abyste pomohli vylepšit tuto aplikaci.
+";
+
+//Update 2.0
+"library.server.error"="Něco se pokazilo na serveru";
+"pack.share"="Sdílet balíček";
+"library.waitForApproval"="Balíček bude přidán do knihovny po schválení během následujících 24 hodin";
+"library.notLoaded"="Knihovna nebyla načtena";
+"library.loading"="Načítání knihovny";
+"library.error"="Chyba serveru";
+"library.loaded"="Knihovna načtena";
+"library.uploaded"="Úspěšně nahráno";
+"library.uploading"="Nahrávání do knihovny";
+"library.welcome"="Vítejte v knihovně balíčků";
+"library.explanation"="Zde si můžete stáhnout balíčky otázek vytvořené ostatními uživateli nebo zde můžete zveřejnit balíčky, které jste vytvořili.";
+"library.enter"="Vstoupit";

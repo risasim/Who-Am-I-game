@@ -29,6 +29,7 @@ Please\U00A0enter\U00A0username. \nUsername will be used for publishing your own
 "set.Ver"="Version";
 "set.app"="Application";
 "set.set"="Settings";
+"set.improve"="If you notice any bug, please report to whoamibugs@gmail.com to help improve this app.";
 ""="";
 
 //Packs
@@ -53,9 +54,42 @@ Ups\U00A0look\U00A0like\U00A0you\U00A0have\U00A0no\U00A0favourites. \nYou can ma
 "game.res"="Results";
 "game.menu"="Menu";
 "game.ups"="Ups it looks like you got stuck on the first question. Better luck next time.";
+"game.Cancel"="Cancel";
+"game.Save"="Save";
+"game.Info"="Info";
+"game.Saved"="Saved";
+"game.Items"="Items";
+"game.Title"="Title";
+"game.Image"="Image";
+"game.AddItem"="Add item";
 
 //Tabs
 "tab.Packs"="Packs";
 "tab.library"="Online library of packs";
+"tab.Icon.Library"="Library";
+
+
+//WhatsNew
+"whatsnew.title"="Whats new:";
+"whatsnew.text"="
+ • You can now share packs created by you with others. If you want to share a pack long-press it and select share.
+ • You can now download and play created by others. To see what are the avaiable packs, press Library tab and then on the download symbol of a pack.
+
+If you notice any bug, please report to whoamibugs@gmail.com to help improve this app.
+";
+
+//Update 2.0
+"library.server.error"="Something went wrong on the server";
+"pack.share"="Share pack";
+"library.waitForApproval"="Pack will be added to library after approval in next 24 hours";
+"library.notLoaded"="Library not loaded";
+"library.loading"="Loading library";
+"library.error"="Server error,try later";
+"library.loaded"="Library loaded";
+"library.uploaded"="Sucessfully uploaded";
+"library.uploading"="Uploading to the library";
+"library.welcome"="Welcome to Packs library";
+"library.explanation"="Here you can download pack of questions that were created by other users or you can post here packs you have created.";
+"library.enter"="Enter";
 
 

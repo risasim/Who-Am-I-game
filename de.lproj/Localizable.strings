@@ -29,6 +29,7 @@ Bitte\U00A0Benutzernamen\U00A0eingeben. \nDer Benutzername wird verwendet, um ei
 "set.Ver"="Version";
 "set.app"="Anwendung";
 "set.set"="Einstellungen";
+"set.improve"="Falls du Fehler bemerkst, melde sie bitte an whoamibugs@gmail.com, um die App zu verbessern.";
 ""="";
 
 //Packs
@@ -53,9 +54,39 @@ Ups\U00A0es\U00A0scheint\U00A0so,\U00A0als\U00A0hättest\U00A0du\U00A0keine\U00A
 "game.res"="Ergebnisse";
 "game.menu"="Menü";
 "game.ups"="Ups, es sieht so aus, als wärst du bei der ersten Frage steckengeblieben. Viel Glück beim nächsten Mal.";
+"game.Cancel"="Abbrechen";
+"game.Save"="Speichern";
+"tab.Icon.Library"="Bibliothek";
+"game.Info"="Info";
+"game.Saved"="Gespeichert";
+"game.Items"="Gegenstände";
+"game.Title"="Titel";
+"game.Image"="Bild";
+"game.AddItem"="Element hinzufügen";
 
 //Tabs
 "tab.Packs"="Pakete";
 "tab.library"="Online-Bibliothek von Paketen";
 
+//Whats new
+"whatsnew.title"="Was gibt's Neues:";
+"whatsnew.text"="
+ • Du kannst jetzt von dir erstellte Pakete mit anderen teilen. Halte ein Paket lange gedrückt und wähle 'Teilen'.
+ • Du kannst jetzt von anderen erstellte Pakete herunterladen und spielen. Um die verfügbaren Pakete zu sehen, gehe auf den Bibliothek-Tab und tippe auf das Download-Symbol eines Pakets.
 
+Falls du Fehler bemerkst, melde sie bitte an whoamibugs@gmail.com, um die App zu verbessern.
+";
+
+//Update 2.0
+"library.server.error"="Es ist ein Fehler auf dem Server aufgetreten";
+"pack.share"="Paket teilen";
+"library.waitForApproval"="Das Paket wird nach Genehmigung innerhalb der nächsten 24 Stunden zur Bibliothek hinzugefügt";
+"library.notLoaded"="Bibliothek nicht geladen";
+"library.loading"="Bibliothek wird geladen";
+"library.error"="Serverfehler";
+"library.loaded"="Bibliothek geladen";
+"library.uploaded"="Erfolgreich hochgeladen";
+"library.uploading"="Hochladen in die Bibliothek";
+"library.welcome"="Willkommen in der Pakete-Bibliothek";
+"library.explanation"="Hier kannst du Fragenpakete herunterladen, die von anderen Nutzern erstellt wurden, oder deine eigenen Pakete hochladen.";
+"library.enter"="Eintreten";

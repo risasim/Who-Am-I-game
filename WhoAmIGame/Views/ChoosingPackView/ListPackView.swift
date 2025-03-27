@@ -16,9 +16,10 @@ struct ListPackView: View {
     @State var change: Bool = false
     @State var noFavourites = false
     @Binding var outerChange:Bool
+    @Namespace var namespace
     
-    @ObservedResults(QuestionPack.self) var questionPacks
-    @State var filteredResults:[QuestionPack] = []
+    @ObservedResults(RealmQuestionPack.self) var questionPacks
+    @State var filteredResults:[RealmQuestionPack] = []
     
     
     var body: some View {
@@ -27,13 +28,22 @@ struct ListPackView: View {
                 LazyVGrid(columns: gridLayout,spacing: 15) {
                     ForEach(filteredResults) { pack in
                         NavigationLink(value: pack) {
-                            ListItemView(pack: pack, changed: $change)
-                            //.padding()
+                            if #available(iOS 18.0, *) {
+                                ListItemView(pack: pack, changed: $change)
+                                    .matchedTransitionSource(id: pack.id, in: namespace)
+                            } else {
+                                ListItemView(pack: pack, changed: $change)
+                            }
                         }
                     }
                 }
-                .navigationDestination(for: QuestionPack.self, destination: { pack in
-                    GameView(model: GameModel(pack: pack))
+                .navigationDestination(for: RealmQuestionPack.self, destination: { pack in
+                    if #available(iOS 18.0, *) {
+                        GameView(model: GameModel(pack: pack))
+                            .navigationTransition(.zoom(sourceID: pack.id, in: namespace))
+                    } else {
+                        GameView(model: GameModel(pack: pack))
+                    }
                 })
                 .padding()
             }
@@ -58,9 +68,11 @@ struct ListPackView: View {
             change.toggle()
         })
         .onChange(of: favourites, perform: { newValue in
-            getFavs()
-            if newValue == false{
-                noFavourites = false
+            withAnimation {
+                getFavs()
+                if newValue == false{
+                    noFavourites = false
+                }
             }
         })
         //When deleting to rearrange the List
@@ -81,7 +93,7 @@ struct ListPackView: View {
     }
     func getFavs(){
         if favourites{
-            var favPacks: [QuestionPack] = []
+            var favPacks: [RealmQuestionPack] = []
             for pack in questionPacks{
                 if pack.isFavourite{
                     favPacks.append(pack)

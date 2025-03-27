@@ -12,6 +12,10 @@ struct WhoAmIGameApp: App {
     @AppStorage("isFirstTime") var isFirstTime = true
     @AppStorage("wasUploaded") var upload = false
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @ObservedObject var realm = RealmGuess()
+    @ObservedObject var network = NetworkController()
+    @State var saved = SavedPacks()
+    @StateObject var pbHandler = PocketBaseHandler()
     
     var body: some Scene {
         WindowGroup {
@@ -19,13 +23,16 @@ struct WhoAmIGameApp: App {
                 FirstUsernameScreen()
                     .onAppear {
                         if !upload{
-                            StartingDatabase()
+                            StartingDatabase(realm: realm)
                             upload = true
                         }
                     }
             }else{
-                ChoosingPackView()
-                //TabsView()
+                TabsView()
+                    .environmentObject(realm)
+                    .environmentObject(saved)
+                    .environmentObject(pbHandler)
+                    .environmentObject(network)
             }
         }
     }

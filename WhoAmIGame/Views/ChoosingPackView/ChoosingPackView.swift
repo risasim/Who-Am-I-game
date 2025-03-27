@@ -10,20 +10,20 @@ import RealmSwift
 
 struct ChoosingPackView: View {
     
-    @ObservedObject var realm = RealmGuess()
-    
     
     @State var isSettingsShown:Bool = false
     @State var isNewPackShown: Bool = false
     @State var favourites:Bool = false
-    @State var outerChange: Bool = false 
+    @State var outerChange: Bool = false
     
+    @EnvironmentObject var realm: RealmGuess
+    @EnvironmentObject var handler: PocketBaseHandler
     @ObservedObject var navi = Navigator()
     
     var body: some View {
         NavigationStack(path: $navi.path){
             VStack{
-                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites, outerChange: $outerChange).environmentObject(realm).navigationBarTitleDisplayMode(.inline))
+                realm.questionPacks.isEmpty ? AnyView(EmptyPacksView()) : AnyView(ListPackView(favourites: $favourites, outerChange: $outerChange).navigationBarTitleDisplayMode(.inline))
             }
             .overlay(content: {
                 VStack{
@@ -34,6 +34,7 @@ struct ChoosingPackView: View {
                     }
                 }
             })
+            //Settings
             .sheet(isPresented: $isSettingsShown, content: {
                 SettingsView()
             })
@@ -43,6 +44,7 @@ struct ChoosingPackView: View {
                         outerChange.toggle()
                     }
             })
+            //Toolbar
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -55,6 +57,7 @@ struct ChoosingPackView: View {
                 ToolbarItem(placement: .principal) {
                     Text("Who Am I ?")
                         .font(.system(size: 27, weight: .bold, design: .rounded))
+                        .padding(.bottom, 0)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
@@ -81,5 +84,8 @@ struct ChoosingPackView: View {
 struct ChoosingPackView_Previews: PreviewProvider {
     static var previews: some View {
         ChoosingPackView()
+            .environmentObject(RealmGuess())
+            .environmentObject(SavedPacks())
+            .environmentObject(PocketBaseHandler())
     }
 }
