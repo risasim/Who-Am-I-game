@@ -68,9 +68,11 @@ struct ListPackView: View {
             change.toggle()
         })
         .onChange(of: favourites, perform: { newValue in
-            getFavs()
-            if newValue == false{
-                noFavourites = false
+            withAnimation {
+                getFavs()
+                if newValue == false{
+                    noFavourites = false
+                }
             }
         })
         //When deleting to rearrange the List
