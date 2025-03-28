@@ -8,19 +8,41 @@
 import SwiftUI
 
 struct TabsView: View {
+    @State private var selectedTab: Int = 1
     var body: some View {
         VStack{
-            TabView {
+            TabView(selection: $selectedTab) {
                 MainPacksView()
                     .tabItem{
                         Label("tab.Packs", systemImage: "square.stack.3d.down.right")
                     }
+                    .tag(1)
                 LibraryView()
                     .tabItem {
                         Label("tab.Icon.Library", systemImage: "books.vertical.fill")
                     }
+                    .tag(2)
             }
         }
+        .onOpenURL { incomingURL in
+            print("App was opened via URL: \(incomingURL)")
+            handleIncomingURL(incomingURL)
+        }
+    }
+    /// Handles the incoming URL and performs validations before acknowledging.
+    private func handleIncomingURL(_ url: URL) {
+        guard url.scheme == "risasimonikwhoamipartygame" else {
+            return
+        }
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+            print("Invalid URL")
+            return
+        }
+        guard let action = components.host, action == "open-library" else {
+            print("Unknown URL, we can't handle this one!")
+            return
+        }
+        selectedTab=2
     }
 }
 
