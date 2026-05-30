@@ -39,7 +39,7 @@ struct TabsView: View {
             return
         }
         guard let action = components.host, action == "open-library" else {
-            print("Unknown URL, we can't handle this one!")
+            print("Unknown URL, we can't handle this one! ")
             return
         }
         selectedTab=2
