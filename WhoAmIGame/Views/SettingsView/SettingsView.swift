@@ -99,6 +99,7 @@ struct SettingsView: View {
                         .multilineTextAlignment(.center)
                 }
             }
+            .padding(.horizontal,5)
             .navigationTitle("set.set")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
