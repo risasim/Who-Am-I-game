@@ -2,16 +2,7 @@
   "images" : [
     {
       "filename" : "adam-kool-ndN00KmbJ1c-unsplash.jpg",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "universal"
     }
   ],
   "info" : {
